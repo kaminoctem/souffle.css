@@ -1,0 +1,20 @@
+/**
+ * containers/container.styl
+ * @author kaminoctem
+ */
+
+/** style */
+.container
+  margin: 0 auto
+  position: relative
+  width: auto
+  +desktop()
+    max-width: $breakpoint-desktop
+  +widescreen()
+    max-width: $breakpoint-widescreen
+  +fullhd()
+    max-width: $breakpoint-fullhd
+  &.is-widescreen
+    max-width: $breakpoint-widescreen
+  &.is-fullhd
+    max-width: $breakpoint-fullhd

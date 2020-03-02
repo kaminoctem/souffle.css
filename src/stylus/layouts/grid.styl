@@ -1,0 +1,48 @@
+/**
+ * layouts/grid.styl
+ * @author kaminoctem
+ */
+
+.grid
+  display: block
+
+.row
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  &.is-direction-row
+    flex-direction: row
+  &.is-direction-row-reverse
+    flex-direction: row-reverse
+  &.is-direction-column
+    flex-direction: column
+  &.is-direction-column-reverse
+    flex-direction: column-reverse
+
+  +is_responsive("-direction-row")
+    flex-direction: row
+  +is_responsive("-direction-row-reverse")
+    flex-direction: row-reverse
+  +is_responsive("-direction-column")
+    flex-direction: column
+  +is_responsive("-direction-column-reverse")
+    flex-direction: column-reverse
+
+  &>.column
+    column()
+    &.is-full
+      flex: none
+      width: 100%
+
+  for num in (1..$grid-column-count)
+    &>.column-{num}
+      column()
+      width: percentage(num / $grid-column-count)
+      flex-basis: percentage(num / $grid-column-count)
+
+  &>.column,
+  &>[class^="column-"]
+    for num in (1..$grid-column-count)
+      +is_responsive("-" + num)
+        width: percentage(num / $grid-column-count)
+        flex-basis: percentage(num / $grid-column-count)

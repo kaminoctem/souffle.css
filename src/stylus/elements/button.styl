@@ -1,0 +1,138 @@
+/**
+ * elements/button.styl
+ * @author kaminoctem
+ */
+
+/** variable */
+$button-forecolor ?= $color-grey-darker
+$button-backcolor ?= $color-white
+$button-bordercolor ?= $color-grey-lighter
+$button-border-radius ?= 4px
+$button-hover-forecolor ?= $color-grey-darker
+$button-hover-backcolor ?= $color-grey-darker
+$button-hover-bordercolor ?= $color-grey-light
+
+$button-focus-forecolor ?= $color-grey-darker
+$button-focus-backcolor ?= $color-grey-darker
+$button-focus-bordercolor ?= $color-link
+$button-focus-box-shadow-size ?= 0 0 0 0.125em
+$button-focus-box-shadow-color ?= alpha($color-link, 0.25)
+
+$button-active-forecolor ?= $color-grey-darker
+$button-active-backcolor ?= $color-grey-darker
+$button-active-bordercolor ?= $color-grey-dark
+
+$button-disabled-forecolor ?= $color-grey-darker
+$button-disabled-backcolor ?= $color-white
+$button-disabled-bordercolor ?= $color-grey-lighter
+$button-disabled-box-shadow ?= none
+$button-disabled-opacity ?= 0.5
+
+/** style */
+.button
+  @extend.control
+  background-color: $button-backcolor
+  border-color: $button-bordercolor
+  cursor: pointer
+
+  &:hover,
+  &.is-hovered
+    border-color: $button-hover-bordercolor
+    color: $button-hover-forecolor
+
+  &:focus,
+  &.is-focused
+    border-color: $button-focus-bordercolor
+    color: $button-focus-forecolor
+    &:not(:active)
+      box-shadow: $button-focus-box-shadow-size $button-focus-box-shadow-color
+
+  &:active,
+  &.is-active
+    border-color: $button-active-bordercolor
+    color: $button-active-forecolor
+
+  &[disabled],
+  fieldset[disabled]
+    background-color: $button-disabled-backcolor
+    border-color: $button-disabled-bordercolor
+    box-shadow: $button-disabled-box-shadow
+    opacity: $button-disabled-opacity
+
+  for colorKey, colorValue in $colors
+    &.is-{colorKey}
+      background-color: colorValue
+      border-color: transparent
+      color: invert(colorValue)
+
+      &:hover,
+      &.is-hovered
+        background-color: darken(colorValue, 5%)
+        border-color: transparent
+        color: invert(colorValue)
+
+      &:focus,
+      &.is-focused
+        border-color: transparent
+        color: invert(colorValue)
+        &:not(:active)
+          box-shadow: $button-focus-box-shadow-size alpha(colorValue, 0.25)
+
+      &:active,
+      &.is-active
+        background-color: darken(colorValue, 10%)
+        border-color: transparent
+        color: invert(colorValue)
+
+      &[disabled],
+      fieldset[disabled],
+      &.is-disabled
+        background-color: colorValue
+        border-color: transparent
+        box-shadow: none
+
+  &.is-wimp
+    &:hover,
+    &.is-hovered
+      animation-duration: 0.1s
+      animation-fill-mode: both
+      animation-iteration-count: infinite
+      animation-name: is-wimp-hover
+    &:focus,
+    &.is-focused
+      animation-duration: 0.1s
+      animation-fill-mode: both
+      animation-iteration-count: infinite
+    &:active,
+    &.is-active
+      animation-duration: 0.1s
+      animation-fill-mode: both
+      animation-iteration-count: infinite
+    &[disabled],
+    fieldset[disabled],
+    &.is-disabled
+      animation-duration: 2s
+      animation-fill-mode: both
+      animation-iteration-count: infinite
+      animation-name: is-wimp-disabled
+
+/** keyframes */
+@keyframes is-wimp-hover
+  0%
+    transform: translate3d(0, 0, 0)
+  25%
+    transform: translate3d(-0.25em, 0, 0)
+  50%
+    transform: translate3d(0, 0, 0)
+  75%
+    transform: translate3d(0.25em, 0, 0)
+  100%
+    transform: translate3d(0, 0, 0)
+
+@keyframes is-wimp-disabled
+  0%
+    opacity: 0.9
+  50%
+    opacity: 0.7
+  100%
+    opacity: 0.9

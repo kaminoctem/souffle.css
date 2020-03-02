@@ -1,0 +1,120 @@
+/**
+ * components/hamburger.styl
+ * @author kaminoctem
+ */
+
+/** style */
+$hamburger-backcolor ?= $color-grey-light
+$hamburger-forecolor ?= $color-grey
+$hamburger-size ?= 3.5rem
+$hamburger-line-color ?= $color-grey
+$hamburger-hover-backcolor ?= $color-grey-lighter
+$hamburger-hover-forecolor ?= $color-grey
+
+.hamburger
+  background-color: $hamburger-backcolor
+  border-radius: 4px
+  color: $hamburger-forecolor
+  cursor: pointer
+  display: inline-block
+  height: $hamburger-size
+  position: relative
+  width: $hamburger-size
+  &:hover,
+  &.is-hovered
+    background-color: $hamburger-hover-backcolor
+    color: $hamburger-hover-forecolor
+  &>span
+    display: inline-block
+    opacity: 1
+    position: absolute
+    transform-origin: center
+    left: 0
+    margin: 0 auto
+    right: 0
+    &:nth-child(1)
+      unselectable()
+      font-size: 0.5em
+      line-height: 1
+      text-align: center
+      top: 0.25em
+      width: $hamburger-size
+    &:nth-child(2)
+      animation: hamburger-crown .75s forwards
+      background-color: $hamburger-line-color
+      height: 1px
+      top: "calc(-1px - (%s / 5) + 50%)" % ($hamburger-size)
+      width: "calc(%s / 5 * 3)" % ($hamburger-size)
+    &:nth-child(3)
+      background-color: $hamburger-line-color
+      height: 1px
+      top: calc(50% - 1px)
+      transition: all .25s .25s
+      width: "calc(%s / 5 * 3)" % ($hamburger-size)
+    &:nth-child(4)
+      animation: hamburger-heel .75s forwards
+      background-color: $hamburger-line-color
+      height: 1px
+      top: "calc(-1px + (%s / 5) + 50%)" % ($hamburger-size)
+      width: "calc(%s / 5 * 3)" % ($hamburger-size)
+    &:nth-child(5)
+      unselectable()
+      bottom: 0.5em
+      font-size: 0.5em
+      line-height: 1
+      text-align: center
+      width: $hamburger-size
+  &.is-active
+    &>span
+      &:nth-child(2)
+        animation: hamburger-crown-is-active .75s forwards
+        top: 50%
+      &:nth-child(3)
+        opacity: 0
+      &:nth-child(4)
+        animation: hamburger-heel-is-active .75s forwards
+        top: 50%
+
+/** keyframes */
+@keyframes hamburger-crown
+  0%
+    transform: rotate(45deg)
+    top: calc(50% - 1px)
+  50%
+    transform: rotate(0deg)
+    top: calc(50% - 1px)
+  100%
+    transform: rotate(0deg)
+    top: "calc(-1px - (%s / 5) + 50%)" % ($hamburger-size)
+
+@keyframes hamburger-crown-is-active
+  0%
+    transform: rotate(0deg)
+    top: "calc(-1px - (%s / 5) + 50%)" % ($hamburger-size)
+  50%
+    transform: rotate(0deg)
+    top: calc(50% - 1px)
+  100%
+    transform: rotate(45deg)
+
+@keyframes hamburger-heel
+  0%
+    transform: rotate(-45deg)
+    top: calc(50% - 1px)
+  50%
+    transform: rotate(0deg)
+    top: calc(50% - 1px)
+  100%
+    transform: rotate(0deg)
+    top: "calc(-1px + (%s / 5) + 50%)" % ($hamburger-size)
+
+@keyframes hamburger-heel-is-active
+  0%
+    transform: rotate(0deg)
+    top: "calc(-1px + (%s / 5) + 50%)" % ($hamburger-size)
+  50%
+    transform: rotate(0deg)
+    top: calc(50% - 1px)
+  100%
+    transform: rotate(-45deg)
+    top: calc(50% - 1px)

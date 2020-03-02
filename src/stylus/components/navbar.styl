@@ -1,0 +1,47 @@
+/**
+ * components/navbar.styl
+ * @author kaminoctem
+ */
+
+/** style */
+.navbar
+  display: block
+  &>.brand
+    display: flex
+    &>.item
+      cursor: pointer
+      display: inline-block
+    &>.left
+      display: block
+      flex-basis: 0
+      flex-grow: 1
+      flex-shrink: 1
+      max-width: 100%
+      margin: auto auto auto 0
+      position: relative
+      text-align: left
+    &>.center
+      display: block
+      flex-basis: 0
+      flex-grow: 1
+      flex-shrink: 1
+      max-width: 100%
+      margin: auto
+      position: relative
+      text-align: center
+    &>.right
+      display: block
+      flex-basis: 0
+      flex-grow: 1
+      flex-shrink: 1
+      max-width: 100%
+      margin: auto 0 auto auto
+      position: relative
+      text-align: right
+  &>.menu
+    display: none
+    &.is-active
+      display: block
+    &>.item
+      cursor: pointer
+      display: block

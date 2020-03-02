@@ -1,0 +1,42 @@
+/**
+ * elements/control.styl
+ * @author kaminoctem
+ */
+
+/** variable */
+$control-border-radius ?= 4px
+$control-border-radius-small ?= 2px
+$control-border-width ?= 1px
+$control-height ?= 2.25em
+$control-line-height ?= 1.5
+$control-padding-vertical ?= (0.375em - $control-border-width)
+$control-padding-horizontal ?= (0.625em - $control-border-width)
+
+/** style */
+.control
+  -moz-appearance: none
+  -webkit-appearance: none
+  align-items: center
+  border: $control-border-width solid transparent
+  border-radius: $control-border-radius
+  box-shadow: none
+  display: inline-flex
+  font-size: $font-size-normal
+  height: $control-height
+  justify-content: flex-start
+  line-height: $control-line-height
+  padding-bottom: $control-padding-vertical
+  padding-left: $control-padding-horizontal
+  padding-right: $control-padding-horizontal
+  padding-top: $control-padding-vertical
+  position: relative
+  vertical-align: top
+  // States
+  &:focus,
+  &.is-focused,
+  &:active,
+  &.is-active
+    outline: none
+  &[disabled],
+  fieldset[disabled] &
+    cursor: not-allowed

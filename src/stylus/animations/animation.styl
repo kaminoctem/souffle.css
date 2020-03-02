@@ -1,0 +1,65 @@
+/**
+ * animations/animation.styl
+ * @author kaminoctem
+ */
+
+/** variable */
+$animation-speed-heavy ?= 4s
+$animation-speed-slower ?= 3s
+$animation-speed-slow ?= 2s
+$animation-speed-normal ?= 1s
+$animation-speed-fast ?= 750ms
+$animation-speed-faster ?= 500ms
+$animation-speed-flash ?= 250ms
+
+/** style */
+.animation
+  animation-fill-mode: both
+  animation-duration: $animation-speed-normal
+
+  &.infinite
+    animation-iteration-count: infinite
+
+  &.heavy
+    animation-duration: $animation-speed-heavy
+
+  &.slower
+    animation-duration: $animation-speed-slower
+
+  &.slow
+    animation-duration: $animation-speed-slow
+
+  &.fast
+    animation-duration: $animation-speed-fast
+
+  &.faster
+    animation-duration: $animation-speed-faster
+
+  &.flash
+    animation-duration: $animation-speed-flash
+  /** direction */
+  &.alternate
+    animation-direction: alternate
+  &.reverse
+    animation-direction: reverse
+
+  /** timing-function */
+  &.ease
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1.0)
+  &.linear
+    animation-timing-function: cubic-bezier(0.0, 0.0, 1.0, 1.0)
+  &.ease-in
+    animation-timing-function: cubic-bezier(0.42, 0.0, 1.0, 1.0)
+  &.ease-out
+    animation-timing-function: cubic-bezier(0.0, 0.0, 0.58, 1.0)
+  &.ease-in-out
+    animation-timing-function: cubic-bezier(0.42, 0.0, 0.58, 1.0)
+
+  for sec in (1..10)
+    &.delay-{sec}
+      animation-delay: 1s * sec
+
+  +reducemotion()
+    animation-duration: 1ms !important
+    transition-duration: 1ms !important
+    animation-iteration-count: 1 !important

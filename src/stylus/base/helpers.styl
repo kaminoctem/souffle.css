@@ -1,0 +1,196 @@
+/**
+ * base/helpers.styl
+ * @author kaminoctem
+ */
+
+/** color */
+for key, value in $colors
+  .forecolor-{key}
+    color: value !important
+  .backcolor-{key}
+    background-color: value !important
+
+/** typography */
+.is-italic
+  font-style: italic !important
+
+.is-oblique
+  font-style: italic !important
+
+.is-capitalized
+  text-transform: capitalize !important
+
+.is-lowercase
+  text-transform: lowercase !important
+
+.is-uppercase
+  text-transform: uppercase !important
+
+/** spacing */
+for num in (1..9)
+  .padding-0{num}
+    padding: 0.1em * num !important
+  .padding-left-0{num}
+    padding-left: 0.1em * num !important
+  .padding-top-0{num}
+    padding-top: 0.1em * num !important
+  .padding-right-0{num}
+    padding-right: 0.1em * num !important
+  .padding-bottom-0{num}
+    padding-bottom: 0.1em * num !important
+  .margin-0{num}
+    margin: 0.1em * num !important
+  .margin-left-0{num}
+    margin-left: 0.1em * num !important
+  .margin-top-0{num}
+    margin-top: 0.1em * num !important
+  .margin-right-0{num}
+    margin-right: 0.1em * num !important
+  .margin-bottom-0{num}
+    margin-bottom: 0.1em * num !important
+
+for num in (1..9)
+  .padding-{num}
+    padding: 1em * num !important
+  .padding-left-{num}
+    padding-left: 1em * num !important
+  .padding-top-{num}
+    padding-top: 1em * num !important
+  .padding-right-{num}
+    padding-right: 1em * num !important
+  .padding-bottom-{num}
+    padding-bottom: 1em * num !important
+  .margin-{num}
+    margin: 1em * num !important
+  .margin-left-{num}
+    margin-left: 1em * num !important
+  .margin-top-{num}
+    margin-top: 1em * num !important
+  .margin-right-{num}
+    margin-right: 1em * num !important
+  .margin-bottom-{num}
+    margin-bottom: 1em * num !important
+
+/** sizing */
+for num in (0..100)
+  .size-{num}
+    height: 1% * num !important
+    width: 1% * num !important
+  .height-{num}
+    height: 1% * num !important
+  .width-{num}
+    width: 1% * num !important
+
+/** coordinate */
+for num in (0..100)
+  .y-plus-{num}
+    top: 1% * num !important
+  .y-minus-{num}
+    top: -1% * num !important
+  .x-plus-{num}
+    left: 1% * num !important
+  .x-minus-{num}
+    left: -1% * num !important
+
+/** other */
+.is-marginless
+  margin: 0 !important
+
+.is-paddingless
+  padding: 0 !important
+
+.is-radiusless
+  border-radius: 0 !important
+
+.is-shadowless
+  box-shadow: none !important
+
+.is-unselectable
+  user-select: none
+
+/* visibility */
+.for-mobile-only
+  +tablet()
+    display: none
+  +desktop()
+    display: none
+  +widescreen()
+    display: none
+  +fullhd()
+    display: none
+
+.for-tablet-or-less
+  +desktop()
+    display: none
+  +widescreen()
+    display: none
+  +fullhd()
+    display: none
+
+.for-tablet-only
+  +mobile()
+    display: none
+  +desktop()
+    display: none
+  +widescreen()
+    display: none
+  +fullhd()
+    display: none
+
+.for-tablet-or-more
+  +mobile()
+    display: none
+
+.for-desktop-or-less
+  +widescreen()
+    display: none
+  +fullhd()
+    display: none
+
+.for-desktop-only
+  +mobile()
+    display: none
+  +tablet()
+    display: none
+  +widescreen()
+    display: none
+  +fullhd()
+    display: none
+
+.for-desktop-or-more
+  +mobile()
+    display: none
+  +tablet()
+    display: none
+
+.for-widescreen-or-less
+  +fullhd()
+    display: none
+
+.for-widescreen-only
+  +mobile()
+    display: none
+  +tablet()
+    display: none
+  +desktop()
+    display: none
+  +fullhd()
+    display: none
+
+.for-widescreen-or-more
+  +mobile()
+    display: none
+  +tablet()
+    display: none
+  +desktop()
+    display: none
+
+.for-fullhd-only
+  +mobile()
+    display: none
+  +tablet()
+    display: none
+  +desktop()
+    display: none
+  +widescreen()
+    display: none

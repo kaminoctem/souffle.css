@@ -1,0 +1,50 @@
+{
+  "name": "souffle.css",
+  "version": "0.0.1",
+  "description": "'tategaki' friendly CSS framework.",
+  "main": "src/stylus/souffle.styl",
+  "unpkg": "dist/css/souffle.css",
+  "scripts": {
+    "build": "npm run format && npm run lint && npm run clean && npm run stylus && npm run autoprefix && npm run cleancss",
+    "clean": "rimraf dist/css",
+    "autoprefix": "postcss --use autoprefixer --map false --output dist/css/souffle.css dist/css/souffle.css",
+    "cleancss": "cleancss -o dist/css/souffle.min.css dist/css/souffle.css",
+    "format": "stylus-supremacy format src/stylus/**/*.styl --options .stylintrc",
+    "lint": "stylint src/stylus --strict",
+    "stylus": "stylus --include-css src/stylus/souffle.styl -o dist/css/souffle.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaminoctem/souffle.css.git"
+  },
+  "keywords": [
+    "css",
+    "css-framework",
+    "framework",
+    "stylus"
+  ],
+  "author": "kaminoctem",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaminoctem/souffle.css/issues"
+  },
+  "homepage": "https://github.com/kaminoctem/souffle.css#readme",
+  "files": [
+    "dist",
+    "src",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^9.6.1",
+    "clean-css-cli": "^4.3.0",
+    "normalize.css": "^8.0.1",
+    "postcss-cli": "^6.1.3",
+    "rimraf": "^3.0.0",
+    "semver": "^6.3.0",
+    "stylint": "^2.0.0",
+    "stylus": "^0.54.5",
+    "stylus-supremacy": "^2.12.7"
+  }
+}

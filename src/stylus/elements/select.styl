@@ -1,0 +1,21 @@
+/**
+ * elements/select.styl
+ * @author kaminoctem
+ */
+
+/** variable */
+$select-disabled-forecolor ?= $color-grey-darker
+$select-disabled-backcolor ?= $color-white
+$select-disabled-bordercolor ?= $color-grey-darker
+$select-disabled-opacity ?= 0.5
+
+/** style */
+.select
+  @extend.control
+  &>.option
+    @extend.control
+  &[disabled],
+  fieldset[disabled]
+    background-color: $select-disabled-backcolor
+    border-color: $select-disabled-bordercolor
+    opacity: $select-disabled-opacity

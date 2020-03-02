@@ -1,0 +1,70 @@
+/**
+ * elements/checkbox.styl
+ * @author kaminoctem
+ */
+
+/** variable */
+$checkbox-text-font-weight ?= $font-weight-normal
+$checkbox-box-size ?= 1em
+$checkbox-box-border-width ?= 0.2em
+$checkbox-box-border-color ?= $color-grey-lighter
+$checkbox-box-backcolor ?= $color-white
+$checkbox-box-checked-border-color ?= $color-grey-lighter
+$checkbox-box-checked-backcolor ?= $color-grey-darker
+$checkbox-disabled-box-checked-border-color ?= $color-grey-lighter
+$checkbox-disabled-box-checked-backcolor ?= $color-grey
+$checkbox-disabled-text-checked-forecolor ?= $color-grey
+
+/** style */
+.checkbox
+  &>.checkbox-input
+    display: none
+  &>.checkbox-box
+    background-color: $checkbox-box-backcolor
+    border: $checkbox-box-border-width solid $checkbox-box-border-color
+    border-radius: 25%
+    cursor: pointer
+    display: inline-block
+    height: "calc(%s - %s)" % ($checkbox-box-size $checkbox-box-border-width)
+    line-height: 1.5
+    margin-left: 0.5em
+    position: relative
+    vertical-align: middle
+    width: "calc(%s - %s)" % ($checkbox-box-size $checkbox-box-border-width)
+    &:before
+      background-color: transparent
+      border-color: transparent
+      border-radius: 25%
+      border-style: solid
+      border-width: 0 0.2em 0.2em 0
+      content: ''
+      display: block
+      height: "calc((%s - %s) / 6 * 3)" % ($checkbox-box-size $checkbox-box-border-width)
+      left: "calc((%s - %s) / 6  * 1.5)" % ($checkbox-box-size $checkbox-box-border-width)
+      position: absolute
+      top: "calc((%s - %s) / 6 * 0.5)" % ($checkbox-box-size $checkbox-box-border-width)
+      transform: rotate(45deg)
+      width: "calc((%s - %s) / 6 * 2)" % ($checkbox-box-size $checkbox-box-border-width)
+  &>.checkbox-text
+    display: inline-block
+    font-size: $font-size-normal
+    font-weight: $checkbox-text-font-weight
+  &>.checkbox-input:checked+.checkbox-box:before,
+  &>.checkbox-input:checked+.checkbox-box:after
+    border-color: $checkbox-box-checked-backcolor
+  &>.checkbox-input[disabled]+.checkbox-box,
+  fieldset[disabled]>.checkbox-box
+    border-color: $checkbox-disabled-box-checked-border-color
+  &>.checkbox-input[disabled]:checked+.checkbox-box:before
+  fieldset[disabled] .checkbox-input:checked>.checkbox-box:before
+    border-color: $checkbox-disabled-box-checked-border-color
+
+  for colorKey, colorValue in $colors
+    &.is-{colorKey}
+      &>.checkbox-input+.checkbox-box
+        border-color: colorValue
+      &>.checkbox-input:checked+.checkbox-box:before
+        border-color: colorValue
+
+
+
