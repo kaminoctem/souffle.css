@@ -32,17 +32,20 @@
     column()
     &.is-full
       flex: none
+      max-width: 100%
       width: 100%
 
   for num in (1..$grid-column-count)
     &>.column-{num}
       column()
-      width: percentage(num / $grid-column-count)
       flex-basis: percentage(num / $grid-column-count)
+      max-width: percentage(num / $grid-column-count)
+      width: percentage(num / $grid-column-count)
 
   &>.column,
   &>[class^="column-"]
     for num in (1..$grid-column-count)
       +is_responsive("-" + num)
-        width: percentage(num / $grid-column-count)
         flex-basis: percentage(num / $grid-column-count)
+        max-width: percentage(num / $grid-column-count)
+        width: percentage(num / $grid-column-count)

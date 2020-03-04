@@ -3,5 +3,20 @@
  * @author kaminoctem
  */
 
+$footer-forecolor ?= $color-mainfore
+$footer-backcolor ?= $color-mainback
+
 /** style */
-// .footer
+.footer
+  background-color: $footer-backcolor
+  color: $footer-forecolor
+  &>*
+    background-color: $footer-backcolor
+    color: $footer-forecolor
+  for colorKey, colorValue in $colors
+    &.is-{colorKey}
+      background-color: colorValue
+      color: invert(colorValue)
+      &>*
+        background-color: colorValue
+        color: invert(colorValue)

@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.2] - 2020-3-4
+### Added
+- `.navbar` color
+### Changed
+- `.navbar>.item`
+### Fixed
+- `.column` not set `max-width`.
+
 ## [0.0.1] - 2020-3-2
 ### Added
 - initial commit

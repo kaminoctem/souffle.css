@@ -1,0 +1,17 @@
+
+$header-forecolor ?= $color-mainfore
+$header-backcolor ?= $color-mainback
+
+.header
+  background-color: $header-backcolor
+  color: $header-forecolor
+  &>*
+    background-color: $header-backcolor
+    color: $header-forecolor
+  for colorKey, colorValue in $colors
+    &.is-{colorKey}
+      background-color: colorValue
+      color: invert(colorValue)
+      &>*
+        background-color: colorValue
+        color: invert(colorValue)

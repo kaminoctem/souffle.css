@@ -1,0 +1,27 @@
+/**
+ * containers/root.styl
+ * @author kaminoctem
+ */
+
+.root
+  display: block
+  width: 100%
+  &.is-header-fixed
+    &>.header
+      top: 0
+      min-height: $root-is-header-fixed-height
+      position: fixed
+      width: 100%
+      z-index: $root-is-header-fixed-z-index
+    &>.main
+      padding-top: $root-is-header-fixed-height
+
+  &.is-footer-fixed
+    &>.main
+      padding-bottom: $root-is-footer-fixed-height
+    &>.footer
+      bottom: 0
+      min-height: $root-is-footer-fixed-height
+      position: fixed
+      width: 100%
+      z-index: $root-is-footer-fixed-z-index
