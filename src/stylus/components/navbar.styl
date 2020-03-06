@@ -46,19 +46,35 @@ $navbar-menu-item-backcolor ?= $color-white
         display: block
   &>.menu
     display: none
+    flex-direction: row
+    flex-wrap: wrap
     padding: 0.5em
     &.is-active
-      display: block
+      display: flex
+    +is_responsive("-active")
+      display: flex
     &>.item
       background-color: $navbar-menu-item-backcolor
+      border-radius: 0.25em
       color: $navbar-menu-item-forecolor
       cursor: pointer
-      display: flex
-      flex-grow: 0
-      flex-shrink: 0
+      display: block
+      flex-basis: 0
+      flex-grow: 1
+      flex-shrink: 1
       line-height: 1.5
-      padding: .5rem .75rem
+      margin: .25em
+      max-width: 100%
+      padding: .5rem .5rem
       position: relative
+      +mobile()
+        flex-basis: 100%
+        max-width: 100%
+        width: 100%
+      +tablet()
+        flex-basis: 100%
+        max-width: 100%
+        width: 100%
       &:hover,
       &.is-hovered
         background-color: darken($navbar-menu-item-backcolor, 5%)
@@ -75,3 +91,56 @@ $navbar-menu-item-backcolor ?= $color-white
         background-color: $navbar-menu-item-backcolor
         border-color: transparent
         box-shadow: none
+
+      for colorKey, colorValue in $colors
+        &.is-{colorKey}
+          background-color: colorValue
+          border-color: transparent
+          color: invert(colorValue)
+          &:hover,
+          &.is-hovered
+            background-color: darken(colorValue, 5%)
+            border-color: transparent
+            color: invert(colorValue)
+          &:focus,
+          &.is-focused
+            border-color: transparent
+            color: invert(colorValue)
+          &:active,
+          &.is-active
+            background-color: darken(colorValue, 10%)
+            border-color: transparent
+            color: invert(colorValue)
+          &[disabled],
+          fieldset[disabled],
+          &.is-disabled
+            background-color: colorValue
+            border-color: transparent
+            box-shadow: none
+          &.is-light
+            &.is-{colorKey}
+              background-color: lighten(colorValue, 80%)
+              border-color: transparent
+              color: colorValue
+              &:hover,
+              &.is-hovered
+                background-color: darken(lighten(colorValue, 80%), 5%)
+                border-color: transparent
+                color: darken(colorValue, 5%)
+              &:focus,
+              &.is-focused
+                border-color: transparent
+                color: colorValue
+              &:active,
+              &.is-active
+                background-color: darken(lighten(colorValue, 80%), 10%)
+                border-color: transparent
+                color: darken(colorValue, 10%)
+              &[disabled],
+              fieldset[disabled],
+              &.is-disabled
+                background-color: lighten(colorValue, 80%)
+                border-color: transparent
+                box-shadow: none
+
+

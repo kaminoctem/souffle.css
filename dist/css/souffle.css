@@ -1,4 +1,4 @@
-/*! souffle.css v0.0.2 | MIT License | github.com/kaminoctem/souffle.css */
+/*! souffle.css v0.0.3 | MIT License | github.com/kaminoctem/souffle.css */
 @charset "utf-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 html {
@@ -3428,7 +3428,7 @@ label,
   -webkit-appearance: none;
   align-items: center;
   border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: 0.25em;
   box-shadow: none;
   display: inline-flex;
   font-size: 1em;
@@ -4292,21 +4292,94 @@ fieldset[disabled] .textarea {
 }
 .navbar>.menu {
   display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
   padding: 0.5em;
 }
 .navbar>.menu.is-active {
-  display: block;
+  display: flex;
+}
+@media screen and (max-width: 767px) {
+  .navbar>.menu.is-mobile-active,
+  .navbar>.menu.is-mobile-or-more-active,
+  .navbar>.menu.is-tablet-or-less-active,
+  .navbar>.menu.is-desktop-or-less-active,
+  .navbar>.menu.is-widescreen-or-less-active,
+  .navbar>.menu.is-fullhd-or-less-active {
+    display: flex;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .navbar>.menu.is-mobile-or-more-active,
+  .navbar>.menu.is-tablet-or-less-active,
+  .navbar>.menu.is-tablet-active,
+  .navbar>.menu.is-tablet-or-more-active,
+  .navbar>.menu.is-desktop-or-less-active,
+  .navbar>.menu.is-widescreen-or-less-active,
+  .navbar>.menu.is-fullhd-or-less-active {
+    display: flex;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1215px) {
+  .navbar>.menu.is-mobile-or-more-active,
+  .navbar>.menu.is-tablet-or-more-active,
+  .navbar>.menu.is-desktop-or-less-active,
+  .navbar>.menu.is-desktop,
+  .navbar>.menu.is-desktop-or-more-active,
+  .navbar>.menu.is-widescreen-or-less-active,
+  .navbar>.menu.is-fullhd-or-less-active {
+    display: flex;
+  }
+}
+@media screen and (min-width: 1216px) and (max-width: 1407px) {
+  .navbar>.menu.is-mobile-or-more-active,
+  .navbar>.menu.is-tablet-or-more-active,
+  .navbar>.menu.is-desktop-or-more-active,
+  .navbar>.menu.is-widescreen-or-less-active,
+  .navbar>.menu.is-widescreen-active,
+  .navbar>.menu.is-widescreen-or-more-active,
+  .navbar>.menu.is-fullhd-or-less-active {
+    display: flex;
+  }
+}
+@media screen and (min-width: 1408px) {
+  .navbar>.menu.is-mobile-or-more-active,
+  .navbar>.menu.is-tablet-or-more-active,
+  .navbar>.menu.is-desktop-or-more-active,
+  .navbar>.menu.is-widescreen-or-more-active,
+  .navbar>.menu.is-fullhd-or-less-active,
+  .navbar>.menu.is-fullhd-active {
+    display: flex;
+  }
 }
 .navbar>.menu>.item {
   background-color: #fff;
+  border-radius: 0.25em;
   color: #333;
   cursor: pointer;
-  display: flex;
-  flex-grow: 0;
-  flex-shrink: 0;
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
   line-height: 1.5;
-  padding: 0.5rem 0.75rem;
+  margin: 0.25em;
+  max-width: 100%;
+  padding: 0.5rem 0.5rem;
   position: relative;
+}
+@media screen and (max-width: 767px) {
+  .navbar>.menu>.item {
+    flex-basis: 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .navbar>.menu>.item {
+    flex-basis: 100%;
+    max-width: 100%;
+    width: 100%;
+  }
 }
 .navbar>.menu>.item:hover,
 .navbar>.menu>.item.is-hovered {
@@ -4325,6 +4398,586 @@ fieldset[disabled] .textarea {
 .navbar>.menu>.item[disabled],
 .navbar>.menu>.item.is-disabled {
   background-color: #fff;
+  border-color: transparent;
+  box-shadow: none;
+}
+.navbar>.menu>.item.is-black {
+  background-color: #000;
+  border-color: transparent;
+  color: #fff;
+}
+.navbar>.menu>.item.is-black:hover,
+.navbar>.menu>.item.is-black.is-hovered {
+  background-color: #000;
+  border-color: transparent;
+  color: #fff;
+}
+.navbar>.menu>.item.is-black:focus,
+.navbar>.menu>.item.is-black.is-focused {
+  border-color: transparent;
+  color: #fff;
+}
+.navbar>.menu>.item.is-black:active,
+.navbar>.menu>.item.is-black.is-active {
+  background-color: #000;
+  border-color: transparent;
+  color: #fff;
+}
+.navbar>.menu>.item.is-black[disabled],
+.navbar>.menu>.item.is-black fieldset[disabled],
+.navbar>.menu>.item.is-black.is-disabled {
+  background-color: #000;
+  border-color: transparent;
+  box-shadow: none;
+}
+.navbar>.menu>.item.is-black.is-light.is-black {
+  background-color: #ccc;
+  border-color: transparent;
+  color: #000;
+}
+.navbar>.menu>.item.is-black.is-light.is-black:hover,
+.navbar>.menu>.item.is-black.is-light.is-black.is-hovered {
+  background-color: #c2c2c2;
+  border-color: transparent;
+  color: #000;
+}
+.navbar>.menu>.item.is-black.is-light.is-black:focus,
+.navbar>.menu>.item.is-black.is-light.is-black.is-focused {
+  border-color: transparent;
+  color: #000;
+}
+.navbar>.menu>.item.is-black.is-light.is-black:active,
+.navbar>.menu>.item.is-black.is-light.is-black.is-active {
+  background-color: #b8b8b8;
+  border-color: transparent;
+  color: #000;
+}
+.navbar>.menu>.item.is-black.is-light.is-black[disabled],
+.navbar>.menu>.item.is-black.is-light.is-black fieldset[disabled],
+.navbar>.menu>.item.is-black.is-light.is-black.is-disabled {
+  background-color: #ccc;
+  border-color: transparent;
+  box-shadow: none;
+}
+.navbar>.menu>.item.is-grey {
+  background-color: #949494;
+  border-color: transparent;
+  color: #6b6b6b;
+}
+.navbar>.menu>.item.is-grey:hover,
+.navbar>.menu>.item.is-grey.is-hovered {
+  background-color: #8d8d8d;
+  border-color: transparent;
+  color: #6b6b6b;
+}
+.navbar>.menu>.item.is-grey:focus,
+.navbar>.menu>.item.is-grey.is-focused {
+  border-color: transparent;
+  color: #6b6b6b;
+}
+.navbar>.menu>.item.is-grey:active,
+.navbar>.menu>.item.is-grey.is-active {
+  background-color: #858585;
+  border-color: transparent;
+  color: #6b6b6b;
+}
+.navbar>.menu>.item.is-grey[disabled],
+.navbar>.menu>.item.is-grey fieldset[disabled],
+.navbar>.menu>.item.is-grey.is-disabled {
+  background-color: #949494;
+  border-color: transparent;
+  box-shadow: none;
+}
+.navbar>.menu>.item.is-grey.is-light.is-grey {
+  background-color: #eaeaea;
+  border-color: transparent;
+  color: #949494;
+}
+.navbar>.menu>.item.is-grey.is-light.is-grey:hover,
+.navbar>.menu>.item.is-grey.is-light.is-grey.is-hovered {
+  background-color: #dedede;
+  border-color: transparent;
+  color: #8d8d8d;
+}
+.navbar>.menu>.item.is-grey.is-light.is-grey:focus,
+.navbar>.menu>.item.is-grey.is-light.is-grey.is-focused {
+  border-color: transparent;
+  color: #949494;
+}
+.navbar>.menu>.item.is-grey.is-light.is-grey:active,
+.navbar>.menu>.item.is-grey.is-light.is-grey.is-active {
+  background-color: #d3d3d3;
+  border-color: transparent;
+  color: #858585;
+}
+.navbar>.menu>.item.is-grey.is-light.is-grey[disabled],
+.navbar>.menu>.item.is-grey.is-light.is-grey fieldset[disabled],
+.navbar>.menu>.item.is-grey.is-light.is-grey.is-disabled {
+  background-color: #eaeaea;
+  border-color: transparent;
+  box-shadow: none;
+}
+.navbar>.menu>.item.is-white {
+  background-color: #fff;
+  border-color: transparent;
+  color: #000;
+}
+.navbar>.menu>.item.is-white:hover,
+.navbar>.menu>.item.is-white.is-hovered {
+  background-color: #f2f2f2;
+  border-color: transparent;
+  color: #000;
+}
+.navbar>.menu>.item.is-white:focus,
+.navbar>.menu>.item.is-white.is-focused {
+  border-color: transparent;
+  color: #000;
+}
+.navbar>.menu>.item.is-white:active,
+.navbar>.menu>.item.is-white.is-active {
+  background-color: #e6e6e6;
+  border-color: transparent;
+  color: #000;
+}
+.navbar>.menu>.item.is-white[disabled],
+.navbar>.menu>.item.is-white fieldset[disabled],
+.navbar>.menu>.item.is-white.is-disabled {
+  background-color: #fff;
+  border-color: transparent;
+  box-shadow: none;
+}
+.navbar>.menu>.item.is-white.is-light.is-white {
+  background-color: #fff;
+  border-color: transparent;
+  color: #fff;
+}
+.navbar>.menu>.item.is-white.is-light.is-white:hover,
+.navbar>.menu>.item.is-white.is-light.is-white.is-hovered {
+  background-color: #f2f2f2;
+  border-color: transparent;
+  color: #f2f2f2;
+}
+.navbar>.menu>.item.is-white.is-light.is-white:focus,
+.navbar>.menu>.item.is-white.is-light.is-white.is-focused {
+  border-color: transparent;
+  color: #fff;
+}
+.navbar>.menu>.item.is-white.is-light.is-white:active,
+.navbar>.menu>.item.is-white.is-light.is-white.is-active {
+  background-color: #e6e6e6;
+  border-color: transparent;
+  color: #e6e6e6;
+}
+.navbar>.menu>.item.is-white.is-light.is-white[disabled],
+.navbar>.menu>.item.is-white.is-light.is-white fieldset[disabled],
+.navbar>.menu>.item.is-white.is-light.is-white.is-disabled {
+  background-color: #fff;
+  border-color: transparent;
+  box-shadow: none;
+}
+.navbar>.menu>.item.is-primary {
+  background-color: #f27da8;
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-primary:hover,
+.navbar>.menu>.item.is-primary.is-hovered {
+  background-color: #f06c9d;
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-primary:focus,
+.navbar>.menu>.item.is-primary.is-focused {
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-primary:active,
+.navbar>.menu>.item.is-primary.is-active {
+  background-color: #ef5c92;
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-primary[disabled],
+.navbar>.menu>.item.is-primary fieldset[disabled],
+.navbar>.menu>.item.is-primary.is-disabled {
+  background-color: #f27da8;
+  border-color: transparent;
+  box-shadow: none;
+}
+.navbar>.menu>.item.is-primary.is-light.is-primary {
+  background-color: #fce5ee;
+  border-color: transparent;
+  color: #f27da8;
+}
+.navbar>.menu>.item.is-primary.is-light.is-primary:hover,
+.navbar>.menu>.item.is-primary.is-light.is-primary.is-hovered {
+  background-color: #facfe0;
+  border-color: transparent;
+  color: #f06c9d;
+}
+.navbar>.menu>.item.is-primary.is-light.is-primary:focus,
+.navbar>.menu>.item.is-primary.is-light.is-primary.is-focused {
+  border-color: transparent;
+  color: #f27da8;
+}
+.navbar>.menu>.item.is-primary.is-light.is-primary:active,
+.navbar>.menu>.item.is-primary.is-light.is-primary.is-active {
+  background-color: #f7bad2;
+  border-color: transparent;
+  color: #ef5c92;
+}
+.navbar>.menu>.item.is-primary.is-light.is-primary[disabled],
+.navbar>.menu>.item.is-primary.is-light.is-primary fieldset[disabled],
+.navbar>.menu>.item.is-primary.is-light.is-primary.is-disabled {
+  background-color: #fce5ee;
+  border-color: transparent;
+  box-shadow: none;
+}
+.navbar>.menu>.item.is-success {
+  background-color: #a6f27d;
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-success:hover,
+.navbar>.menu>.item.is-success.is-hovered {
+  background-color: #9bf06c;
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-success:focus,
+.navbar>.menu>.item.is-success.is-focused {
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-success:active,
+.navbar>.menu>.item.is-success.is-active {
+  background-color: #8fef5c;
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-success[disabled],
+.navbar>.menu>.item.is-success fieldset[disabled],
+.navbar>.menu>.item.is-success.is-disabled {
+  background-color: #a6f27d;
+  border-color: transparent;
+  box-shadow: none;
+}
+.navbar>.menu>.item.is-success.is-light.is-success {
+  background-color: #edfce5;
+  border-color: transparent;
+  color: #a6f27d;
+}
+.navbar>.menu>.item.is-success.is-light.is-success:hover,
+.navbar>.menu>.item.is-success.is-light.is-success.is-hovered {
+  background-color: #defacf;
+  border-color: transparent;
+  color: #9bf06c;
+}
+.navbar>.menu>.item.is-success.is-light.is-success:focus,
+.navbar>.menu>.item.is-success.is-light.is-success.is-focused {
+  border-color: transparent;
+  color: #a6f27d;
+}
+.navbar>.menu>.item.is-success.is-light.is-success:active,
+.navbar>.menu>.item.is-success.is-light.is-success.is-active {
+  background-color: #cff7ba;
+  border-color: transparent;
+  color: #8fef5c;
+}
+.navbar>.menu>.item.is-success.is-light.is-success[disabled],
+.navbar>.menu>.item.is-success.is-light.is-success fieldset[disabled],
+.navbar>.menu>.item.is-success.is-light.is-success.is-disabled {
+  background-color: #edfce5;
+  border-color: transparent;
+  box-shadow: none;
+}
+.navbar>.menu>.item.is-info {
+  background-color: #7da6f2;
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-info:hover,
+.navbar>.menu>.item.is-info.is-hovered {
+  background-color: #6c9bf0;
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-info:focus,
+.navbar>.menu>.item.is-info.is-focused {
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-info:active,
+.navbar>.menu>.item.is-info.is-active {
+  background-color: #5c8fef;
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-info[disabled],
+.navbar>.menu>.item.is-info fieldset[disabled],
+.navbar>.menu>.item.is-info.is-disabled {
+  background-color: #7da6f2;
+  border-color: transparent;
+  box-shadow: none;
+}
+.navbar>.menu>.item.is-info.is-light.is-info {
+  background-color: #e5edfc;
+  border-color: transparent;
+  color: #7da6f2;
+}
+.navbar>.menu>.item.is-info.is-light.is-info:hover,
+.navbar>.menu>.item.is-info.is-light.is-info.is-hovered {
+  background-color: #cfdefa;
+  border-color: transparent;
+  color: #6c9bf0;
+}
+.navbar>.menu>.item.is-info.is-light.is-info:focus,
+.navbar>.menu>.item.is-info.is-light.is-info.is-focused {
+  border-color: transparent;
+  color: #7da6f2;
+}
+.navbar>.menu>.item.is-info.is-light.is-info:active,
+.navbar>.menu>.item.is-info.is-light.is-info.is-active {
+  background-color: #bacff7;
+  border-color: transparent;
+  color: #5c8fef;
+}
+.navbar>.menu>.item.is-info.is-light.is-info[disabled],
+.navbar>.menu>.item.is-info.is-light.is-info fieldset[disabled],
+.navbar>.menu>.item.is-info.is-light.is-info.is-disabled {
+  background-color: #e5edfc;
+  border-color: transparent;
+  box-shadow: none;
+}
+.navbar>.menu>.item.is-warning {
+  background-color: #f2c97d;
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-warning:hover,
+.navbar>.menu>.item.is-warning.is-hovered {
+  background-color: #f0c26c;
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-warning:focus,
+.navbar>.menu>.item.is-warning.is-focused {
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-warning:active,
+.navbar>.menu>.item.is-warning.is-active {
+  background-color: #efbb5c;
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-warning[disabled],
+.navbar>.menu>.item.is-warning fieldset[disabled],
+.navbar>.menu>.item.is-warning.is-disabled {
+  background-color: #f2c97d;
+  border-color: transparent;
+  box-shadow: none;
+}
+.navbar>.menu>.item.is-warning.is-light.is-warning {
+  background-color: #fcf4e5;
+  border-color: transparent;
+  color: #f2c97d;
+}
+.navbar>.menu>.item.is-warning.is-light.is-warning:hover,
+.navbar>.menu>.item.is-warning.is-light.is-warning.is-hovered {
+  background-color: #faebcf;
+  border-color: transparent;
+  color: #f0c26c;
+}
+.navbar>.menu>.item.is-warning.is-light.is-warning:focus,
+.navbar>.menu>.item.is-warning.is-light.is-warning.is-focused {
+  border-color: transparent;
+  color: #f2c97d;
+}
+.navbar>.menu>.item.is-warning.is-light.is-warning:active,
+.navbar>.menu>.item.is-warning.is-light.is-warning.is-active {
+  background-color: #f7e2ba;
+  border-color: transparent;
+  color: #efbb5c;
+}
+.navbar>.menu>.item.is-warning.is-light.is-warning[disabled],
+.navbar>.menu>.item.is-warning.is-light.is-warning fieldset[disabled],
+.navbar>.menu>.item.is-warning.is-light.is-warning.is-disabled {
+  background-color: #fcf4e5;
+  border-color: transparent;
+  box-shadow: none;
+}
+.navbar>.menu>.item.is-danger {
+  background-color: #f27d7d;
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-danger:hover,
+.navbar>.menu>.item.is-danger.is-hovered {
+  background-color: #f06c6c;
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-danger:focus,
+.navbar>.menu>.item.is-danger.is-focused {
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-danger:active,
+.navbar>.menu>.item.is-danger.is-active {
+  background-color: #ef5c5c;
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-danger[disabled],
+.navbar>.menu>.item.is-danger fieldset[disabled],
+.navbar>.menu>.item.is-danger.is-disabled {
+  background-color: #f27d7d;
+  border-color: transparent;
+  box-shadow: none;
+}
+.navbar>.menu>.item.is-danger.is-light.is-danger {
+  background-color: #fce5e5;
+  border-color: transparent;
+  color: #f27d7d;
+}
+.navbar>.menu>.item.is-danger.is-light.is-danger:hover,
+.navbar>.menu>.item.is-danger.is-light.is-danger.is-hovered {
+  background-color: #facfcf;
+  border-color: transparent;
+  color: #f06c6c;
+}
+.navbar>.menu>.item.is-danger.is-light.is-danger:focus,
+.navbar>.menu>.item.is-danger.is-light.is-danger.is-focused {
+  border-color: transparent;
+  color: #f27d7d;
+}
+.navbar>.menu>.item.is-danger.is-light.is-danger:active,
+.navbar>.menu>.item.is-danger.is-light.is-danger.is-active {
+  background-color: #f7baba;
+  border-color: transparent;
+  color: #ef5c5c;
+}
+.navbar>.menu>.item.is-danger.is-light.is-danger[disabled],
+.navbar>.menu>.item.is-danger.is-light.is-danger fieldset[disabled],
+.navbar>.menu>.item.is-danger.is-light.is-danger.is-disabled {
+  background-color: #fce5e5;
+  border-color: transparent;
+  box-shadow: none;
+}
+.navbar>.menu>.item.is-link {
+  background-color: #7df2c9;
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-link:hover,
+.navbar>.menu>.item.is-link.is-hovered {
+  background-color: #6cf0c2;
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-link:focus,
+.navbar>.menu>.item.is-link.is-focused {
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-link:active,
+.navbar>.menu>.item.is-link.is-active {
+  background-color: #5cefbb;
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-link[disabled],
+.navbar>.menu>.item.is-link fieldset[disabled],
+.navbar>.menu>.item.is-link.is-disabled {
+  background-color: #7df2c9;
+  border-color: transparent;
+  box-shadow: none;
+}
+.navbar>.menu>.item.is-link.is-light.is-link {
+  background-color: #e5fcf4;
+  border-color: transparent;
+  color: #7df2c9;
+}
+.navbar>.menu>.item.is-link.is-light.is-link:hover,
+.navbar>.menu>.item.is-link.is-light.is-link.is-hovered {
+  background-color: #cffaeb;
+  border-color: transparent;
+  color: #6cf0c2;
+}
+.navbar>.menu>.item.is-link.is-light.is-link:focus,
+.navbar>.menu>.item.is-link.is-light.is-link.is-focused {
+  border-color: transparent;
+  color: #7df2c9;
+}
+.navbar>.menu>.item.is-link.is-light.is-link:active,
+.navbar>.menu>.item.is-link.is-light.is-link.is-active {
+  background-color: #baf7e2;
+  border-color: transparent;
+  color: #5cefbb;
+}
+.navbar>.menu>.item.is-link.is-light.is-link[disabled],
+.navbar>.menu>.item.is-link.is-light.is-link fieldset[disabled],
+.navbar>.menu>.item.is-link.is-light.is-link.is-disabled {
+  background-color: #e5fcf4;
+  border-color: transparent;
+  box-shadow: none;
+}
+.navbar>.menu>.item.is-visited {
+  background-color: #c97df2;
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-visited:hover,
+.navbar>.menu>.item.is-visited.is-hovered {
+  background-color: #c26cf0;
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-visited:focus,
+.navbar>.menu>.item.is-visited.is-focused {
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-visited:active,
+.navbar>.menu>.item.is-visited.is-active {
+  background-color: #bb5cef;
+  border-color: transparent;
+  color: #474747;
+}
+.navbar>.menu>.item.is-visited[disabled],
+.navbar>.menu>.item.is-visited fieldset[disabled],
+.navbar>.menu>.item.is-visited.is-disabled {
+  background-color: #c97df2;
+  border-color: transparent;
+  box-shadow: none;
+}
+.navbar>.menu>.item.is-visited.is-light.is-visited {
+  background-color: #f4e5fc;
+  border-color: transparent;
+  color: #c97df2;
+}
+.navbar>.menu>.item.is-visited.is-light.is-visited:hover,
+.navbar>.menu>.item.is-visited.is-light.is-visited.is-hovered {
+  background-color: #ebcffa;
+  border-color: transparent;
+  color: #c26cf0;
+}
+.navbar>.menu>.item.is-visited.is-light.is-visited:focus,
+.navbar>.menu>.item.is-visited.is-light.is-visited.is-focused {
+  border-color: transparent;
+  color: #c97df2;
+}
+.navbar>.menu>.item.is-visited.is-light.is-visited:active,
+.navbar>.menu>.item.is-visited.is-light.is-visited.is-active {
+  background-color: #e2baf7;
+  border-color: transparent;
+  color: #bb5cef;
+}
+.navbar>.menu>.item.is-visited.is-light.is-visited[disabled],
+.navbar>.menu>.item.is-visited.is-light.is-visited fieldset[disabled],
+.navbar>.menu>.item.is-visited.is-light.is-visited.is-disabled {
+  background-color: #f4e5fc;
   border-color: transparent;
   box-shadow: none;
 }
@@ -4621,20 +5274,20 @@ fieldset[disabled] .textarea {
 }
 .root.is-header-fixed>.header {
   top: 0;
-  min-height: 7rem;
+  min-height: 5.25rem;
   position: fixed;
   width: 100%;
   z-index: 998;
 }
 .root.is-header-fixed>.main {
-  padding-top: 7rem;
+  padding-top: 5.25rem;
 }
 .root.is-footer-fixed>.main {
-  padding-bottom: 7rem;
+  padding-bottom: 5.25rem;
 }
 .root.is-footer-fixed>.footer {
   bottom: 0;
-  min-height: 7rem;
+  min-height: 5.25rem;
   position: fixed;
   width: 100%;
   z-index: 998;

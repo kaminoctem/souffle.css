@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.2] - 2020-3-6
+### Changed
+- `.navbar>.item` change flex.
+- `.is-header-fixed` and `.is-footer-fixed` default height.
+
 ## [0.0.2] - 2020-3-4
 ### Added
 - `.navbar` color
