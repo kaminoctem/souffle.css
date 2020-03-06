@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for your interest in contributing to ***souffle.css***.
+Thanks for your interest in contributing to ***soufflé.css***.
 
 ## Try your changes
 

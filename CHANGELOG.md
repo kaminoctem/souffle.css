@@ -6,7 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.0.2] - 2020-3-6
+## [0.0.4] - 2020-3-6
+### Changed
+- `.mordal` rename to `.modal`(typo).
+
+## [0.0.3] - 2020-3-6
 ### Changed
 - `.navbar>.item` change flex.
 - `.is-header-fixed` and `.is-footer-fixed` default height.

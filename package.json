@@ -1,6 +1,6 @@
 {
   "name": "souffle.css",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "'tategaki' friendly CSS framework.",
   "main": "src/stylus/souffle.styl",
   "unpkg": "dist/css/souffle.css",

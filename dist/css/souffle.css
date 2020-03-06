@@ -5263,10 +5263,22 @@ fieldset[disabled] .textarea {
   background-color: #c97df2;
   color: #474747;
 }
-.mordal {
+.modal {
+  align-items: center;
+  background-color: rgba(0,0,0,0.7);
+  display: none;
+  flex-direction: column;
   height: 100vh;
+  justify-content: center;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
   width: 100vw;
   z-index: 999;
+}
+.modal.is-active {
+  display: flex;
 }
 .root {
   display: block;
