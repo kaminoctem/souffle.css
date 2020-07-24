@@ -3,31 +3,6 @@
  * @author kaminoctem
  */
 
-/** variable */
-$button-forecolor ?= $color-grey-darker
-$button-backcolor ?= $color-white
-$button-bordercolor ?= $color-grey-lighter
-$button-border-radius ?= 4px
-$button-hover-forecolor ?= $color-grey-darker
-$button-hover-backcolor ?= $color-grey-darker
-$button-hover-bordercolor ?= $color-grey-light
-
-$button-focus-forecolor ?= $color-grey-darker
-$button-focus-backcolor ?= $color-grey-darker
-$button-focus-bordercolor ?= $color-link
-$button-focus-box-shadow-size ?= 0 0 0 0.125em
-$button-focus-box-shadow-color ?= alpha($color-link, 0.25)
-
-$button-active-forecolor ?= $color-grey-darker
-$button-active-backcolor ?= $color-grey-darker
-$button-active-bordercolor ?= $color-grey-dark
-
-$button-disabled-forecolor ?= $color-grey-darker
-$button-disabled-backcolor ?= $color-white
-$button-disabled-bordercolor ?= $color-grey-lighter
-$button-disabled-box-shadow ?= none
-$button-disabled-opacity ?= 0.5
-
 /** style */
 .button
   @extend.control
@@ -59,37 +34,38 @@ $button-disabled-opacity ?= 0.5
     box-shadow: $button-disabled-box-shadow
     opacity: $button-disabled-opacity
 
-  for colorKey, colorValue in $colors
-    &.is-{colorKey}
-      background-color: colorValue
-      border-color: transparent
-      color: invert(colorValue)
-
-      &:hover,
-      &.is-hovered
-        background-color: darken(colorValue, 5%)
+  if (!$is-skeleton)
+    for colorKey, colorValue in $colors
+      &.is-{colorKey}
+        background-color: colorValue.base
         border-color: transparent
-        color: invert(colorValue)
+        color: colorValue.inverted
 
-      &:focus,
-      &.is-focused
-        border-color: transparent
-        color: invert(colorValue)
-        &:not(:active)
-          box-shadow: $button-focus-box-shadow-size alpha(colorValue, 0.25)
+        &:hover,
+        &.is-hovered
+          background-color: colorValue.dim
+          border-color: transparent
+          color: colorValue.inverted
 
-      &:active,
-      &.is-active
-        background-color: darken(colorValue, 10%)
-        border-color: transparent
-        color: invert(colorValue)
+        &:focus,
+        &.is-focused
+          border-color: transparent
+          color: colorValue.inverted
+          &:not(:active)
+            box-shadow: $button-focus-box-shadow-size colorValue.translucent
 
-      &[disabled],
-      fieldset[disabled],
-      &.is-disabled
-        background-color: colorValue
-        border-color: transparent
-        box-shadow: none
+        &:active,
+        &.is-active
+          background-color: colorValue.dark
+          border-color: transparent
+          color: colorValue.inverted
+
+        &[disabled],
+        fieldset[disabled],
+        &.is-disabled
+          background-color: colorValue.base
+          border-color: transparent
+          box-shadow: none
 
   &.is-wimp
     &:hover,

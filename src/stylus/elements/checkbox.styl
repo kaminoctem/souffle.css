@@ -3,19 +3,6 @@
  * @author kaminoctem
  */
 
-/** variable */
-$checkbox-text-font-weight ?= $font-weight-normal
-$checkbox-box-size ?= 1em
-$checkbox-box-border-width ?= 0.2em
-$checkbox-box-border-color ?= $color-grey-lighter
-$checkbox-box-backcolor ?= $color-white
-$checkbox-box-checked-border-color ?= $color-grey-lighter
-$checkbox-box-checked-backcolor ?= $color-grey-darker
-$checkbox-disabled-box-checked-border-color ?= $color-grey-lighter
-$checkbox-disabled-box-checked-backcolor ?= $color-grey
-$checkbox-disabled-text-checked-forecolor ?= $color-grey
-
-/** style */
 .checkbox
   &>.checkbox-input
     display: none
@@ -49,22 +36,26 @@ $checkbox-disabled-text-checked-forecolor ?= $color-grey
     display: inline-block
     font-size: $font-size-normal
     font-weight: $checkbox-text-font-weight
-  &>.checkbox-input:checked+.checkbox-box:before,
-  &>.checkbox-input:checked+.checkbox-box:after
+  &>.checkbox-input:checked~.checkbox-box:before,
+  &>.checkbox-input:checked~.checkbox-box:after
     border-color: $checkbox-box-checked-backcolor
-  &>.checkbox-input[disabled]+.checkbox-box,
+  &>.checkbox-input[disabled]~.checkbox-box,
   fieldset[disabled]>.checkbox-box
     border-color: $checkbox-disabled-box-checked-border-color
-  &>.checkbox-input[disabled]:checked+.checkbox-box:before
-  fieldset[disabled] .checkbox-input:checked>.checkbox-box:before
+  &>.checkbox-input[disabled]~.checkbox-text,
+  fieldset[disabled]>.checkbox-text
+    color: $checkbox-disabled-text-forecolor
+  &>.checkbox-input[disabled]:checked~.checkbox-box:before
+  fieldset[disabled] .checkbox-input:checked~.checkbox-box:before
     border-color: $checkbox-disabled-box-checked-border-color
 
-  for colorKey, colorValue in $colors
-    &.is-{colorKey}
-      &>.checkbox-input+.checkbox-box
-        border-color: colorValue
-      &>.checkbox-input:checked+.checkbox-box:before
-        border-color: colorValue
+  if (!$is-skeleton)
+    for colorKey, colorValue in $colors
+      &.is-{colorKey}
+        &>.checkbox-input+.checkbox-box
+          border-color: colorValue.base
+        &>.checkbox-input:checked+.checkbox-box:before
+          border-color: colorValue.base
 
 
 

@@ -3,19 +3,6 @@
  * @author kaminoctem
  */
 
-/** variable */
-$radio-text-font-weight ?= $font-weight-normal
-$radio-button-size ?= 1em
-$radio-button-border-width ?= 0.2em
-$radio-button-border-color ?= $color-grey-lighter
-$radio-button-backcolor ?= $color-white
-$radio-button-checked-border-color ?= $color-grey-lighter
-$radio-button-checked-backcolor ?= $color-grey-darker
-$radio-disabled-button-checked-border-color ?= $color-grey-lighter
-$radio-disabled-button-checked-backcolor ?= $color-grey
-$radio-disabled-text-checked-forecolor ?= $color-grey
-
-/** style */
 .radio
   &>.radio-input
     display: none
@@ -44,19 +31,24 @@ $radio-disabled-text-checked-forecolor ?= $color-grey
     display: inline-block
     font-size: $font-size-normal
     font-weight: $radio-text-font-weight
-  &>.radio-input:checked+.radio-button:after
+  &>.radio-input:checked~.radio-button:after
     background-color: $radio-button-checked-backcolor
-  &>.radio-input[disabled]+.radio-button,
-  fieldset[disabled]>.radio-button
-    border-color: $radio-disabled-button-checked-border-color
-  &>.radio-input[disabled]:checked+.radio-button:after,
-  fieldset[disabled] .radio-input:checked>.radio-button:after
-    border-color: $radio-disabled-button-checked-border-color
 
-  for colorKey, colorValue in $colors
-    &.is-{colorKey}
-      &>.radio-input+.radio-button
-        background-color: $radio-button-backcolor
-        border-color: colorValue
-      &>.radio-input:checked+.radio-button:after
-        background-color: colorValue
+  &>.radio-input[disabled]~.radio-button,
+  fieldset[disabled]>.radio-button
+    background-color: $radio-disabled-button-backcolor
+  &>.radio-input[disabled]~.radio-text,
+  fieldset[disabled]>.radio-text
+    color: $radio-disabled-text-forecolor
+  &>.radio-input[disabled]:checked~.radio-button:after,
+  fieldset[disabled]>.radio-input[disabled]:checked~.radio-button:after
+    background-color: $radio-disabled-button-checked-backcolor
+
+  if (!$is-skeleton)
+    for colorKey, colorValue in $colors
+      &.is-{colorKey}
+        &>.radio-input~.radio-button
+          background-color: $radio-button-backcolor
+          border-color: colorValue.base
+        &>.radio-input:checked~.radio-button:after
+          background-color: colorValue.base

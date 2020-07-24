@@ -2,31 +2,33 @@
 
 ***soufflé.css*** is a _tategaki_ friendly CSS framework.
 
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
 ## Installation
 
 ### npm
 
 ```
-npm install souflle.css
+npm install souffle.css
 ```
 
 ### Yarn
 
 ```
-yarn add souflle.css
+yarn add souffle.css
 ```
 
 ## Documentation
 
-[English](docs/en/README.md)
-
-[日本語](docs/ja/README.md)
+Sorry, work in progress.
 
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Acknowledgements
+
+[normalize.css](https://github.com/necolas/normalize.css)
 
 ## License
 

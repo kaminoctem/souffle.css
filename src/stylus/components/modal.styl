@@ -1,0 +1,23 @@
+/**
+ * components/modal.styl
+ * @author kaminoctem
+ */
+
+
+/** style */
+.modal
+  align-items: center
+  background-color: alpha($color-black, 0.7)
+  display: none
+  flex-direction: column
+  height: 100vh
+  justify-content: center
+  left: 0
+  overflow: hidden
+  position: fixed
+  top: 0
+  width: 100vw
+  z-index: 999
+  &.is-active
+    display: flex
+

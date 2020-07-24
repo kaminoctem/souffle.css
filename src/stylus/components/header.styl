@@ -8,10 +8,12 @@ $header-backcolor ?= $color-mainback
   &>*
     background-color: $header-backcolor
     color: $header-forecolor
-  for colorKey, colorValue in $colors
-    &.is-{colorKey}
-      background-color: colorValue
-      color: invert(colorValue)
-      &>*
-        background-color: colorValue
-        color: invert(colorValue)
+
+  if (!$is-skeleton)
+    for colorKey, colorValue in $colors
+      &.is-{colorKey}
+        background-color: colorValue.base
+        color: colorValue.inverted
+        &>*
+          background-color: colorValue.base
+          color: colorValue.inverted

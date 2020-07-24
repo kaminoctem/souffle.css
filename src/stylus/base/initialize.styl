@@ -4,10 +4,10 @@
  */
 
 /** variable */
-$base-common-forecolor ?= $color-mainfore
+$base-common-forecolor ?= var(--color-mainfore, $color-mainfore)
 $base-common-font-family ?= $font-family-sans-serif
 $base-common-font-size ?= $font-size-root
-$base-html-backcolor ?= $color-mainback
+$base-html-backcolor ?= var(--color-mainback, $color-mainback)
 $base-html-min-height ?= 180px
 $base-html-min-width ?= 320px
 $base-html-overflow-x ?= hidden
@@ -21,27 +21,29 @@ $a-forecolor ?= $color-grey-darker
 $a-hover-forecolor ?= $color-grey-darker
 
 $code-font-family ?= $font-family-monospace
-$code-forecolor ?= $color-white
-$code-backcolor ?= $color-black
+$code-forecolor ?= var(--color-mainback, $color-mainback)
+$code-backcolor ?= var(--color-mainfore, $color-mainfore)
 $code-padding ?= 0.25em 0.5em 0.25em
 $code-font-size ?= 0.875em
 $code-font-weight ?= normal
 
-$hr-backcolor ?= $base-html-backcolor
+$hr-backcolor ?= var(--color-mainback, $color-mainback)
 $hr-height ?= 2px
 $hr-margin ?= 1.5rem 0
 
-$strong-forecolor ?= $color-black
+$strong-forecolor ?= var(--color-mainfore, $color-mainfore)
 $strong-font-weight ?= $font-weight-normal
 
 $small-font-size ?= $font-size-small
 
-$pre-forecolor ?= $color-white
-$pre-backcolor ?= $color-black
+$pre-forecolor ?= var(--color-mainback, $color-mainback)
+$pre-backcolor ?= var(--color-mainfore, $color-mainfore)
 $pre-font-size ?= 0.875em
 $pre-padding ?= 1.25rem 1.5rem
 $pre-padding ?= 1.25rem 1.5rem
 $pre-code-font-size ?= 1em
+$pre-code-forecolor ?= var(--color-mainback, $color-mainback)
+$pre-code-backcolor ?= var(--color-mainfore, $color-mainfore)
 
 /** style */
 html
@@ -141,8 +143,8 @@ pre
   white-space: pre
   word-wrap: normal
   code
-    background-color: transparent
-    color: currentColor
+    background-color: $pre-code-backcolor
+    color: $pre-code-forecolor
     font-size: $pre-code-font-size
     padding: 0
 

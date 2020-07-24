@@ -1,17 +1,20 @@
 {
   "name": "souffle.css",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "'tategaki' friendly CSS framework.",
   "main": "src/stylus/souffle.styl",
   "unpkg": "dist/css/souffle.css",
   "scripts": {
-    "build": "npm run format && npm run lint && npm run clean && npm run stylus && npm run autoprefix && npm run cleancss",
+    "build": "npm run format && npm run lint && npm run clean && npm run stylus && npm run autoprefix && npm run cleancss && npm run stylus-skeleton && npm run autoprefix-skeleton && npm run cleancss-skeleton",
     "clean": "rimraf dist/css",
     "autoprefix": "postcss --use autoprefixer --map false --output dist/css/souffle.css dist/css/souffle.css",
     "cleancss": "cleancss -o dist/css/souffle.min.css dist/css/souffle.css",
     "format": "stylus-supremacy format src/stylus/**/*.styl --options .stylintrc",
     "lint": "stylint src/stylus --strict",
-    "stylus": "stylus --include-css src/stylus/souffle.styl -o dist/css/souffle.css"
+    "stylus": "stylus --include-css src/stylus/souffle.styl -o dist/css/souffle.css",
+    "autoprefix-skeleton": "postcss --use autoprefixer --map false --output dist/css/souffle.skeleton.css dist/css/souffle.skeleton.css",
+    "cleancss-skeleton": "cleancss -o dist/css/souffle.skeleton.min.css dist/css/souffle.skeleton.css",
+    "stylus-skeleton": "stylus --include-css src/stylus/souffle.skeleton.styl -o dist/css/souffle.skeleton.css"
   },
   "repository": {
     "type": "git",

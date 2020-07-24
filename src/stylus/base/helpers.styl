@@ -4,11 +4,11 @@
  */
 
 /** color */
-for key, value in $colors
-  .forecolor-{key}
-    color: value !important
-  .backcolor-{key}
-    background-color: value !important
+for colorKey, colorValue in $colors
+  .forecolor-{colorKey}
+    color: colorValue.base !important
+  .backcolor-{colorKey}
+    background-color: colorValue.base !important
 
 /** typography */
 .is-italic

@@ -3,9 +3,6 @@
  * @author kaminoctem
  */
 
-$footer-forecolor ?= $color-mainfore
-$footer-backcolor ?= $color-mainback
-
 /** style */
 .footer
   background-color: $footer-backcolor
@@ -13,10 +10,12 @@ $footer-backcolor ?= $color-mainback
   &>*
     background-color: $footer-backcolor
     color: $footer-forecolor
-  for colorKey, colorValue in $colors
-    &.is-{colorKey}
-      background-color: colorValue
-      color: invert(colorValue)
-      &>*
-        background-color: colorValue
-        color: invert(colorValue)
+
+  if (!$is-skeleton)
+    for colorKey, colorValue in $colors
+      &.is-{colorKey}
+        background-color: colorValue.base
+        color: colorValue.inverted
+        &>*
+          background-color: colorValue.base
+          color: colorValue.inverted

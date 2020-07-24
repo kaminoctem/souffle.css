@@ -3,9 +3,6 @@
  * @author kaminoctem
  */
 
-$navbar-menu-item-forecolor ?= $color-grey-darker
-$navbar-menu-item-backcolor ?= $color-white
-
 /** style */
 .navbar
   display: block
@@ -92,55 +89,30 @@ $navbar-menu-item-backcolor ?= $color-white
         border-color: transparent
         box-shadow: none
 
-      for colorKey, colorValue in $colors
-        &.is-{colorKey}
-          background-color: colorValue
-          border-color: transparent
-          color: invert(colorValue)
-          &:hover,
-          &.is-hovered
-            background-color: darken(colorValue, 5%)
+      if (!$is-skeleton)
+        for colorKey, colorValue in $colors
+          &.is-{colorKey}
+            background-color: colorValue.base
             border-color: transparent
-            color: invert(colorValue)
-          &:focus,
-          &.is-focused
-            border-color: transparent
-            color: invert(colorValue)
-          &:active,
-          &.is-active
-            background-color: darken(colorValue, 10%)
-            border-color: transparent
-            color: invert(colorValue)
-          &[disabled],
-          fieldset[disabled],
-          &.is-disabled
-            background-color: colorValue
-            border-color: transparent
-            box-shadow: none
-          &.is-light
-            &.is-{colorKey}
-              background-color: lighten(colorValue, 80%)
+            color: colorValue.inverted
+            &:hover,
+            &.is-hovered
+              background-color: colorValue.dim
               border-color: transparent
-              color: colorValue
-              &:hover,
-              &.is-hovered
-                background-color: darken(lighten(colorValue, 80%), 5%)
-                border-color: transparent
-                color: darken(colorValue, 5%)
-              &:focus,
-              &.is-focused
-                border-color: transparent
-                color: colorValue
-              &:active,
-              &.is-active
-                background-color: darken(lighten(colorValue, 80%), 10%)
-                border-color: transparent
-                color: darken(colorValue, 10%)
-              &[disabled],
-              fieldset[disabled],
-              &.is-disabled
-                background-color: lighten(colorValue, 80%)
-                border-color: transparent
-                box-shadow: none
-
+              color: colorValue.inverted
+            &:focus,
+            &.is-focused
+              border-color: transparent
+              color: colorValue.inverted
+            &:active,
+            &.is-active
+              background-color: colorValue.dark
+              border-color: transparent
+              color: colorValue.inverted
+            &[disabled],
+            fieldset[disabled],
+            &.is-disabled
+              background-color: colorValue.base
+              border-color: transparent
+              box-shadow: none
 
