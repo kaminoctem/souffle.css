@@ -1,30 +1,18 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html>
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>soufflé.css(skeleton)</title>
-    <meta name="description" content="soufflé.css is a tategaki friendly CSS framework.">
-    <link rel="canonical" href="https://kaminoctem.github.io/souffle.css/skeleton.html">
+    <title>soufflé.css</title>
+    <meta name="description" content="">
+    <meta name="robots" content="noindex,nofollow">
     <meta name="format-detection" content="email=no,telephone=no,address=no">
-    <meta name="twitter:creator" content="@kaminoctem">
-    <meta name="twitter:url" content="https://kaminoctem.github.io/souffle.css/skeleton.html">
-    <meta name="twitter:title" content="soufflé.css(skeleton)">
-    <meta name="twitter:description" content="soufflé.css is a tategaki friendly CSS framework.">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173468650-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-173468650-1');
-    </script>
-    <link rel="stylesheet" type="text/css" media="all" href="css/souffle.skeleton.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="./css/souffle.skeleton.min.css" />
   </head>
   <body>
     <div id="root" class="souffle is-header-fixed is-footer-fixed">
-      <header class="header">
+      <header class="header is-primary">
         <div class="container">
           <nav
             class="navbar"
@@ -37,11 +25,11 @@
               </span>
               <span class="center">
                 <h1
-                  class="item is-italic has-text-weight-bold"
+                  class="item is-italic forecolor-weight-bold"
                   style="margin: 0.25em;font-size: 2em;"
                 >
                   <ruby>
-                    souflle.css<rp>(</rp><rt>すふれしーえすえす</rt><rp>)</rp>
+                    soufflé.css<rp>(</rp><rt>すふれしーえすえす</rt><rp>)</rp>
                   </ruby>
                 </h1>
               </span>
@@ -64,12 +52,13 @@
             <div id="menu" class="menu">
               <a class="item" href="index.html">
                 <span class="for-tablet-or-less">
-                  <span class="icon has-text-grey-lighter">
+                  <span class="icon forecolor-pink">
                     <span class="fas fa-home"></span>
                   </span>
+                  Home
                 </span>
                 <span class="for-desktop-or-more">
-                  <span class="icon has-text-grey-lighter">
+                  <span class="icon forecolor-pink">
                     <span class="fas fa-home"></span>
                   </span>
                   Home
@@ -77,12 +66,13 @@
               </a>
               <a class="item" href="skeleton.html">
                 <span class="for-tablet-or-less">
-                  <span class="icon has-text-grey-lighter">
+                  <span class="icon forecolor-grey">
                     <span class="fas fa-skull"></span>
                   </span>
+                  Skeleton
                 </span>
                 <span class="for-desktop-or-more">
-                  <span class="icon has-text-grey-lighter">
+                  <span class="icon forecolor-grey">
                     <span class="fas fa-skull"></span>
                   </span>
                   Skeleton
@@ -93,17 +83,17 @@
                   <label class="radio" for="radio-prefers">
                     <input type="radio" id="radio-prefers" name="radio-theme" class="radio-input" value="prefers" />
                     <span class="radio-button"></span>
-                    <span class="radio-text"><span class="fas fa-robot"></span></span>
+                    <span class="radio-text forecolor-blue"><span class="fas fa-robot"></span></span>
                   </label>
                   <label class="radio" for="radio-light">
                     <input type="radio" id="radio-light" name="radio-theme" class="radio-input" value="light" />
                     <span class="radio-button"></span>
-                    <span class="radio-text"><span class="fas fa-sun"></span></span>
+                    <span class="radio-text forecolor-red"><span class="fas fa-sun"></span></span>
                   </label>
                   <label class="radio" for="radio-dark">
                     <input type="radio" id="radio-dark" name="radio-theme" class="radio-input" value="dark" />
                     <span class="radio-button"></span>
-                    <span class="radio-text"><span class="fas fa-moon"></span></span>
+                    <span class="radio-text forecolor-yellow"><span class="fas fa-moon"></span></span>
                   </label>
                 </div>
               </a>
@@ -124,27 +114,27 @@
               <div class="row is-direction-row-reverse is-mobile-direction-row">
                 <div class="column is-mobile-12">
                   <article class="tategaki">
-                    <p><ruby>soufflé.css<rp>(</rp><rt>すふれしーえすえす</rt><rp>)</rp></ruby>は、<ruby>縦書き<rp>(</rp><rt>たてがき</rt><rp>)</rp></ruby>と<ruby>ルビ<rp>(</rp><rt>るび</rt><rp>)</rp></ruby>にフレンドリーなCSSフレームワークです。ソースコードは<ruby>stylus<rp>(</rp><rt>すたいらす</rt><rp>)</rp></ruby>で書かれているので、カスタマイズしやすいです。</p>
+                    <p class="paragraph has-indent"><ruby>soufflé.css<rp>(</rp><rt>すふれしーえすえす</rt><rp>)</rp></ruby>は、<ruby>縦書き<rp>(</rp><rt>たてがき</rt><rp>)</rp></ruby>と<ruby>ルビ<rp>(</rp><rt>るび</rt><rp>)</rp></ruby>にフレンドリーなCSSフレームワークです。ソースコードは<ruby>stylus<rp>(</rp><rt>すたいらす</rt><rp>)</rp></ruby>で書かれているので、カスタマイズしやすいです。</p>
                   </article>
                 </div>
                 <div class="column is-mobile-12">
                   <article class="tategaki">
-                    <p><ruby>soufflé.css<rp>(</rp><rt>すふれしーえすえす</rt><rp>)</rp></ruby>は、<ruby><input type="text" class="text" value="縦" /><rp>(</rp><rt>たてがき</rt><rp>)</rp></ruby>と<ruby>ルビ<rp>(</rp><rt>るび</rt><rp>)</rp></ruby>にフレンドリーなCSSフレームワークです。ソースコードは<ruby>stylus<rp>(</rp><rt>すたいらす</rt><rp>)</rp></ruby>で書かれているので、カスタマイズしやすいです。</p>
+                    <p class="paragraph has-indent"><ruby>soufflé.css<rp>(</rp><rt>すふれしーえすえす</rt><rp>)</rp></ruby>は、<ruby><input type="text" class="text" value="縦" /><rp>(</rp><rt>たてがき</rt><rp>)</rp></ruby>と<ruby>ルビ<rp>(</rp><rt>るび</rt><rp>)</rp></ruby>にフレンドリーなCSSフレームワークです。ソースコードは<ruby>stylus<rp>(</rp><rt>すたいらす</rt><rp>)</rp></ruby>で書かれているので、カスタマイズしやすいです。</p>
                   </article>
                 </div>
                 <div class="column is-mobile-12">
                   <article class="tategaki">
-                    <p>
+                    <p class="paragraph has-indent">
                       アリスは川辺でおねえさんのよこにすわって、なんにもすることがないのでとても<ruby>退屈<rp>(</rp><rt>たいくつ</rt><rp>)</rp></ruby>しはじめていました。
                     </p>
-                    <p>
+                    <p class="paragraph has-indent">
                       一、二回はおねえさんの読んでいる本をのぞいてみたけれど、そこには絵も会話もないのです。「絵や会話のない本なんて、なんの役にもたたないじゃないの」とアリスは思いました。
                     </p>
                   </article>
                 </div>
                 <div class="column is-mobile-12">
                   <article class="tategaki">
-                    <p>
+                    <p class="paragraph has-indent">
                       そこでアリスは、頭のなかで、ひなぎくのくさりをつくったら楽しいだろうけれど、起きあがってひなぎくをつむのもめんどくさいし、どうしようかと考えていました
                     </p>
                     <p>
@@ -154,30 +144,30 @@
                 </div>
                 <div class="column is-mobile-12">
                   <article class="tategaki">
-                    <p>
+                    <p class="paragraph has-indent">
                       そこへいきなり、ピンクの目をした白うさぎが近くを走ってきたのです。
                     </p>
-                    <p>
+                    <p class="paragraph">
                       それだけなら、そんなにめずらしいことでもありませんでした。さらにアリスとしては、そのうさぎが「どうしよう！　どうしよう！　ちこくしちゃうぞ！」とつぶやくのを聞いたときも、それがそんなにへんてこだとは思いませんでした
                     </p>
                   </article>
                 </div>
                 <div class="column is-mobile-12">
                   <article class="tategaki">
-                    <p>
+                    <p class="paragraph">
                       （あとから考えてみたら、これも不思議に思うべきだったのですけれど、でもこのときには、それがごく自然なことに思えたのです）。
                     </p>
-                    <p>
+                    <p class="paragraph">
                       でもそのうさぎがほんとうに、チョッキのポケットから<ruby>懐中時計<rp>(</rp><rt>かいちゅうどけい</rt><rp>)</rp></ruby>をとりだしてそれをながめ、そしてまたあわててかけだしたとき、アリスもとびあがりました。
                     </p>
                   </article>
                 </div>
                 <div class="column is-mobile-12">
                   <article class="tategaki">
-                    <p>
+                    <p class="paragraph">
                       というのも、チョッキのポケットなんかがあるうさぎはこれまで見たことがないし、そこからとりだす時計をもっているうさぎなんかも見たことないぞ、というのに急に気がついたからです。
                     </p>
-                    <p>
+                    <p class="paragraph">
                       そこで、興味きょうみしんしんになったアリスは、うさぎのあとを追っかけて野原をよこぎって、それがしげみの下の、おっきなうさぎの穴にとびこむのを、ぎりぎりのところで見つけました。
                     </p>
                   </article>
@@ -261,49 +251,16 @@
                     souflle.css<rp>(</rp><rt>すふれしーえすえす</rt><rp>)</rp>
                   </ruby>
                 </div>
-                <div class="column is-mobile-4">
+              </div>
+              <div class="row">
+                <div class="column is-mobile-6">
                   <div class="tategaki">
-                    <p>
-                      <ruby>
-                        縦書き<rp>(</rp><rt>tategaki</rt><rp>)</rp>
-                      </ruby>
-                    </p>
-                    <p>
-                      Year 2020
-                    </p>
-                    <p>
-                      すふれしーえすえす
-                    </p>
+                    <p><ruby>縦書き<rp>(</rp><rt>tategaki</rt><rp>)</rp></ruby>Year 2020すふれしーえすえす</p>
                   </div>
                 </div>
-                <div class="column is-mobile-4">
+                <div class="column is-mobile-6">
                   <div class="tategaki">
-                    <p>
-                      <ruby>
-                        縦書き<rp>(</rp><rt>tategaki</rt><rp>)</rp>
-                      </ruby>
-                    </p>
-                    <p>
-                      Year 2020
-                    </p>
-                    <p>
-                      すふれしーえすえす
-                    </p>
-                  </div>
-                </div>
-                <div class="column is-mobile-4">
-                  <div class="tategaki">
-                    <p class="with-alphanumeric">
-                      <ruby>
-                        縦書き<rp>(</rp><rt>tategaki</rt><rp>)</rp>
-                      </ruby>
-                    </p>
-                    <p class="with-alphanumeric">
-                      Year 2020
-                    </p>
-                    <p>
-                      すふれしーえすえす
-                    </p>
+                    <p class="with-alphanumeric"><ruby>縦書き<rp>(</rp><rt>tategaki</rt><rp>)</rp></ruby>Year 2020すふれしーえすえす</p>
                   </div>
                 </div>
               </div>
@@ -323,6 +280,9 @@
                 <div class="column is-mobile-12">
                   <span class="backcolor-primary">backcolor-primary</span>
                 </div>
+                <div class="column is-mobile-12">
+                  <button class="button is-primary">button is-primary</button>
+                </div>
               </div>
               <div class="row">
                 <div class="column is-mobile-12">
@@ -330,6 +290,9 @@
                 </div>
                 <div class="column is-mobile-12">
                   <span class="backcolor-info">backcolor-info</span>
+                </div>
+                <div class="column is-mobile-12">
+                  <button class="button is-info">button is-info</button>
                 </div>
               </div>
               <div class="row">
@@ -339,6 +302,9 @@
                 <div class="column is-mobile-12">
                   <span class="backcolor-success">backcolor-success</span>
                 </div>
+                <div class="column is-mobile-12">
+                  <button class="button is-success">button is-success</button>
+                </div>
               </div>
               <div class="row">
                 <div class="column is-mobile-12">
@@ -346,6 +312,9 @@
                 </div>
                 <div class="column is-mobile-12">
                   <span class="backcolor-warning">backcolor-warning</span>
+                </div>
+                <div class="column is-mobile-12">
+                  <button class="button is-warning">button is-warning</button>
                 </div>
               </div>
               <div class="row">
@@ -355,6 +324,9 @@
                 <div class="column is-mobile-12">
                   <span class="backcolor-danger">backcolor-danger</span>
                 </div>
+                <div class="column is-mobile-12">
+                  <button class="button is-danger">button is-danger</button>
+                </div>
               </div>
               <div class="row">
                 <div class="column is-mobile-12">
@@ -363,6 +335,9 @@
                 <div class="column is-mobile-12">
                   <span class="backcolor-link">backcolor-link</span>
                 </div>
+                <div class="column is-mobile-12">
+                  <button class="button is-link">button is-link</button>
+                </div>
               </div>
               <div class="row">
                 <div class="column is-mobile-12">
@@ -370,6 +345,9 @@
                 </div>
                 <div class="column is-mobile-12">
                   <span class="backcolor-visited">backcolor-visited</span>
+                </div>
+                <div class="column is-mobile-12">
+                  <button class="button is-visited">button is-visited</button>
                 </div>
               </div>
             </div>
@@ -392,15 +370,15 @@
           <section>
             <div class="row">
               <div class="column">
-                <div class="control">
+                <div class="field">
                   <input class="text" type="text" placeholder="text input" />
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="column">
-                <div class="control">
-                  <textarea class="textarea"></textarea>
+                <div class="field">
+                  <textarea class="textarea" placeholder="textarea"></textarea>
                 </div>
               </div>
             </div>
@@ -408,7 +386,7 @@
           <section>
             <div class="row">
               <div class="column">
-                <div class="control">
+                <div class="field">
                   <label class="radio" for="radio-on">
                     <input type="radio" id="radio-on" name="radio" class="radio-input" checked />
                     <span class="radio-button"></span>
@@ -424,16 +402,104 @@
             </div>
             <div class="row">
               <div class="column">
-                <div class="control">
+                <div class="field">
                   <label class="radio" for="radio-on-disabled">
                     <input type="radio" id="radio-on-disabled" name="radio-disabled" class="radio-input" checked disabled />
                     <span class="radio-button"></span>
                     <span class="radio-text">radio on disabled</span>
                   </label>
                   <label class="radio" for="radio-off-disabled">
-                    <input type="radio" id="radio-off-disabled" name="radio-disabled" class="radio-input" checked disabled />
+                    <input type="radio" id="radio-off-disabled" name="radio-disabled" class="radio-input" disabled />
                     <span class="radio-button"></span>
                     <span class="radio-text">radio off disabled</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <label class="radio is-primary" for="radio-primary">
+                    <input type="radio" id="radio-primary" name="radio-color" class="radio-input" />
+                    <span class="radio-button"></span>
+                    <span class="radio-text">radio is-primary</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <label class="radio is-info" for="radio-info">
+                    <input type="radio" id="radio-info" name="radio-color" class="radio-input" />
+                    <span class="radio-button"></span>
+                    <span class="radio-text">radio is-info</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <label class="radio is-success" for="radio-success">
+                    <input type="radio" id="radio-success" name="radio-color" class="radio-input" />
+                    <span class="radio-button"></span>
+                    <span class="radio-text">radio is-success</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <label class="radio is-warning" for="radio-warning">
+                    <input type="radio" id="radio-warning" name="radio-color" class="radio-input" />
+                    <span class="radio-button"></span>
+                    <span class="radio-text">radio is-warning</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <label class="radio is-danger" for="radio-danger">
+                    <input type="radio" id="radio-danger" name="radio-color" class="radio-input" />
+                    <span class="radio-button"></span>
+                    <span class="radio-text">radio is-danger</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <label class="radio is-link" for="radio-link">
+                    <input type="radio" id="radio-link" name="radio-color" class="radio-input" />
+                    <span class="radio-button"></span>
+                    <span class="radio-text">radio is-link</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <label class="radio is-visited" for="radio-visited">
+                    <input type="radio" id="radio-visited" name="radio-color" class="radio-input" />
+                    <span class="radio-button"></span>
+                    <span class="radio-text">radio is-visited</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <label class="radio is-disabled" for="radio-disabled">
+                    <input type="radio" id="radio-disabled" name="radio-color" class="radio-input" />
+                    <span class="radio-button"></span>
+                    <span class="radio-text">radio is-disabled</span>
                   </label>
                 </div>
               </div>
@@ -443,7 +509,7 @@
           <section>
             <div class="row">
               <div class="column">
-                <div class="control">
+                <div class="field">
                   <label class="checkbox" for="checkbox-on">
                     <input type="checkbox" id="checkbox-on" name="checkbox" class="checkbox-input" checked />
                     <span class="checkbox-box"></span>
@@ -459,7 +525,7 @@
             </div>
             <div class="row">
               <div class="column">
-                <div class="control">
+                <div class="field">
                   <label class="checkbox" for="checkbox-on-disabled">
                     <input type="checkbox" id="checkbox-on-disabled" name="checkbox-disabled" class="checkbox-input" checked disabled />
                     <span class="checkbox-box"></span>
@@ -473,8 +539,292 @@
                 </div>
               </div>
             </div>
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <label class="checkbox is-primary" for="checkbox-primary">
+                    <input type="checkbox" id="checkbox-primary" name="checkbox-color" class="checkbox-input" />
+                    <span class="checkbox-box"></span>
+                    <span class="checkbox-text">checkbox is-primary</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <label class="checkbox is-info" for="checkbox-info">
+                    <input type="checkbox" id="checkbox-info" name="checkbox-color" class="checkbox-input" />
+                    <span class="checkbox-box"></span>
+                    <span class="checkbox-text">checkbox is-info</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <label class="checkbox is-success" for="checkbox-success">
+                    <input type="checkbox" id="checkbox-success" name="checkbox-color" class="checkbox-input" />
+                    <span class="checkbox-box"></span>
+                    <span class="checkbox-text">checkbox is-success</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <label class="checkbox is-warning" for="checkbox-warning">
+                    <input type="checkbox" id="checkbox-warning" name="checkbox-color" class="checkbox-input" />
+                    <span class="checkbox-box"></span>
+                    <span class="checkbox-text">checkbox is-warning</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <label class="checkbox is-danger" for="checkbox-danger">
+                    <input type="checkbox" id="checkbox-danger" name="checkbox-color" class="checkbox-input" />
+                    <span class="checkbox-box"></span>
+                    <span class="checkbox-text">checkbox is-danger</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <label class="checkbox is-link" for="checkbox-link">
+                    <input type="checkbox" id="checkbox-link" name="checkbox-color" class="checkbox-input" />
+                    <span class="checkbox-box"></span>
+                    <span class="checkbox-text">checkbox is-link</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <label class="checkbox is-visited" for="checkbox-visited">
+                    <input type="checkbox" id="checkbox-visited" name="checkbox-color" class="checkbox-input" />
+                    <span class="checkbox-box"></span>
+                    <span class="checkbox-text">checkbox is-visited</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <label class="checkbox is-disabled" for="checkbox-disabled">
+                    <input type="checkbox" id="checkbox-disabled" name="checkbox-color" class="checkbox-input" />
+                    <span class="checkbox-box"></span>
+                    <span class="checkbox-text">checkbox is-disabled</span>
+                  </label>
+                </div>
+              </div>
+            </div>
           </section>
-
+          <section>
+            <div class="row">
+              <div class="column">
+                <span class="badge">badge</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <span class="badge is-primary">badge is-primary</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <span class="badge is-info">badge is-info</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <span class="badge is-success">badge is-success</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <span class="badge is-warning">badge is-warning</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <span class="badge is-danger">badge is-danger</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <span class="badge is-link">badge is-link</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <span class="badge is-visited">badge is-visited</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <span class="badge is-disabled">badge is-disabled</span>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <span class="file">
+                    <label class="file-action">
+                      <input type="file" class="file-input" name="datafile">
+                      choose file...
+                    </label>
+                    <label class="file-filename">
+                      souffle.css
+                    </label>
+                  </span>
+                </div>
+              </div>
+              <div class="column">
+                <div class="field">
+                  <span class="file">
+                    <label class="file-filename">
+                      souffle.css
+                    </label>
+                    <label class="file-action">
+                      <input type="file" class="file-input" name="datafile">
+                      file
+                    </label>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <span class="file is-primary">
+                    <label class="file-filename">
+                      souffle.css
+                    </label>
+                    <label class="file-action">
+                      <input type="file" class="file-input" name="datafile">
+                      file is-primary
+                    </label>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <span class="file is-info">
+                    <label class="file-action">
+                      <input type="file" class="file-input" name="datafile">
+                      file is-info
+                    </label>
+                    <label class="file-filename">
+                      souffle.css
+                    </label>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <span class="file is-success">
+                    <label class="file-filename">
+                      souffle.css
+                    </label>
+                    <label class="file-action">
+                      <input type="file" class="file-input" name="datafile">
+                      file is-success
+                    </label>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <span class="file is-warning">
+                    <label class="file-action">
+                      <input type="file" class="file-input" name="datafile">
+                      file is-warning
+                    </label>
+                    <label class="file-filename">
+                      souffle.css
+                    </label>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <span class="file is-danger">
+                    <label class="file-filename">
+                      souffle.css
+                    </label>
+                    <label class="file-action">
+                      <input type="file" class="file-input" name="datafile">
+                      file is-danger
+                    </label>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <span class="file is-link">
+                    <label class="file-action">
+                      <input type="file" class="file-input" name="datafile">
+                      file is-link
+                    </label>
+                    <label class="file-filename">
+                      souffle.css
+                    </label>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <span class="file is-visited">
+                    <label class="file-filename">
+                      souffle.css
+                    </label>
+                    <label class="file-action">
+                      <input type="file" class="file-input" name="datafile">
+                      file is-visited
+                    </label>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <span class="file is-disabled">
+                    <label class="file-action">
+                      <input type="file" class="file-input" name="datafile">
+                      file is-disabled
+                    </label>
+                    <label class="file-filename">
+                      souffle.css
+                    </label>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </section>
           <section>
             <div class="grid">
               <div class="row">
@@ -484,35 +834,43 @@
               </div>
             </div>
             <div class="modal">
-              <div class="grid">
-                <div class="row">
-                  <div class="column">
-                    modal is-active
+              <div class="modal-content">
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-title">
+                    My Movie
                   </div>
+                </div>
+                <div class="card-body">
+                  <div class="centering">
+                    <iframe
+                      width="560"
+                      height="315"
+                      src="https://www.youtube.com/embed/vU_N2NZ5vkQ"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen>
+                    </iframe>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  Check it out!
                 </div>
               </div>
             </div>
           </section>
-          <!--
-          <section>
-            <div class="row">
-              <div class="column">
-                <video id="video" class="video" width="640" height="480" autoplay></video>
-              </div>
-            </div>
-          </section>
-          -->
         </div>
       </main>
       <footer class="footer is-danger">
         <div class="container">
-          <p>souffle.css by kaminoctem</p>
+          <p>soufflé.css by <a class="link forecolor-link" href="https://twitter.com/kaminoctem">@kaminoctem</a></p>
           <p>The source code is licensed MIT!</p>
+          <p><a class="link forecolor-black" href="https://github.com/kaminoctem/souffle.css"></a></p>
         </div>
       </footer>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
-    <script src="scripts/skeleton.js"></script>
+    <script src="scripts/index.js"></script>
   </body>
 </html>

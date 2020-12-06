@@ -1,4 +1,4 @@
-/*! souffle.css-mode:skeleton v0.0.5 | MIT License | github.com/kaminoctem/souffle.css */
+/*! souffle.css-mode:skeleton v0.0.7 | MIT License | github.com/kaminoctem/souffle.css */
 @charset "utf-8";
 html {
   --color-mainfore: #0a0200;
@@ -21,6 +21,7 @@ html {
   --color-danger: #f27d7d;
   --color-link: #7df2c9;
   --color-visited: #c97df2;
+  --color-disabled: #d9d9d9;
 }
 .souffle.is-light,
 .root.is-light {
@@ -41,6 +42,7 @@ html {
   --color-danger: #f27d7d;
   --color-link: #7df2c9;
   --color-visited: #c97df2;
+  --color-disabled: $color-light-disabled;
 }
 .souffle.is-dark,
 .root.is-dark {
@@ -61,6 +63,7 @@ html {
   --color-danger: #cc1414;
   --color-link: #14cc8c;
   --color-visited: #8c14cc;
+  --color-disabled: #d9d9d9;
 }
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 html {
@@ -223,7 +226,6 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
      -moz-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
           text-size-adjust: 100%;
 }
 article,
@@ -454,6 +456,12 @@ video {
 }
 .backcolor-visited {
   background-color: var(--color-visited, #c97df2) !important;
+}
+.forecolor-disabled {
+  color: var(--color-disabled, #d9d9d9) !important;
+}
+.backcolor-disabled {
+  background-color: var(--color-disabled, #d9d9d9) !important;
 }
 .is-italic {
   font-style: italic !important;
@@ -3410,19 +3418,16 @@ video {
     display: none;
   }
 }
-label,
-.label {
-  color: $label-forecolor;
-  display: block;
-  font-size: 1em;
-  font-weight: 700;
-}
 .control,
 .button,
-.select,
+.file,
+.file>.file-action,
+.radio,
+.checkbox,
 .select>.option,
 .text,
-.textarea {
+.textarea,
+.label {
   -moz-appearance: none;
   -webkit-appearance: none;
   align-items: center;
@@ -3434,56 +3439,79 @@ label,
   height: 2.25em;
   justify-content: flex-start;
   line-height: 1.5;
-  padding-bottom: -0.625em;
-  padding-left: -0.375em;
-  padding-right: -0.375em;
-  padding-top: -0.625em;
+  margin: 0.05em 0.05em;
+  padding-bottom: -0.625em -0.375em;
   position: relative;
   vertical-align: top;
 }
 .control:focus,
 .button:focus,
-.select:focus,
+.file:focus,
+.file>.file-action:focus,
+.radio:focus,
+.checkbox:focus,
 .select>.option:focus,
 .text:focus,
 .textarea:focus,
+.label:focus,
 .control.is-focused,
 .button.is-focused,
-.select.is-focused,
+.file.is-focused,
+.file>.file-action.is-focused,
+.radio.is-focused,
+.checkbox.is-focused,
 .select>.option.is-focused,
 .text.is-focused,
 .textarea.is-focused,
+.label.is-focused,
 .control:active,
 .button:active,
-.select:active,
+.file:active,
+.file>.file-action:active,
+.radio:active,
+.checkbox:active,
 .select>.option:active,
 .text:active,
 .textarea:active,
+.label:active,
 .control.is-active,
 .button.is-active,
-.select.is-active,
+.file.is-active,
+.file>.file-action.is-active,
+.radio.is-active,
+.checkbox.is-active,
 .select>.option.is-active,
 .text.is-active,
-.textarea.is-active {
+.textarea.is-active,
+.label.is-active {
   outline: none;
 }
 .control[disabled],
 .button[disabled],
-.select[disabled],
+.file[disabled],
+.file>.file-action[disabled],
+.radio[disabled],
+.checkbox[disabled],
 .select>.option[disabled],
 .text[disabled],
 .textarea[disabled],
-fieldset[disabled] .control,
-fieldset[disabled] .button,
-fieldset[disabled] .select,
-fieldset[disabled] .select>.option,
-fieldset[disabled] .text,
-fieldset[disabled] .textarea {
+.label[disabled],
+.control fieldset[disabled],
+.button fieldset[disabled],
+.file fieldset[disabled],
+.file>.file-action fieldset[disabled],
+.radio fieldset[disabled],
+.checkbox fieldset[disabled],
+.select>.option fieldset[disabled],
+.text fieldset[disabled],
+.textarea fieldset[disabled],
+.label fieldset[disabled] {
   cursor: not-allowed;
 }
 .button {
   background-color: #fff;
   border-color: #d9d9d9;
+  color: #333;
   cursor: pointer;
 }
 .button:hover,
@@ -3609,6 +3637,56 @@ fieldset[disabled] .textarea {
     opacity: 0.9;
   }
 }
+.file {
+  border-color: #d9d9d9;
+  width: 100%;
+}
+.file>.file-action {
+  background-color: #fff;
+  border-color: #d9d9d9;
+  color: #333;
+  cursor: pointer;
+  margin: -1px -1px;
+  padding: 0 0.25em;
+}
+.file>.file-action:last-child {
+  margin: -1px -1px -1px auto;
+}
+.file>.file-action:hover,
+.file>.file-action.is-hovered {
+  border-color: #b3b3b3;
+  color: #333;
+}
+.file>.file-action:focus,
+.file>.file-action.is-focused {
+  border-color: #7df2c9;
+  color: #333;
+}
+.file>.file-action:focus:not(:active),
+.file>.file-action.is-focused:not(:active) {
+  box-shadow: 0 0 0 0.125em rgba(125,242,201,0.25);
+}
+.file>.file-action:active,
+.file>.file-action.is-active {
+  border-color: #474747;
+  color: #333;
+}
+.file>.file-action[disabled],
+.file>.file-action fieldset[disabled] {
+  background-color: #fff;
+  border-color: #d9d9d9;
+  box-shadow: none;
+  opacity: 0.5;
+}
+.file>.file-action>.file-input {
+  display: none;
+}
+.file>.file-filename {
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 400;
+  padding: 0 0.5em;
+}
 .radio>.radio-input {
   display: none;
 }
@@ -3639,6 +3717,7 @@ fieldset[disabled] .textarea {
   display: inline-block;
   font-size: 1em;
   font-weight: 400;
+  padding: 0 0.25em;
 }
 .radio>.radio-input:checked~.radio-button:after {
   background-color: #333;
@@ -3690,6 +3769,7 @@ fieldset[disabled] .textarea {
   display: inline-block;
   font-size: 1em;
   font-weight: 400;
+  padding: 0 0.25em;
 }
 .checkbox>.checkbox-input:checked~.checkbox-box:before,
 .checkbox>.checkbox-input:checked~.checkbox-box:after {
@@ -3718,8 +3798,10 @@ fieldset[disabled] .textarea {
   border: 0.05rem solid #b3b3b3;
   border-radius: 0.25rem;
   color: #000;
-  margin: 0.25rem 0;
-  padding: 0.25rem;
+  height: 1.75em;
+  margin: 0.25em 0;
+  padding: 0.25em;
+  width: 100%;
 }
 .textarea {
   background-color: #fff;
@@ -3733,9 +3815,13 @@ fieldset[disabled] .textarea {
   min-height: 2.25rem;
   padding: 0.25rem;
   resize: vertical;
+  width: 100%;
 }
-.file>.file-input {
-  display: none;
+.label {
+  color: #333;
+  display: block;
+  font-size: 1em;
+  font-weight: 700;
 }
 .header {
   background-color: #fff7f5;
@@ -4117,6 +4203,45 @@ fieldset[disabled] .textarea {
 .modal.is-active {
   display: flex;
 }
+.modal>.modal-content {
+  margin: auto;
+  z-index: 1000;
+}
+.badge {
+  align-items: center;
+  border: 1px solid #d9d9d9;
+  background-color: #fff7f5;
+  border-radius: 0.25rem;
+  color: #0a0200;
+  display: inline-flex;
+  font-size: 0.75em;
+  justify-content: center;
+  padding: 0.1rem 0.5rem;
+  white-space: nowrap;
+}
+.card {
+  background-color: #fff7f5;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 0.5rem 0.25rem #d9d9d9;
+  color: #0a0200;
+  display: block;
+  margin: 1em;
+  padding: 1em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.card>.card-header,
+.card>.card-body,
+.card>.card-footer {
+  margin: auto;
+}
+.card>.card-header>.card-title,
+.card>.card-body>.card-title,
+.card>.card-footer>.card-title {
+  font-size: 1.25em;
+  font-weight: 600;
+}
 .souffle,
 .root {
   background-color: var(--color-mainback, #fff7f5);
@@ -4274,6 +4399,10 @@ fieldset[disabled] .textarea {
   border-left: 1px solid var(--color-visited, #c97df2);
   color: var(--color-visited, #c97df2);
 }
+.blockquote.is-disabled {
+  border-left: 1px solid var(--color-disabled, #d9d9d9);
+  color: var(--color-disabled, #d9d9d9);
+}
 .tategaki {
   align-items: center;
   display: block;
@@ -4293,8 +4422,12 @@ fieldset[disabled] .textarea {
   letter-spacing: 0.1em;
   margin: 0 0 0 auto;
 }
-.tategaki>p.with-alphanumeric,
-.tategaki>.paragraph.with-alphanumeric {
+.tategaki>p.has-indent,
+.tategaki>.paragraph.has-indent {
+  text-indent: 1em;
+}
+.tategaki>p .with-alphanumeric,
+.tategaki>.paragraph .with-alphanumeric {
   -webkit-text-orientation: upright;
           text-orientation: upright;
   text-transform: full-width;
@@ -4308,8 +4441,17 @@ fieldset[disabled] .textarea {
   transform: rotate(90deg);
   transform-origin: center;
   width: 1.5em;
-  -ms-writing-mode: initial;
-      writing-mode: initial;
+  -ms-writing-mode: inherit;
+      writing-mode: inherit;
+}
+.centering {
+  display: flex;
+  height: auto;
+  justify-content: flex-start;
+  width: 100%;
+}
+.centering>* {
+  margin: 0 auto;
 }
 .layer-folder {
   display: flex;

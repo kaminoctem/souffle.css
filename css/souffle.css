@@ -1,4 +1,4 @@
-/*! souffle.css v0.0.5 | MIT License | github.com/kaminoctem/souffle.css */
+/*! souffle.css v0.0.7 | MIT License | github.com/kaminoctem/souffle.css */
 @charset "utf-8";
 html {
   --color-mainfore: #0a0200;
@@ -21,6 +21,7 @@ html {
   --color-danger: #f27d7d;
   --color-link: #7df2c9;
   --color-visited: #c97df2;
+  --color-disabled: #d9d9d9;
 }
 .souffle.is-light,
 .root.is-light {
@@ -41,6 +42,7 @@ html {
   --color-danger: #f27d7d;
   --color-link: #7df2c9;
   --color-visited: #c97df2;
+  --color-disabled: $color-light-disabled;
 }
 .souffle.is-dark,
 .root.is-dark {
@@ -61,6 +63,7 @@ html {
   --color-danger: #cc1414;
   --color-link: #14cc8c;
   --color-visited: #8c14cc;
+  --color-disabled: #d9d9d9;
 }
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 html {
@@ -223,7 +226,6 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
      -moz-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
           text-size-adjust: 100%;
 }
 article,
@@ -454,6 +456,12 @@ video {
 }
 .backcolor-visited {
   background-color: var(--color-visited, #c97df2) !important;
+}
+.forecolor-disabled {
+  color: var(--color-disabled, #d9d9d9) !important;
+}
+.backcolor-disabled {
+  background-color: var(--color-disabled, #d9d9d9) !important;
 }
 .is-italic {
   font-style: italic !important;
@@ -3410,111 +3418,137 @@ video {
     display: none;
   }
 }
-.animation {
+.animation,
+.fade-in {
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  -webkit-animation-duration: $animation-speed-normal;
+          animation-duration: $animation-speed-normal;
 /** direction */
 /** timing-function */
 }
-.animation.infinite {
+.animation.infinite,
+.fade-in.infinite {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
-.animation.heavy {
-  -webkit-animation-duration: 4s;
-          animation-duration: 4s;
+.animation.heavy,
+.fade-in.heavy {
+  -webkit-animation-duration: $animation-speed-heavy;
+          animation-duration: $animation-speed-heavy;
 }
-.animation.slower {
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+.animation.slower,
+.fade-in.slower {
+  -webkit-animation-duration: $animation-speed-slower;
+          animation-duration: $animation-speed-slower;
 }
-.animation.slow {
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+.animation.slow,
+.fade-in.slow {
+  -webkit-animation-duration: $animation-speed-slow;
+          animation-duration: $animation-speed-slow;
 }
-.animation.fast {
-  -webkit-animation-duration: 750ms;
-          animation-duration: 750ms;
+.animation.fast,
+.fade-in.fast {
+  -webkit-animation-duration: $animation-speed-fast;
+          animation-duration: $animation-speed-fast;
 }
-.animation.faster {
-  -webkit-animation-duration: 500ms;
-          animation-duration: 500ms;
+.animation.faster,
+.fade-in.faster {
+  -webkit-animation-duration: $animation-speed-faster;
+          animation-duration: $animation-speed-faster;
 }
-.animation.flash {
-  -webkit-animation-duration: 250ms;
-          animation-duration: 250ms;
+.animation.flash,
+.fade-in.flash {
+  -webkit-animation-duration: $animation-speed-flash;
+          animation-duration: $animation-speed-flash;
 }
-.animation.alternate {
+.animation.alternate,
+.fade-in.alternate {
   -webkit-animation-direction: alternate;
           animation-direction: alternate;
 }
-.animation.reverse {
+.animation.reverse,
+.fade-in.reverse {
   animation-direction: reverse;
 }
-.animation.ease {
+.animation.ease,
+.fade-in.ease {
   -webkit-animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
           animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
-.animation.linear {
+.animation.linear,
+.fade-in.linear {
   -webkit-animation-timing-function: cubic-bezier(0, 0, 1, 1);
           animation-timing-function: cubic-bezier(0, 0, 1, 1);
 }
-.animation.ease-in {
+.animation.ease-in,
+.fade-in.ease-in {
   -webkit-animation-timing-function: cubic-bezier(0.42, 0, 1, 1);
           animation-timing-function: cubic-bezier(0.42, 0, 1, 1);
 }
-.animation.ease-out {
+.animation.ease-out,
+.fade-in.ease-out {
   -webkit-animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
           animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
 }
-.animation.ease-in-out {
+.animation.ease-in-out,
+.fade-in.ease-in-out {
   -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
           animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
 }
-.animation.delay-1 {
+.animation.delay-1,
+.fade-in.delay-1 {
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
 }
-.animation.delay-2 {
+.animation.delay-2,
+.fade-in.delay-2 {
   -webkit-animation-delay: 2s;
           animation-delay: 2s;
 }
-.animation.delay-3 {
+.animation.delay-3,
+.fade-in.delay-3 {
   -webkit-animation-delay: 3s;
           animation-delay: 3s;
 }
-.animation.delay-4 {
+.animation.delay-4,
+.fade-in.delay-4 {
   -webkit-animation-delay: 4s;
           animation-delay: 4s;
 }
-.animation.delay-5 {
+.animation.delay-5,
+.fade-in.delay-5 {
   -webkit-animation-delay: 5s;
           animation-delay: 5s;
 }
-.animation.delay-6 {
+.animation.delay-6,
+.fade-in.delay-6 {
   -webkit-animation-delay: 6s;
           animation-delay: 6s;
 }
-.animation.delay-7 {
+.animation.delay-7,
+.fade-in.delay-7 {
   -webkit-animation-delay: 7s;
           animation-delay: 7s;
 }
-.animation.delay-8 {
+.animation.delay-8,
+.fade-in.delay-8 {
   -webkit-animation-delay: 8s;
           animation-delay: 8s;
 }
-.animation.delay-9 {
+.animation.delay-9,
+.fade-in.delay-9 {
   -webkit-animation-delay: 9s;
           animation-delay: 9s;
 }
-.animation.delay-10 {
+.animation.delay-10,
+.fade-in.delay-10 {
   -webkit-animation-delay: 10s;
           animation-delay: 10s;
 }
 @media (print), (prefers-reduced-motion: reduce) {
-  .animation {
+  .animation,
+  .fade-in {
     -webkit-animation-duration: 1ms !important;
             animation-duration: 1ms !important;
     transition-duration: 1ms !important;
@@ -3522,19 +3556,56 @@ video {
             animation-iteration-count: 1 !important;
   }
 }
-label,
-.label {
-  color: $label-forecolor;
-  display: block;
-  font-size: 1em;
-  font-weight: 700;
+.fade-in {
+  -webkit-animation-name: fade-in;
+          animation-name: fade-in;
+}
+.fade-out {
+  -webkit-animation-name: fade-out;
+          animation-name: fade-out;
+}
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 .control,
 .button,
-.select,
+.file,
+.file>.file-action,
+.radio,
+.checkbox,
 .select>.option,
 .text,
-.textarea {
+.textarea,
+.label {
   -moz-appearance: none;
   -webkit-appearance: none;
   align-items: center;
@@ -3546,56 +3617,79 @@ label,
   height: 2.25em;
   justify-content: flex-start;
   line-height: 1.5;
-  padding-bottom: -0.625em;
-  padding-left: -0.375em;
-  padding-right: -0.375em;
-  padding-top: -0.625em;
+  margin: 0.05em 0.05em;
+  padding-bottom: -0.625em -0.375em;
   position: relative;
   vertical-align: top;
 }
 .control:focus,
 .button:focus,
-.select:focus,
+.file:focus,
+.file>.file-action:focus,
+.radio:focus,
+.checkbox:focus,
 .select>.option:focus,
 .text:focus,
 .textarea:focus,
+.label:focus,
 .control.is-focused,
 .button.is-focused,
-.select.is-focused,
+.file.is-focused,
+.file>.file-action.is-focused,
+.radio.is-focused,
+.checkbox.is-focused,
 .select>.option.is-focused,
 .text.is-focused,
 .textarea.is-focused,
+.label.is-focused,
 .control:active,
 .button:active,
-.select:active,
+.file:active,
+.file>.file-action:active,
+.radio:active,
+.checkbox:active,
 .select>.option:active,
 .text:active,
 .textarea:active,
+.label:active,
 .control.is-active,
 .button.is-active,
-.select.is-active,
+.file.is-active,
+.file>.file-action.is-active,
+.radio.is-active,
+.checkbox.is-active,
 .select>.option.is-active,
 .text.is-active,
-.textarea.is-active {
+.textarea.is-active,
+.label.is-active {
   outline: none;
 }
 .control[disabled],
 .button[disabled],
-.select[disabled],
+.file[disabled],
+.file>.file-action[disabled],
+.radio[disabled],
+.checkbox[disabled],
 .select>.option[disabled],
 .text[disabled],
 .textarea[disabled],
-fieldset[disabled] .control,
-fieldset[disabled] .button,
-fieldset[disabled] .select,
-fieldset[disabled] .select>.option,
-fieldset[disabled] .text,
-fieldset[disabled] .textarea {
+.label[disabled],
+.control fieldset[disabled],
+.button fieldset[disabled],
+.file fieldset[disabled],
+.file>.file-action fieldset[disabled],
+.radio fieldset[disabled],
+.checkbox fieldset[disabled],
+.select>.option fieldset[disabled],
+.text fieldset[disabled],
+.textarea fieldset[disabled],
+.label fieldset[disabled] {
   cursor: not-allowed;
 }
 .button {
   background-color: #fff;
   border-color: #d9d9d9;
+  color: #333;
   cursor: pointer;
 }
 .button:hover,
@@ -4218,6 +4312,39 @@ fieldset[disabled] .textarea {
   border-color: transparent;
   box-shadow: none;
 }
+.button.is-disabled {
+  background-color: var(--color-disabled, #d9d9d9);
+  border-color: transparent;
+  color: var(--color-disabled-inverted, #262626);
+}
+.button.is-disabled:hover,
+.button.is-disabled.is-hovered {
+  background-color: var(--color-disabled-dim, #cecece);
+  border-color: transparent;
+  color: var(--color-disabled-inverted, #262626);
+}
+.button.is-disabled:focus,
+.button.is-disabled.is-focused {
+  border-color: transparent;
+  color: var(--color-disabled-inverted, #262626);
+}
+.button.is-disabled:focus:not(:active),
+.button.is-disabled.is-focused:not(:active) {
+  box-shadow: 0 0 0 0.125em var(--color-disabled-translucent, rgba(217,217,217,0.25));
+}
+.button.is-disabled:active,
+.button.is-disabled.is-active {
+  background-color: var(--color-disabled-dark, #c3c3c3);
+  border-color: transparent;
+  color: var(--color-disabled-inverted, #262626);
+}
+.button.is-disabled[disabled],
+.button.is-disabled fieldset[disabled],
+.button.is-disabled.is-disabled {
+  background-color: var(--color-disabled, #d9d9d9);
+  border-color: transparent;
+  box-shadow: none;
+}
 .button.is-wimp:hover,
 .button.is-wimp.is-hovered {
   -webkit-animation-duration: 0.1s;
@@ -4315,6 +4442,740 @@ fieldset[disabled] .textarea {
     opacity: 0.9;
   }
 }
+.file {
+  border-color: #d9d9d9;
+  width: 100%;
+}
+.file>.file-action {
+  background-color: #fff;
+  border-color: #d9d9d9;
+  color: #333;
+  cursor: pointer;
+  margin: -1px -1px;
+  padding: 0 0.25em;
+}
+.file>.file-action:last-child {
+  margin: -1px -1px -1px auto;
+}
+.file>.file-action:hover,
+.file>.file-action.is-hovered {
+  border-color: #b3b3b3;
+  color: #333;
+}
+.file>.file-action:focus,
+.file>.file-action.is-focused {
+  border-color: #7df2c9;
+  color: #333;
+}
+.file>.file-action:focus:not(:active),
+.file>.file-action.is-focused:not(:active) {
+  box-shadow: 0 0 0 0.125em rgba(125,242,201,0.25);
+}
+.file>.file-action:active,
+.file>.file-action.is-active {
+  border-color: #474747;
+  color: #333;
+}
+.file>.file-action[disabled],
+.file>.file-action fieldset[disabled] {
+  background-color: #fff;
+  border-color: #d9d9d9;
+  box-shadow: none;
+  opacity: 0.5;
+}
+.file>.file-action>.file-input {
+  display: none;
+}
+.file>.file-filename {
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 400;
+  padding: 0 0.5em;
+}
+.file.is-black {
+  border-color: var(--color-black, #000);
+}
+.file.is-black>.file-action {
+  background-color: var(--color-black, #000);
+  border-color: transparent;
+  color: var(--color-black-inverted, #fff);
+}
+.file.is-black>.file-action:hover,
+.file.is-black>.file-action.is-hovered {
+  background-color: var(--color-black-dim, #000);
+  border-color: transparent;
+  color: var(--color-black-inverted, #fff);
+}
+.file.is-black>.file-action:focus,
+.file.is-black>.file-action.is-focused {
+  border-color: transparent;
+  color: var(--color-black-inverted, #fff);
+}
+.file.is-black>.file-action:focus:not(:active),
+.file.is-black>.file-action.is-focused:not(:active) {
+  box-shadow: $file-focus-box-shadow-size var(--color-black-translucent, rgba(0,0,0,0.25));
+}
+.file.is-black>.file-action:active,
+.file.is-black>.file-action.is-active {
+  background-color: var(--color-black-dark, #000);
+  border-color: transparent;
+  color: var(--color-black-inverted, #fff);
+}
+.file.is-black>.file-action[disabled],
+.file.is-black>.file-action fieldset[disabled],
+.file.is-black>.file-action.is-disabled {
+  background-color: var(--color-black, #000);
+  border-color: transparent;
+  box-shadow: none;
+}
+.file.is-grey {
+  border-color: var(--color-grey, #949494);
+}
+.file.is-grey>.file-action {
+  background-color: var(--color-grey, #949494);
+  border-color: transparent;
+  color: var(--color-grey-inverted, #6b6b6b);
+}
+.file.is-grey>.file-action:hover,
+.file.is-grey>.file-action.is-hovered {
+  background-color: var(--color-grey-dim, #8d8d8d);
+  border-color: transparent;
+  color: var(--color-grey-inverted, #6b6b6b);
+}
+.file.is-grey>.file-action:focus,
+.file.is-grey>.file-action.is-focused {
+  border-color: transparent;
+  color: var(--color-grey-inverted, #6b6b6b);
+}
+.file.is-grey>.file-action:focus:not(:active),
+.file.is-grey>.file-action.is-focused:not(:active) {
+  box-shadow: $file-focus-box-shadow-size var(--color-grey-translucent, rgba(148,148,148,0.25));
+}
+.file.is-grey>.file-action:active,
+.file.is-grey>.file-action.is-active {
+  background-color: var(--color-grey-dark, #858585);
+  border-color: transparent;
+  color: var(--color-grey-inverted, #6b6b6b);
+}
+.file.is-grey>.file-action[disabled],
+.file.is-grey>.file-action fieldset[disabled],
+.file.is-grey>.file-action.is-disabled {
+  background-color: var(--color-grey, #949494);
+  border-color: transparent;
+  box-shadow: none;
+}
+.file.is-white {
+  border-color: var(--color-white, #fff);
+}
+.file.is-white>.file-action {
+  background-color: var(--color-white, #fff);
+  border-color: transparent;
+  color: var(--color-white-inverted, #000);
+}
+.file.is-white>.file-action:hover,
+.file.is-white>.file-action.is-hovered {
+  background-color: var(--color-white-dim, #f2f2f2);
+  border-color: transparent;
+  color: var(--color-white-inverted, #000);
+}
+.file.is-white>.file-action:focus,
+.file.is-white>.file-action.is-focused {
+  border-color: transparent;
+  color: var(--color-white-inverted, #000);
+}
+.file.is-white>.file-action:focus:not(:active),
+.file.is-white>.file-action.is-focused:not(:active) {
+  box-shadow: $file-focus-box-shadow-size var(--color-white-translucent, rgba(255,255,255,0.25));
+}
+.file.is-white>.file-action:active,
+.file.is-white>.file-action.is-active {
+  background-color: var(--color-white-dark, #e6e6e6);
+  border-color: transparent;
+  color: var(--color-white-inverted, #000);
+}
+.file.is-white>.file-action[disabled],
+.file.is-white>.file-action fieldset[disabled],
+.file.is-white>.file-action.is-disabled {
+  background-color: var(--color-white, #fff);
+  border-color: transparent;
+  box-shadow: none;
+}
+.file.is-red {
+  border-color: var(--color-red, #f27d7d);
+}
+.file.is-red>.file-action {
+  background-color: var(--color-red, #f27d7d);
+  border-color: transparent;
+  color: var(--color-red-inverted, #474747);
+}
+.file.is-red>.file-action:hover,
+.file.is-red>.file-action.is-hovered {
+  background-color: var(--color-red-dim, #f06c6c);
+  border-color: transparent;
+  color: var(--color-red-inverted, #474747);
+}
+.file.is-red>.file-action:focus,
+.file.is-red>.file-action.is-focused {
+  border-color: transparent;
+  color: var(--color-red-inverted, #474747);
+}
+.file.is-red>.file-action:focus:not(:active),
+.file.is-red>.file-action.is-focused:not(:active) {
+  box-shadow: $file-focus-box-shadow-size var(--color-red-translucent, rgba(242,125,125,0.25));
+}
+.file.is-red>.file-action:active,
+.file.is-red>.file-action.is-active {
+  background-color: var(--color-red-dark, #ef5c5c);
+  border-color: transparent;
+  color: var(--color-red-inverted, #474747);
+}
+.file.is-red>.file-action[disabled],
+.file.is-red>.file-action fieldset[disabled],
+.file.is-red>.file-action.is-disabled {
+  background-color: var(--color-red, #f27d7d);
+  border-color: transparent;
+  box-shadow: none;
+}
+.file.is-pink {
+  border-color: var(--color-pink, #f27da8);
+}
+.file.is-pink>.file-action {
+  background-color: var(--color-pink, #f27da8);
+  border-color: transparent;
+  color: var(--color-pink-inverted, #474747);
+}
+.file.is-pink>.file-action:hover,
+.file.is-pink>.file-action.is-hovered {
+  background-color: var(--color-pink-dim, #f06c9d);
+  border-color: transparent;
+  color: var(--color-pink-inverted, #474747);
+}
+.file.is-pink>.file-action:focus,
+.file.is-pink>.file-action.is-focused {
+  border-color: transparent;
+  color: var(--color-pink-inverted, #474747);
+}
+.file.is-pink>.file-action:focus:not(:active),
+.file.is-pink>.file-action.is-focused:not(:active) {
+  box-shadow: $file-focus-box-shadow-size var(--color-pink-translucent, rgba(242,125,168,0.25));
+}
+.file.is-pink>.file-action:active,
+.file.is-pink>.file-action.is-active {
+  background-color: var(--color-pink-dark, #ef5c92);
+  border-color: transparent;
+  color: var(--color-pink-inverted, #474747);
+}
+.file.is-pink>.file-action[disabled],
+.file.is-pink>.file-action fieldset[disabled],
+.file.is-pink>.file-action.is-disabled {
+  background-color: var(--color-pink, #f27da8);
+  border-color: transparent;
+  box-shadow: none;
+}
+.file.is-orange {
+  border-color: var(--color-orange, #f2a07d);
+}
+.file.is-orange>.file-action {
+  background-color: var(--color-orange, #f2a07d);
+  border-color: transparent;
+  color: var(--color-orange-inverted, #474747);
+}
+.file.is-orange>.file-action:hover,
+.file.is-orange>.file-action.is-hovered {
+  background-color: var(--color-orange-dim, #f0946c);
+  border-color: transparent;
+  color: var(--color-orange-inverted, #474747);
+}
+.file.is-orange>.file-action:focus,
+.file.is-orange>.file-action.is-focused {
+  border-color: transparent;
+  color: var(--color-orange-inverted, #474747);
+}
+.file.is-orange>.file-action:focus:not(:active),
+.file.is-orange>.file-action.is-focused:not(:active) {
+  box-shadow: $file-focus-box-shadow-size var(--color-orange-translucent, rgba(242,160,125,0.25));
+}
+.file.is-orange>.file-action:active,
+.file.is-orange>.file-action.is-active {
+  background-color: var(--color-orange-dark, #ef885c);
+  border-color: transparent;
+  color: var(--color-orange-inverted, #474747);
+}
+.file.is-orange>.file-action[disabled],
+.file.is-orange>.file-action fieldset[disabled],
+.file.is-orange>.file-action.is-disabled {
+  background-color: var(--color-orange, #f2a07d);
+  border-color: transparent;
+  box-shadow: none;
+}
+.file.is-yellow {
+  border-color: var(--color-yellow, #f2c97d);
+}
+.file.is-yellow>.file-action {
+  background-color: var(--color-yellow, #f2c97d);
+  border-color: transparent;
+  color: var(--color-yellow-inverted, #474747);
+}
+.file.is-yellow>.file-action:hover,
+.file.is-yellow>.file-action.is-hovered {
+  background-color: var(--color-yellow-dim, #f0c26c);
+  border-color: transparent;
+  color: var(--color-yellow-inverted, #474747);
+}
+.file.is-yellow>.file-action:focus,
+.file.is-yellow>.file-action.is-focused {
+  border-color: transparent;
+  color: var(--color-yellow-inverted, #474747);
+}
+.file.is-yellow>.file-action:focus:not(:active),
+.file.is-yellow>.file-action.is-focused:not(:active) {
+  box-shadow: $file-focus-box-shadow-size var(--color-yellow-translucent, rgba(242,201,125,0.25));
+}
+.file.is-yellow>.file-action:active,
+.file.is-yellow>.file-action.is-active {
+  background-color: var(--color-yellow-dark, #efbb5c);
+  border-color: transparent;
+  color: var(--color-yellow-inverted, #474747);
+}
+.file.is-yellow>.file-action[disabled],
+.file.is-yellow>.file-action fieldset[disabled],
+.file.is-yellow>.file-action.is-disabled {
+  background-color: var(--color-yellow, #f2c97d);
+  border-color: transparent;
+  box-shadow: none;
+}
+.file.is-turquoise {
+  border-color: var(--color-turquoise, #7df2c9);
+}
+.file.is-turquoise>.file-action {
+  background-color: var(--color-turquoise, #7df2c9);
+  border-color: transparent;
+  color: var(--color-turquoise-inverted, #474747);
+}
+.file.is-turquoise>.file-action:hover,
+.file.is-turquoise>.file-action.is-hovered {
+  background-color: var(--color-turquoise-dim, #6cf0c2);
+  border-color: transparent;
+  color: var(--color-turquoise-inverted, #474747);
+}
+.file.is-turquoise>.file-action:focus,
+.file.is-turquoise>.file-action.is-focused {
+  border-color: transparent;
+  color: var(--color-turquoise-inverted, #474747);
+}
+.file.is-turquoise>.file-action:focus:not(:active),
+.file.is-turquoise>.file-action.is-focused:not(:active) {
+  box-shadow: $file-focus-box-shadow-size var(--color-turquoise-translucent, rgba(125,242,201,0.25));
+}
+.file.is-turquoise>.file-action:active,
+.file.is-turquoise>.file-action.is-active {
+  background-color: var(--color-turquoise-dark, #5cefbb);
+  border-color: transparent;
+  color: var(--color-turquoise-inverted, #474747);
+}
+.file.is-turquoise>.file-action[disabled],
+.file.is-turquoise>.file-action fieldset[disabled],
+.file.is-turquoise>.file-action.is-disabled {
+  background-color: var(--color-turquoise, #7df2c9);
+  border-color: transparent;
+  box-shadow: none;
+}
+.file.is-green {
+  border-color: var(--color-green, #a6f27d);
+}
+.file.is-green>.file-action {
+  background-color: var(--color-green, #a6f27d);
+  border-color: transparent;
+  color: var(--color-green-inverted, #474747);
+}
+.file.is-green>.file-action:hover,
+.file.is-green>.file-action.is-hovered {
+  background-color: var(--color-green-dim, #9bf06c);
+  border-color: transparent;
+  color: var(--color-green-inverted, #474747);
+}
+.file.is-green>.file-action:focus,
+.file.is-green>.file-action.is-focused {
+  border-color: transparent;
+  color: var(--color-green-inverted, #474747);
+}
+.file.is-green>.file-action:focus:not(:active),
+.file.is-green>.file-action.is-focused:not(:active) {
+  box-shadow: $file-focus-box-shadow-size var(--color-green-translucent, rgba(166,242,125,0.25));
+}
+.file.is-green>.file-action:active,
+.file.is-green>.file-action.is-active {
+  background-color: var(--color-green-dark, #8fef5c);
+  border-color: transparent;
+  color: var(--color-green-inverted, #474747);
+}
+.file.is-green>.file-action[disabled],
+.file.is-green>.file-action fieldset[disabled],
+.file.is-green>.file-action.is-disabled {
+  background-color: var(--color-green, #a6f27d);
+  border-color: transparent;
+  box-shadow: none;
+}
+.file.is-blue {
+  border-color: var(--color-blue, #7da6f2);
+}
+.file.is-blue>.file-action {
+  background-color: var(--color-blue, #7da6f2);
+  border-color: transparent;
+  color: var(--color-blue-inverted, #474747);
+}
+.file.is-blue>.file-action:hover,
+.file.is-blue>.file-action.is-hovered {
+  background-color: var(--color-blue-dim, #6c9bf0);
+  border-color: transparent;
+  color: var(--color-blue-inverted, #474747);
+}
+.file.is-blue>.file-action:focus,
+.file.is-blue>.file-action.is-focused {
+  border-color: transparent;
+  color: var(--color-blue-inverted, #474747);
+}
+.file.is-blue>.file-action:focus:not(:active),
+.file.is-blue>.file-action.is-focused:not(:active) {
+  box-shadow: $file-focus-box-shadow-size var(--color-blue-translucent, rgba(125,166,242,0.25));
+}
+.file.is-blue>.file-action:active,
+.file.is-blue>.file-action.is-active {
+  background-color: var(--color-blue-dark, #5c8fef);
+  border-color: transparent;
+  color: var(--color-blue-inverted, #474747);
+}
+.file.is-blue>.file-action[disabled],
+.file.is-blue>.file-action fieldset[disabled],
+.file.is-blue>.file-action.is-disabled {
+  background-color: var(--color-blue, #7da6f2);
+  border-color: transparent;
+  box-shadow: none;
+}
+.file.is-violet {
+  border-color: var(--color-violet, #c97df2);
+}
+.file.is-violet>.file-action {
+  background-color: var(--color-violet, #c97df2);
+  border-color: transparent;
+  color: var(--color-violet-inverted, #474747);
+}
+.file.is-violet>.file-action:hover,
+.file.is-violet>.file-action.is-hovered {
+  background-color: var(--color-violet-dim, #c26cf0);
+  border-color: transparent;
+  color: var(--color-violet-inverted, #474747);
+}
+.file.is-violet>.file-action:focus,
+.file.is-violet>.file-action.is-focused {
+  border-color: transparent;
+  color: var(--color-violet-inverted, #474747);
+}
+.file.is-violet>.file-action:focus:not(:active),
+.file.is-violet>.file-action.is-focused:not(:active) {
+  box-shadow: $file-focus-box-shadow-size var(--color-violet-translucent, rgba(201,125,242,0.25));
+}
+.file.is-violet>.file-action:active,
+.file.is-violet>.file-action.is-active {
+  background-color: var(--color-violet-dark, #bb5cef);
+  border-color: transparent;
+  color: var(--color-violet-inverted, #474747);
+}
+.file.is-violet>.file-action[disabled],
+.file.is-violet>.file-action fieldset[disabled],
+.file.is-violet>.file-action.is-disabled {
+  background-color: var(--color-violet, #c97df2);
+  border-color: transparent;
+  box-shadow: none;
+}
+.file.is-primary {
+  border-color: var(--color-primary, #f27da8);
+}
+.file.is-primary>.file-action {
+  background-color: var(--color-primary, #f27da8);
+  border-color: transparent;
+  color: var(--color-primary-inverted, #474747);
+}
+.file.is-primary>.file-action:hover,
+.file.is-primary>.file-action.is-hovered {
+  background-color: var(--color-primary-dim, #f06c9d);
+  border-color: transparent;
+  color: var(--color-primary-inverted, #474747);
+}
+.file.is-primary>.file-action:focus,
+.file.is-primary>.file-action.is-focused {
+  border-color: transparent;
+  color: var(--color-primary-inverted, #474747);
+}
+.file.is-primary>.file-action:focus:not(:active),
+.file.is-primary>.file-action.is-focused:not(:active) {
+  box-shadow: $file-focus-box-shadow-size var(--color-primary-translucent, rgba(242,125,168,0.25));
+}
+.file.is-primary>.file-action:active,
+.file.is-primary>.file-action.is-active {
+  background-color: var(--color-primary-dark, #ef5c92);
+  border-color: transparent;
+  color: var(--color-primary-inverted, #474747);
+}
+.file.is-primary>.file-action[disabled],
+.file.is-primary>.file-action fieldset[disabled],
+.file.is-primary>.file-action.is-disabled {
+  background-color: var(--color-primary, #f27da8);
+  border-color: transparent;
+  box-shadow: none;
+}
+.file.is-success {
+  border-color: var(--color-success, #a6f27d);
+}
+.file.is-success>.file-action {
+  background-color: var(--color-success, #a6f27d);
+  border-color: transparent;
+  color: var(--color-success-inverted, #474747);
+}
+.file.is-success>.file-action:hover,
+.file.is-success>.file-action.is-hovered {
+  background-color: var(--color-success-dim, #9bf06c);
+  border-color: transparent;
+  color: var(--color-success-inverted, #474747);
+}
+.file.is-success>.file-action:focus,
+.file.is-success>.file-action.is-focused {
+  border-color: transparent;
+  color: var(--color-success-inverted, #474747);
+}
+.file.is-success>.file-action:focus:not(:active),
+.file.is-success>.file-action.is-focused:not(:active) {
+  box-shadow: $file-focus-box-shadow-size var(--color-success-translucent, rgba(166,242,125,0.25));
+}
+.file.is-success>.file-action:active,
+.file.is-success>.file-action.is-active {
+  background-color: var(--color-success-dark, #8fef5c);
+  border-color: transparent;
+  color: var(--color-success-inverted, #474747);
+}
+.file.is-success>.file-action[disabled],
+.file.is-success>.file-action fieldset[disabled],
+.file.is-success>.file-action.is-disabled {
+  background-color: var(--color-success, #a6f27d);
+  border-color: transparent;
+  box-shadow: none;
+}
+.file.is-info {
+  border-color: var(--color-info, #7da6f2);
+}
+.file.is-info>.file-action {
+  background-color: var(--color-info, #7da6f2);
+  border-color: transparent;
+  color: var(--color-info-inverted, #474747);
+}
+.file.is-info>.file-action:hover,
+.file.is-info>.file-action.is-hovered {
+  background-color: var(--color-info-dim, #6c9bf0);
+  border-color: transparent;
+  color: var(--color-info-inverted, #474747);
+}
+.file.is-info>.file-action:focus,
+.file.is-info>.file-action.is-focused {
+  border-color: transparent;
+  color: var(--color-info-inverted, #474747);
+}
+.file.is-info>.file-action:focus:not(:active),
+.file.is-info>.file-action.is-focused:not(:active) {
+  box-shadow: $file-focus-box-shadow-size var(--color-info-translucent, rgba(125,166,242,0.25));
+}
+.file.is-info>.file-action:active,
+.file.is-info>.file-action.is-active {
+  background-color: var(--color-info-dark, #5c8fef);
+  border-color: transparent;
+  color: var(--color-info-inverted, #474747);
+}
+.file.is-info>.file-action[disabled],
+.file.is-info>.file-action fieldset[disabled],
+.file.is-info>.file-action.is-disabled {
+  background-color: var(--color-info, #7da6f2);
+  border-color: transparent;
+  box-shadow: none;
+}
+.file.is-warning {
+  border-color: var(--color-warning, #f2c97d);
+}
+.file.is-warning>.file-action {
+  background-color: var(--color-warning, #f2c97d);
+  border-color: transparent;
+  color: var(--color-warning-inverted, #474747);
+}
+.file.is-warning>.file-action:hover,
+.file.is-warning>.file-action.is-hovered {
+  background-color: var(--color-warning-dim, #f0c26c);
+  border-color: transparent;
+  color: var(--color-warning-inverted, #474747);
+}
+.file.is-warning>.file-action:focus,
+.file.is-warning>.file-action.is-focused {
+  border-color: transparent;
+  color: var(--color-warning-inverted, #474747);
+}
+.file.is-warning>.file-action:focus:not(:active),
+.file.is-warning>.file-action.is-focused:not(:active) {
+  box-shadow: $file-focus-box-shadow-size var(--color-warning-translucent, rgba(242,201,125,0.25));
+}
+.file.is-warning>.file-action:active,
+.file.is-warning>.file-action.is-active {
+  background-color: var(--color-warning-dark, #efbb5c);
+  border-color: transparent;
+  color: var(--color-warning-inverted, #474747);
+}
+.file.is-warning>.file-action[disabled],
+.file.is-warning>.file-action fieldset[disabled],
+.file.is-warning>.file-action.is-disabled {
+  background-color: var(--color-warning, #f2c97d);
+  border-color: transparent;
+  box-shadow: none;
+}
+.file.is-danger {
+  border-color: var(--color-danger, #f27d7d);
+}
+.file.is-danger>.file-action {
+  background-color: var(--color-danger, #f27d7d);
+  border-color: transparent;
+  color: var(--color-danger-inverted, #474747);
+}
+.file.is-danger>.file-action:hover,
+.file.is-danger>.file-action.is-hovered {
+  background-color: var(--color-danger-dim, #f06c6c);
+  border-color: transparent;
+  color: var(--color-danger-inverted, #474747);
+}
+.file.is-danger>.file-action:focus,
+.file.is-danger>.file-action.is-focused {
+  border-color: transparent;
+  color: var(--color-danger-inverted, #474747);
+}
+.file.is-danger>.file-action:focus:not(:active),
+.file.is-danger>.file-action.is-focused:not(:active) {
+  box-shadow: $file-focus-box-shadow-size var(--color-danger-translucent, rgba(242,125,125,0.25));
+}
+.file.is-danger>.file-action:active,
+.file.is-danger>.file-action.is-active {
+  background-color: var(--color-danger-dark, #ef5c5c);
+  border-color: transparent;
+  color: var(--color-danger-inverted, #474747);
+}
+.file.is-danger>.file-action[disabled],
+.file.is-danger>.file-action fieldset[disabled],
+.file.is-danger>.file-action.is-disabled {
+  background-color: var(--color-danger, #f27d7d);
+  border-color: transparent;
+  box-shadow: none;
+}
+.file.is-link {
+  border-color: var(--color-link, #7df2c9);
+}
+.file.is-link>.file-action {
+  background-color: var(--color-link, #7df2c9);
+  border-color: transparent;
+  color: var(--color-link-inverted, #474747);
+}
+.file.is-link>.file-action:hover,
+.file.is-link>.file-action.is-hovered {
+  background-color: var(--color-link-dim, #6cf0c2);
+  border-color: transparent;
+  color: var(--color-link-inverted, #474747);
+}
+.file.is-link>.file-action:focus,
+.file.is-link>.file-action.is-focused {
+  border-color: transparent;
+  color: var(--color-link-inverted, #474747);
+}
+.file.is-link>.file-action:focus:not(:active),
+.file.is-link>.file-action.is-focused:not(:active) {
+  box-shadow: $file-focus-box-shadow-size var(--color-link-translucent, rgba(125,242,201,0.25));
+}
+.file.is-link>.file-action:active,
+.file.is-link>.file-action.is-active {
+  background-color: var(--color-link-dark, #5cefbb);
+  border-color: transparent;
+  color: var(--color-link-inverted, #474747);
+}
+.file.is-link>.file-action[disabled],
+.file.is-link>.file-action fieldset[disabled],
+.file.is-link>.file-action.is-disabled {
+  background-color: var(--color-link, #7df2c9);
+  border-color: transparent;
+  box-shadow: none;
+}
+.file.is-visited {
+  border-color: var(--color-visited, #c97df2);
+}
+.file.is-visited>.file-action {
+  background-color: var(--color-visited, #c97df2);
+  border-color: transparent;
+  color: var(--color-visited-inverted, #474747);
+}
+.file.is-visited>.file-action:hover,
+.file.is-visited>.file-action.is-hovered {
+  background-color: var(--color-visited-dim, #c26cf0);
+  border-color: transparent;
+  color: var(--color-visited-inverted, #474747);
+}
+.file.is-visited>.file-action:focus,
+.file.is-visited>.file-action.is-focused {
+  border-color: transparent;
+  color: var(--color-visited-inverted, #474747);
+}
+.file.is-visited>.file-action:focus:not(:active),
+.file.is-visited>.file-action.is-focused:not(:active) {
+  box-shadow: $file-focus-box-shadow-size var(--color-visited-translucent, rgba(201,125,242,0.25));
+}
+.file.is-visited>.file-action:active,
+.file.is-visited>.file-action.is-active {
+  background-color: var(--color-visited-dark, #bb5cef);
+  border-color: transparent;
+  color: var(--color-visited-inverted, #474747);
+}
+.file.is-visited>.file-action[disabled],
+.file.is-visited>.file-action fieldset[disabled],
+.file.is-visited>.file-action.is-disabled {
+  background-color: var(--color-visited, #c97df2);
+  border-color: transparent;
+  box-shadow: none;
+}
+.file.is-disabled {
+  border-color: var(--color-disabled, #d9d9d9);
+}
+.file.is-disabled>.file-action {
+  background-color: var(--color-disabled, #d9d9d9);
+  border-color: transparent;
+  color: var(--color-disabled-inverted, #262626);
+}
+.file.is-disabled>.file-action:hover,
+.file.is-disabled>.file-action.is-hovered {
+  background-color: var(--color-disabled-dim, #cecece);
+  border-color: transparent;
+  color: var(--color-disabled-inverted, #262626);
+}
+.file.is-disabled>.file-action:focus,
+.file.is-disabled>.file-action.is-focused {
+  border-color: transparent;
+  color: var(--color-disabled-inverted, #262626);
+}
+.file.is-disabled>.file-action:focus:not(:active),
+.file.is-disabled>.file-action.is-focused:not(:active) {
+  box-shadow: $file-focus-box-shadow-size var(--color-disabled-translucent, rgba(217,217,217,0.25));
+}
+.file.is-disabled>.file-action:active,
+.file.is-disabled>.file-action.is-active {
+  background-color: var(--color-disabled-dark, #c3c3c3);
+  border-color: transparent;
+  color: var(--color-disabled-inverted, #262626);
+}
+.file.is-disabled>.file-action[disabled],
+.file.is-disabled>.file-action fieldset[disabled],
+.file.is-disabled>.file-action.is-disabled {
+  background-color: var(--color-disabled, #d9d9d9);
+  border-color: transparent;
+  box-shadow: none;
+}
 .radio>.radio-input {
   display: none;
 }
@@ -4345,6 +5206,7 @@ fieldset[disabled] .textarea {
   display: inline-block;
   font-size: 1em;
   font-weight: 400;
+  padding: 0 0.25em;
 }
 .radio>.radio-input:checked~.radio-button:after {
   background-color: #333;
@@ -4487,6 +5349,13 @@ fieldset[disabled] .textarea {
 .radio.is-visited>.radio-input:checked~.radio-button:after {
   background-color: var(--color-visited, #c97df2);
 }
+.radio.is-disabled>.radio-input~.radio-button {
+  background-color: #fff;
+  border-color: var(--color-disabled, #d9d9d9);
+}
+.radio.is-disabled>.radio-input:checked~.radio-button:after {
+  background-color: var(--color-disabled, #d9d9d9);
+}
 .checkbox>.checkbox-input {
   display: none;
 }
@@ -4522,6 +5391,7 @@ fieldset[disabled] .textarea {
   display: inline-block;
   font-size: 1em;
   font-weight: 400;
+  padding: 0 0.25em;
 }
 .checkbox>.checkbox-input:checked~.checkbox-box:before,
 .checkbox>.checkbox-input:checked~.checkbox-box:after {
@@ -4647,6 +5517,12 @@ fieldset[disabled] .textarea {
 .checkbox.is-visited>.checkbox-input:checked+.checkbox-box:before {
   border-color: var(--color-visited, #c97df2);
 }
+.checkbox.is-disabled>.checkbox-input+.checkbox-box {
+  border-color: var(--color-disabled, #d9d9d9);
+}
+.checkbox.is-disabled>.checkbox-input:checked+.checkbox-box:before {
+  border-color: var(--color-disabled, #d9d9d9);
+}
 .select[disabled],
 .select fieldset[disabled] {
   background-color: #fff;
@@ -4658,8 +5534,10 @@ fieldset[disabled] .textarea {
   border: 0.05rem solid #b3b3b3;
   border-radius: 0.25rem;
   color: #000;
-  margin: 0.25rem 0;
-  padding: 0.25rem;
+  height: 1.75em;
+  margin: 0.25em 0;
+  padding: 0.25em;
+  width: 100%;
 }
 .textarea {
   background-color: #fff;
@@ -4673,9 +5551,13 @@ fieldset[disabled] .textarea {
   min-height: 2.25rem;
   padding: 0.25rem;
   resize: vertical;
+  width: 100%;
 }
-.file>.file-input {
-  display: none;
+.label {
+  color: #333;
+  display: block;
+  font-size: 1em;
+  font-weight: 700;
 }
 .header {
   background-color: #fff7f5;
@@ -4828,6 +5710,14 @@ fieldset[disabled] .textarea {
 .header.is-visited>* {
   background-color: var(--color-visited, #c97df2);
   color: var(--color-visited-inverted, #474747);
+}
+.header.is-disabled {
+  background-color: var(--color-disabled, #d9d9d9);
+  color: var(--color-disabled-inverted, #262626);
+}
+.header.is-disabled>* {
+  background-color: var(--color-disabled, #d9d9d9);
+  color: var(--color-disabled-inverted, #262626);
 }
 .navbar {
   display: block;
@@ -5504,6 +6394,35 @@ fieldset[disabled] .textarea {
   border-color: transparent;
   box-shadow: none;
 }
+.navbar>.menu>.item.is-disabled {
+  background-color: var(--color-disabled, #d9d9d9);
+  border-color: transparent;
+  color: var(--color-disabled-inverted, #262626);
+}
+.navbar>.menu>.item.is-disabled:hover,
+.navbar>.menu>.item.is-disabled.is-hovered {
+  background-color: var(--color-disabled-dim, #cecece);
+  border-color: transparent;
+  color: var(--color-disabled-inverted, #262626);
+}
+.navbar>.menu>.item.is-disabled:focus,
+.navbar>.menu>.item.is-disabled.is-focused {
+  border-color: transparent;
+  color: var(--color-disabled-inverted, #262626);
+}
+.navbar>.menu>.item.is-disabled:active,
+.navbar>.menu>.item.is-disabled.is-active {
+  background-color: var(--color-disabled-dark, #c3c3c3);
+  border-color: transparent;
+  color: var(--color-disabled-inverted, #262626);
+}
+.navbar>.menu>.item.is-disabled[disabled],
+.navbar>.menu>.item.is-disabled fieldset[disabled],
+.navbar>.menu>.item.is-disabled.is-disabled {
+  background-color: var(--color-disabled, #d9d9d9);
+  border-color: transparent;
+  box-shadow: none;
+}
 .hamburger {
   background-color: #d9d9d9;
   border-radius: 4px;
@@ -5850,6 +6769,14 @@ fieldset[disabled] .textarea {
   background-color: var(--color-visited, #c97df2);
   color: var(--color-visited-inverted, #474747);
 }
+.footer.is-disabled {
+  background-color: var(--color-disabled, #d9d9d9);
+  color: var(--color-disabled-inverted, #262626);
+}
+.footer.is-disabled>* {
+  background-color: var(--color-disabled, #d9d9d9);
+  color: var(--color-disabled-inverted, #262626);
+}
 .modal {
   align-items: center;
   background-color: rgba(0,0,0,0.7);
@@ -5866,6 +6793,235 @@ fieldset[disabled] .textarea {
 }
 .modal.is-active {
   display: flex;
+}
+.modal>.modal-content {
+  margin: auto;
+  z-index: 1000;
+}
+.badge {
+  align-items: center;
+  border: 1px solid #d9d9d9;
+  background-color: #fff7f5;
+  border-radius: 0.25rem;
+  color: #0a0200;
+  display: inline-flex;
+  font-size: 0.75em;
+  justify-content: center;
+  padding: 0.1rem 0.5rem;
+  white-space: nowrap;
+}
+.badge.is-black {
+  background-color: var(--color-black, #000);
+  border-color: transparent;
+  color: var(--color-black-inverted, #fff);
+}
+.badge.is-grey {
+  background-color: var(--color-grey, #949494);
+  border-color: transparent;
+  color: var(--color-grey-inverted, #6b6b6b);
+}
+.badge.is-white {
+  background-color: var(--color-white, #fff);
+  border-color: transparent;
+  color: var(--color-white-inverted, #000);
+}
+.badge.is-red {
+  background-color: var(--color-red, #f27d7d);
+  border-color: transparent;
+  color: var(--color-red-inverted, #474747);
+}
+.badge.is-pink {
+  background-color: var(--color-pink, #f27da8);
+  border-color: transparent;
+  color: var(--color-pink-inverted, #474747);
+}
+.badge.is-orange {
+  background-color: var(--color-orange, #f2a07d);
+  border-color: transparent;
+  color: var(--color-orange-inverted, #474747);
+}
+.badge.is-yellow {
+  background-color: var(--color-yellow, #f2c97d);
+  border-color: transparent;
+  color: var(--color-yellow-inverted, #474747);
+}
+.badge.is-turquoise {
+  background-color: var(--color-turquoise, #7df2c9);
+  border-color: transparent;
+  color: var(--color-turquoise-inverted, #474747);
+}
+.badge.is-green {
+  background-color: var(--color-green, #a6f27d);
+  border-color: transparent;
+  color: var(--color-green-inverted, #474747);
+}
+.badge.is-blue {
+  background-color: var(--color-blue, #7da6f2);
+  border-color: transparent;
+  color: var(--color-blue-inverted, #474747);
+}
+.badge.is-violet {
+  background-color: var(--color-violet, #c97df2);
+  border-color: transparent;
+  color: var(--color-violet-inverted, #474747);
+}
+.badge.is-primary {
+  background-color: var(--color-primary, #f27da8);
+  border-color: transparent;
+  color: var(--color-primary-inverted, #474747);
+}
+.badge.is-success {
+  background-color: var(--color-success, #a6f27d);
+  border-color: transparent;
+  color: var(--color-success-inverted, #474747);
+}
+.badge.is-info {
+  background-color: var(--color-info, #7da6f2);
+  border-color: transparent;
+  color: var(--color-info-inverted, #474747);
+}
+.badge.is-warning {
+  background-color: var(--color-warning, #f2c97d);
+  border-color: transparent;
+  color: var(--color-warning-inverted, #474747);
+}
+.badge.is-danger {
+  background-color: var(--color-danger, #f27d7d);
+  border-color: transparent;
+  color: var(--color-danger-inverted, #474747);
+}
+.badge.is-link {
+  background-color: var(--color-link, #7df2c9);
+  border-color: transparent;
+  color: var(--color-link-inverted, #474747);
+}
+.badge.is-visited {
+  background-color: var(--color-visited, #c97df2);
+  border-color: transparent;
+  color: var(--color-visited-inverted, #474747);
+}
+.badge.is-disabled {
+  background-color: var(--color-disabled, #d9d9d9);
+  border-color: transparent;
+  color: var(--color-disabled-inverted, #262626);
+}
+.card {
+  background-color: #fff7f5;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 0.5rem 0.25rem #d9d9d9;
+  color: #0a0200;
+  display: block;
+  margin: 1em;
+  padding: 1em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.card>.card-header,
+.card>.card-body,
+.card>.card-footer {
+  margin: auto;
+}
+.card>.card-header>.card-title,
+.card>.card-body>.card-title,
+.card>.card-footer>.card-title {
+  font-size: 1.25em;
+  font-weight: 600;
+}
+.card.is-black {
+  background-color: var(--color-black, #000);
+  border-color: transparent;
+  color: var(--color-black-inverted, #fff);
+}
+.card.is-grey {
+  background-color: var(--color-grey, #949494);
+  border-color: transparent;
+  color: var(--color-grey-inverted, #6b6b6b);
+}
+.card.is-white {
+  background-color: var(--color-white, #fff);
+  border-color: transparent;
+  color: var(--color-white-inverted, #000);
+}
+.card.is-red {
+  background-color: var(--color-red, #f27d7d);
+  border-color: transparent;
+  color: var(--color-red-inverted, #474747);
+}
+.card.is-pink {
+  background-color: var(--color-pink, #f27da8);
+  border-color: transparent;
+  color: var(--color-pink-inverted, #474747);
+}
+.card.is-orange {
+  background-color: var(--color-orange, #f2a07d);
+  border-color: transparent;
+  color: var(--color-orange-inverted, #474747);
+}
+.card.is-yellow {
+  background-color: var(--color-yellow, #f2c97d);
+  border-color: transparent;
+  color: var(--color-yellow-inverted, #474747);
+}
+.card.is-turquoise {
+  background-color: var(--color-turquoise, #7df2c9);
+  border-color: transparent;
+  color: var(--color-turquoise-inverted, #474747);
+}
+.card.is-green {
+  background-color: var(--color-green, #a6f27d);
+  border-color: transparent;
+  color: var(--color-green-inverted, #474747);
+}
+.card.is-blue {
+  background-color: var(--color-blue, #7da6f2);
+  border-color: transparent;
+  color: var(--color-blue-inverted, #474747);
+}
+.card.is-violet {
+  background-color: var(--color-violet, #c97df2);
+  border-color: transparent;
+  color: var(--color-violet-inverted, #474747);
+}
+.card.is-primary {
+  background-color: var(--color-primary, #f27da8);
+  border-color: transparent;
+  color: var(--color-primary-inverted, #474747);
+}
+.card.is-success {
+  background-color: var(--color-success, #a6f27d);
+  border-color: transparent;
+  color: var(--color-success-inverted, #474747);
+}
+.card.is-info {
+  background-color: var(--color-info, #7da6f2);
+  border-color: transparent;
+  color: var(--color-info-inverted, #474747);
+}
+.card.is-warning {
+  background-color: var(--color-warning, #f2c97d);
+  border-color: transparent;
+  color: var(--color-warning-inverted, #474747);
+}
+.card.is-danger {
+  background-color: var(--color-danger, #f27d7d);
+  border-color: transparent;
+  color: var(--color-danger-inverted, #474747);
+}
+.card.is-link {
+  background-color: var(--color-link, #7df2c9);
+  border-color: transparent;
+  color: var(--color-link-inverted, #474747);
+}
+.card.is-visited {
+  background-color: var(--color-visited, #c97df2);
+  border-color: transparent;
+  color: var(--color-visited-inverted, #474747);
+}
+.card.is-disabled {
+  background-color: var(--color-disabled, #d9d9d9);
+  border-color: transparent;
+  color: var(--color-disabled-inverted, #262626);
 }
 .souffle,
 .root {
@@ -6024,6 +7180,10 @@ fieldset[disabled] .textarea {
   border-left: 1px solid var(--color-visited, #c97df2);
   color: var(--color-visited, #c97df2);
 }
+.blockquote.is-disabled {
+  border-left: 1px solid var(--color-disabled, #d9d9d9);
+  color: var(--color-disabled, #d9d9d9);
+}
 .tategaki {
   align-items: center;
   display: block;
@@ -6043,8 +7203,12 @@ fieldset[disabled] .textarea {
   letter-spacing: 0.1em;
   margin: 0 0 0 auto;
 }
-.tategaki>p.with-alphanumeric,
-.tategaki>.paragraph.with-alphanumeric {
+.tategaki>p.has-indent,
+.tategaki>.paragraph.has-indent {
+  text-indent: 1em;
+}
+.tategaki>p .with-alphanumeric,
+.tategaki>.paragraph .with-alphanumeric {
   -webkit-text-orientation: upright;
           text-orientation: upright;
   text-transform: full-width;
@@ -6058,8 +7222,17 @@ fieldset[disabled] .textarea {
   transform: rotate(90deg);
   transform-origin: center;
   width: 1.5em;
-  -ms-writing-mode: initial;
-      writing-mode: initial;
+  -ms-writing-mode: inherit;
+      writing-mode: inherit;
+}
+.centering {
+  display: flex;
+  height: auto;
+  justify-content: flex-start;
+  width: 100%;
+}
+.centering>* {
+  margin: 0 auto;
 }
 .layer-folder {
   display: flex;
