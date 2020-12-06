@@ -1,6 +1,6 @@
 {
   "name": "souffle.css",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "'tategaki' friendly CSS framework.",
   "main": "src/stylus/souffle.styl",
   "unpkg": "dist/css/souffle.css",
@@ -49,5 +49,8 @@
     "stylint": "^2.0.0",
     "stylus": "^0.54.5",
     "stylus-supremacy": "^2.12.7"
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/@kaminoctem"
   }
 }
