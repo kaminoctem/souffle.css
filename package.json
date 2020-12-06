@@ -1,6 +1,6 @@
 {
   "name": "souffle.css",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "'tategaki' friendly CSS framework.",
   "main": "src/stylus/souffle.styl",
   "unpkg": "dist/css/souffle.css",
@@ -31,7 +31,7 @@
   "bugs": {
     "url": "https://github.com/kaminoctem/souffle.css/issues"
   },
-  "homepage": "https://github.com/kaminoctem/souffle.css#readme",
+  "homepage": "https://kaminoctem.github.io/souffle.css/",
   "files": [
     "dist",
     "src",

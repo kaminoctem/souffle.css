@@ -1,0 +1,17 @@
+.badge
+  align-items: center
+  border: $badge-border-width solid $badge-bordercolor
+  background-color: $badge-backcolor
+  border-radius: 0.25rem
+  color: $badge-forecolor
+  display: inline-flex
+  font-size: $font-size-small
+  justify-content: center
+  padding: 0.1rem 0.5rem
+  white-space: nowrap
+  if (!$is-skeleton)
+    for colorKey, colorValue in $colors
+      &.is-{colorKey}
+        background-color: colorValue.base
+        border-color: transparent
+        color: colorValue.inverted

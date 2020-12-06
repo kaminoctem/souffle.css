@@ -4,6 +4,7 @@
  */
 
 .radio
+  @extend.control
   &>.radio-input
     display: none
   &>.radio-button
@@ -31,6 +32,7 @@
     display: inline-block
     font-size: $font-size-normal
     font-weight: $radio-text-font-weight
+    padding: $radio-text-padding-vertical $radio-text-padding-horizontal
   &>.radio-input:checked~.radio-button:after
     background-color: $radio-button-checked-backcolor
 

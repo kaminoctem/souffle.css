@@ -18,14 +18,16 @@
     line-height: 3em
     letter-spacing: 0.1em
     margin: 0 0 0 auto
-    &.with-alphanumeric
+    &.has-indent
+      text-indent: 1em
+    .with-alphanumeric
       text-orientation: upright
       text-transform: full-width
-    & .text
+    .text
       height: 1.5em
       margin: 0 0.25rem
       text-orientation: mixed
       transform: rotate(90deg)
       transform-origin: center
       width: 1.5em
-      writing-mode: initial
+      writing-mode: inherit

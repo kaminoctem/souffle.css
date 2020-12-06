@@ -4,5 +4,84 @@
  */
 
 .file
-  &>.file-input
-    display: none
+  @extend.control
+  border-color: $file-bordercolor
+  width: 100%
+  &>.file-action
+    @extend.control
+    background-color: $file-backcolor
+    border-color: $file-bordercolor
+    color: $file-forecolor
+    cursor: pointer
+    margin: $file-action-margin-vertical $file-action-margin-horizontal
+    padding: $file-action-padding-vertical $file-action-padding-horizontal
+
+    &:last-child
+      margin: $file-action-margin-vertical $file-action-margin-horizontal $file-action-margin-vertical auto
+
+    &:hover,
+    &.is-hovered
+      border-color: $file-action-hover-bordercolor
+      color: $file-action-hover-forecolor
+
+    &:focus,
+    &.is-focused
+      border-color: $file-action-focus-bordercolor
+      color: $file-action-focus-forecolor
+      &:not(:active)
+        box-shadow: $file-action-focus-box-shadow-size $file-action-focus-box-shadow-color
+
+    &:active,
+    &.is-active
+      border-color: $file-action-active-bordercolor
+      color: $file-action-active-forecolor
+
+    &[disabled],
+    fieldset[disabled]
+      background-color: $file-action-disabled-backcolor
+      border-color: $file-action-disabled-bordercolor
+      box-shadow: $file-action-disabled-box-shadow
+      opacity: $file-action-disabled-opacity
+    &>.file-input
+      display: none
+
+  &>.file-filename
+    display: inline-block
+    font-size: $font-size-normal
+    font-weight: $file-filename-font-weight
+    padding: 0 0.5em
+
+  if (!$is-skeleton)
+    for colorKey, colorValue in $colors
+      &.is-{colorKey}
+        border-color: colorValue.base
+        &>.file-action
+          background-color: colorValue.base
+          border-color: transparent
+          color: colorValue.inverted
+
+          &:hover,
+          &.is-hovered
+            background-color: colorValue.dim
+            border-color: transparent
+            color: colorValue.inverted
+
+          &:focus,
+          &.is-focused
+            border-color: transparent
+            color: colorValue.inverted
+            &:not(:active)
+              box-shadow: $file-focus-box-shadow-size colorValue.translucent
+
+          &:active,
+          &.is-active
+            background-color: colorValue.dark
+            border-color: transparent
+            color: colorValue.inverted
+
+          &[disabled],
+          fieldset[disabled],
+          &.is-disabled
+            background-color: colorValue.base
+            border-color: transparent
+            box-shadow: none

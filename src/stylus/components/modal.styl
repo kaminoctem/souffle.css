@@ -17,7 +17,9 @@
   position: fixed
   top: 0
   width: 100vw
-  z-index: 999
+  z-index: $modal-z-index
   &.is-active
     display: flex
-
+  &>.modal-content
+    margin: auto
+    z-index: ($modal-z-index + 1)

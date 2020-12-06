@@ -39,6 +39,7 @@ $color-warning ?= $color-yellow
 $color-danger ?= $color-red
 $color-link ?= $color-turquoise
 $color-visited ?= $color-violet
+$color-disabled ?= $color-grey-lighter
 
 /* light */
 $color-light-mainfore ?= $color-mainfore
@@ -64,6 +65,7 @@ $color-light-warning ?= $color-yellow
 $color-light-danger ?= $color-red
 $color-light-link ?= $color-turquoise
 $color-light-visited ?= $color-violet
+$color-dark-disabled ?= $color-grey-lighter
 
 /* dark */
 $color-dark-red ?= hsl(0, 82%, 44%)
@@ -88,6 +90,7 @@ $color-dark-warning ?= $color-dark-yellow
 $color-dark-danger ?= $color-dark-red
 $color-dark-link ?= $color-dark-turquoise
 $color-dark-visited ?= $color-dark-violet
+$color-dark-disabled ?= $color-grey-darker
 
 $colors = {
   black: {
@@ -251,6 +254,15 @@ $colors = {
     dark: var(--color-visited-dark, darken($color-visited, 10%)),
     pale: var(--color-visited-pale, lighten($color-visited, 5%)),
     light: var(--color-visited-light, lighten($color-visited, 10%)),
+  },
+  disabled: {
+    base: var(--color-disabled, $color-disabled),
+    translucent: var(--color-disabled-translucent, alpha($color-disabled, 0.25)),
+    inverted: var(--color-disabled-inverted, invert($color-disabled)),
+    dim: var(--color-disabled-dim, darken($color-disabled, 5%)),
+    dark: var(--color-disabled-dark, darken($color-disabled, 10%)),
+    pale: var(--color-disabled-pale, lighten($color-disabled, 5%)),
+    light: var(--color-disabled-light, lighten($color-disabled, 10%)),
   }
 }
 
@@ -273,6 +285,7 @@ color_light()
   --color-danger: $color-light-danger
   --color-link: $color-light-link
   --color-visited: $color-light-visited
+  --color-disabled: $color-light-disabled
 
 color_dark()
   --color-mainfore: $color-dark-mainfore
@@ -292,6 +305,7 @@ color_dark()
   --color-danger: $color-dark-danger
   --color-link: $color-dark-link
   --color-visited: $color-dark-visited
+  --color-disabled: $color-dark-disabled
 
 /* style */
 html
@@ -315,6 +329,7 @@ html
   --color-danger: $color-danger
   --color-link: $color-link
   --color-visited: $color-visited
+  --color-disabled: $color-disabled
 
 if ($enable-prefers-color-scheme)
   @media(prefers-color-scheme: light)

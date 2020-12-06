@@ -1,0 +1,50 @@
+.table
+  background-color: var(--color-mainback, $color-mainback)
+  border: solid 1px invert(var(--color-mainback, $color-mainback))
+  border-collapse: collapse
+  width: 100%
+  margin: 0.5rem
+  &.is-bordered
+    &>tbody
+      &>tr
+        border: solid 1px invert(var(--color-mainback, $color-mainback))
+        &>td,
+        >th
+          border: solid 1px invert(var(--color-mainback, $color-mainback))
+  &.is-striped
+    &>tbody
+      &>tr:nth-child(even)
+        background-color: var(--color-mainback, darken($color-mainback, 10%))
+  &>tbody
+    &>tr
+      &.is-selected
+        background-color: var(--color-primary-light, lighten($color-primary, 10%))
+        color: var(--color-white, $color-white)
+      &>td,
+      &>th
+        vertical-align: top
+        &.is-narrow
+          white-space: nowrap
+          width: 1%
+        &.is-selected
+          background-color: var(--color-primary-light, lighten($color-primary, 10%))
+
+  if (!$is-skeleton)
+    for colorKey, colorValue in $colors
+      &.is-{colorKey}
+        background-color: var(--color-mainback, $color-mainback)
+        border-color: colorValue.base
+        &>thead
+          &>tr
+            background-color: colorValue.base
+            color: colorValue.inverted
+        &.is-striped
+          &>tbody
+            &>tr
+              border-color: colorValue.light
+              &>td,
+              >th
+                border-color: colorValue.light
+            &>tr:nth-child(even)
+              background-color: $color-white-ter
+

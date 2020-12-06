@@ -4,6 +4,7 @@
  */
 
 .checkbox
+  @extend.control
   &>.checkbox-input
     display: none
   &>.checkbox-box
@@ -36,6 +37,7 @@
     display: inline-block
     font-size: $font-size-normal
     font-weight: $checkbox-text-font-weight
+    padding: $checkbox-text-padding-vertical $radio-text-padding-horizontal
   &>.checkbox-input:checked~.checkbox-box:before,
   &>.checkbox-input:checked~.checkbox-box:after
     border-color: $checkbox-box-checked-backcolor
@@ -56,6 +58,3 @@
           border-color: colorValue.base
         &>.checkbox-input:checked+.checkbox-box:before
           border-color: colorValue.base
-
-
-
