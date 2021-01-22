@@ -42,7 +42,7 @@ html {
   --color-danger: #f27d7d;
   --color-link: #7df2c9;
   --color-visited: #c97df2;
-  --color-disabled: $color-light-disabled;
+  --color-disabled: #d9d9d9;
 }
 .souffle.is-dark,
 .root.is-dark {
@@ -63,7 +63,7 @@ html {
   --color-danger: #cc1414;
   --color-link: #14cc8c;
   --color-visited: #8c14cc;
-  --color-disabled: #d9d9d9;
+  --color-disabled: #333;
 }
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 html {
@@ -349,6 +349,11 @@ video {
   -o-object-position: 50% 50%;
      object-position: 50% 50%;
 }
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
 .forecolor-black {
   color: var(--color-black, #000) !important;
 }
@@ -477,6 +482,15 @@ video {
 }
 .is-uppercase {
   text-transform: uppercase !important;
+}
+.is-text-align-left {
+  text-align: left;
+}
+.is-text-align-right {
+  text-align: right;
+}
+.is-white-space-nowrap {
+  white-space: nowrap;
 }
 .padding-01 {
   padding: 0.1em !important;
@@ -3258,6 +3272,9 @@ video {
       -ms-user-select: none;
           user-select: none;
 }
+.is-invisible {
+  display: none;
+}
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .for-mobile-only {
     display: none;
@@ -3422,12 +3439,12 @@ video {
 .button,
 .file,
 .file>.file-action,
+.label,
 .radio,
 .checkbox,
 .select>.option,
 .text,
-.textarea,
-.label {
+.textarea {
   -moz-appearance: none;
   -webkit-appearance: none;
   align-items: center;
@@ -3448,71 +3465,80 @@ video {
 .button:focus,
 .file:focus,
 .file>.file-action:focus,
+.label:focus,
 .radio:focus,
 .checkbox:focus,
 .select>.option:focus,
 .text:focus,
 .textarea:focus,
-.label:focus,
 .control.is-focused,
 .button.is-focused,
 .file.is-focused,
 .file>.file-action.is-focused,
+.label.is-focused,
 .radio.is-focused,
 .checkbox.is-focused,
 .select>.option.is-focused,
 .text.is-focused,
 .textarea.is-focused,
-.label.is-focused,
 .control:active,
 .button:active,
 .file:active,
 .file>.file-action:active,
+.label:active,
 .radio:active,
 .checkbox:active,
 .select>.option:active,
 .text:active,
 .textarea:active,
-.label:active,
 .control.is-active,
 .button.is-active,
 .file.is-active,
 .file>.file-action.is-active,
+.label.is-active,
 .radio.is-active,
 .checkbox.is-active,
 .select>.option.is-active,
 .text.is-active,
-.textarea.is-active,
-.label.is-active {
+.textarea.is-active {
   outline: none;
 }
 .control[disabled],
 .button[disabled],
 .file[disabled],
 .file>.file-action[disabled],
+.label[disabled],
 .radio[disabled],
 .checkbox[disabled],
 .select>.option[disabled],
 .text[disabled],
 .textarea[disabled],
-.label[disabled],
 .control fieldset[disabled],
 .button fieldset[disabled],
 .file fieldset[disabled],
 .file>.file-action fieldset[disabled],
+.label fieldset[disabled],
 .radio fieldset[disabled],
 .checkbox fieldset[disabled],
 .select>.option fieldset[disabled],
 .text fieldset[disabled],
-.textarea fieldset[disabled],
-.label fieldset[disabled] {
+.textarea fieldset[disabled] {
   cursor: not-allowed;
 }
 .button {
   background-color: #fff;
   border-color: #d9d9d9;
+  box-sizing: border-box;
   color: #333;
   cursor: pointer;
+  display: inline-block;
+  height: auto;
+  min-height: 2.5em;
+  min-width: 7.5em;
+  text-align: center;
+  text-transform: none;
+  vertical-align: top;
+  word-spacing: 0px;
 }
 .button:hover,
 .button.is-hovered {
@@ -3534,7 +3560,8 @@ video {
   color: #333;
 }
 .button[disabled],
-.button fieldset[disabled] {
+.button fieldset[disabled],
+.button.is-disabled {
   background-color: #fff;
   border-color: #d9d9d9;
   box-shadow: none;
@@ -3672,7 +3699,8 @@ video {
   color: #333;
 }
 .file>.file-action[disabled],
-.file>.file-action fieldset[disabled] {
+.file>.file-action fieldset[disabled],
+.file>.file-action.is-disabled {
   background-color: #fff;
   border-color: #d9d9d9;
   box-shadow: none;
@@ -3686,6 +3714,73 @@ video {
   font-size: 1em;
   font-weight: 400;
   padding: 0 0.5em;
+}
+.icon {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  height: 1.5em;
+  width: 1.5em;
+}
+.icon.is-small {
+  height: 1em;
+  width: 1em;
+}
+.icon.is-medium {
+  height: 2em;
+  width: 2em;
+}
+.icon.is-large {
+  height: 3em;
+  width: 3em;
+}
+.image {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
+}
+.image.is-ratio-square,
+.image.is-ratio-1by1,
+.image padding-top: 100%,
+.image.is-2by1 {
+  padding-top: 50%;
+}
+.image.is-ratio-3by2 {
+  padding-top: 66.66666666666666%;
+}
+.image.is-ratio-4by3 {
+  padding-top: 75%;
+}
+.image.is-ratio-16by9 {
+  padding-top: 56.25%;
+}
+.image.is-ratio-9by16 {
+  padding-top: 177.77777777777777%;
+}
+.image>.has-ratio {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+.label {
+  color: #333;
+  display: block;
+  font-size: 1em;
+  font-weight: 700;
+}
+.link:hover,
+.link.is-hovered {
+  text-decoration: underline;
+}
+.link:visited,
+.link.is-visited {
+  color: var(--color-visited, #c97df2);
 }
 .radio>.radio-input {
   display: none;
@@ -3724,7 +3819,7 @@ video {
 }
 .radio>.radio-input[disabled]~.radio-button,
 .radio fieldset[disabled]>.radio-button {
-  background-color: $radio-disabled-button-backcolor;
+  background-color: #fff;
 }
 .radio>.radio-input[disabled]~.radio-text,
 .radio fieldset[disabled]>.radio-text {
@@ -3733,6 +3828,9 @@ video {
 .radio>.radio-input[disabled]:checked~.radio-button:after,
 .radio fieldset[disabled]>.radio-input[disabled]:checked~.radio-button:after {
   background-color: #b3b3b3;
+}
+.checkbox {
+  height: auto;
 }
 .checkbox>.checkbox-input {
   display: none;
@@ -3788,7 +3886,8 @@ video {
   border-color: #d9d9d9;
 }
 .select[disabled],
-.select fieldset[disabled] {
+.select fieldset[disabled],
+.select.is-disabled {
   background-color: #fff;
   border-color: #333;
   opacity: 0.5;
@@ -3802,6 +3901,17 @@ video {
   margin: 0.25em 0;
   padding: 0.25em;
   width: 100%;
+}
+.text.is-number {
+  text-align: right;
+}
+.text[disabled],
+.text fieldset[disabled],
+.text.is-disabled {
+  background-color: #fff;
+  border-color: #d9d9d9;
+  box-shadow: none;
+  opacity: 0.5;
 }
 .textarea {
   background-color: #fff;
@@ -3817,11 +3927,84 @@ video {
   resize: vertical;
   width: 100%;
 }
-.label {
-  color: #333;
+.textarea[disabled],
+.textarea fieldset[disabled],
+.textarea.is-disabled {
+  background-color: #fff;
+  border-color: #d9d9d9;
+  box-shadow: none;
+  opacity: 0.5;
+}
+.video {
   display: block;
-  font-size: 1em;
-  font-weight: 700;
+  height: auto;
+  max-width: 100%;
+  min-width: 320px;
+  width: 100%;
+  position: relative;
+}
+.video.is-ratio-square,
+.video.is-ratio-1by1,
+.video padding-top: 100%,
+.video.is-2by1 {
+  padding-top: 50%;
+}
+.video.is-ratio-3by2 {
+  padding-top: 66.66666666666666%;
+}
+.video.is-ratio-4by3 {
+  padding-top: 75%;
+}
+.video.is-ratio-16by9 {
+  padding-top: 56.25%;
+}
+.video.is-ratio-9by16 {
+  padding-top: 177.77777777777777%;
+}
+.video>.has-ratio {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+*.has-notification[data-notification-count=""]:before {
+  display: none;
+}
+*.has-notification:before {
+  align-items: center;
+  background-color: #fff7f5;
+  border: 1px solid #949494;
+  box-sizing: border-box;
+  color: #0a0200;
+  content: attr(data-notification-count);
+  display: flex;
+  font-size: 0.75em;
+  font-weight: 600;
+  height: 1.5em;
+  justify-content: center;
+  min-width: 1.5em;
+  padding: 0.25em;
+  position: absolute;
+  border-radius: 0.75em;
+  top: 0;
+  right: 0;
+  transform: translate(45%, -45%);
+  z-index: 1;
+}
+.badge {
+  align-items: center;
+  border: 1px solid #d9d9d9;
+  background-color: #fff7f5;
+  border-radius: 0.25rem;
+  color: #0a0200;
+  display: inline-flex;
+  font-size: 0.75em;
+  justify-content: center;
+  padding: 0.1rem 0.5rem;
+  white-space: nowrap;
 }
 .header {
   background-color: #fff7f5;
@@ -3986,6 +4169,7 @@ video {
 }
 .hamburger {
   background-color: #d9d9d9;
+  border: 1px solid transparent;
   border-radius: 4px;
   color: #949494;
   cursor: pointer;
@@ -4204,20 +4388,15 @@ video {
   display: flex;
 }
 .modal>.modal-content {
+  display: contents;
   margin: auto;
+  max-height: 95vh;
+  max-width: 95vw;
+  margin: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 90%;
   z-index: 1000;
-}
-.badge {
-  align-items: center;
-  border: 1px solid #d9d9d9;
-  background-color: #fff7f5;
-  border-radius: 0.25rem;
-  color: #0a0200;
-  display: inline-flex;
-  font-size: 0.75em;
-  justify-content: center;
-  padding: 0.1rem 0.5rem;
-  white-space: nowrap;
 }
 .card {
   background-color: #fff7f5;
@@ -4225,11 +4404,25 @@ video {
   box-shadow: 0px 0px 0.5rem 0.25rem #d9d9d9;
   color: #0a0200;
   display: block;
-  margin: 1em;
+  height: auto;
+  margin: 1em auto;
   padding: 1em;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 100%;
+}
+@media screen and (min-width: 1024px) and (max-width: 1215px) {
+  .card {
+    width: auto;
+  }
+}
+@media screen and (min-width: 1216px) and (max-width: 1407px) {
+  .card {
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: 1408px) {
+  .card {
+    max-width: 100%;
+  }
 }
 .card>.card-header,
 .card>.card-body,
@@ -4241,6 +4434,39 @@ video {
 .card>.card-footer>.card-title {
   font-size: 1.25em;
   font-weight: 600;
+}
+.list {
+  display: block;
+  margin: 1em 0;
+  list-style-type: none;
+}
+.list.is-marker-disc {
+  list-style-type: disc;
+}
+.list.is-marker-circle {
+  list-style-type: circle;
+}
+.list.is-marker-square {
+  list-style-type: square;
+}
+.list.is-marker-decimal {
+  list-style-type: decimal;
+}
+.list.is-marker-hiragana-iroha {
+  list-style-type: hiragana-iroha;
+}
+.list>.list-item {
+  margin: 0.25em 0;
+}
+.message {
+  background-color: #fff;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  margin: 0.5em;
+  border: 1px solid #fff;
+}
+.message>.message-body {
+  padding: 1.25em 1.5em;
 }
 .souffle,
 .root {
@@ -4405,6 +4631,7 @@ video {
 }
 .tategaki {
   align-items: center;
+  box-sizing: border-box;
   display: block;
   float: right;
   justify-content: flex-start;
@@ -4452,6 +4679,15 @@ video {
 }
 .centering>* {
   margin: 0 auto;
+}
+.section {
+  border: solid 1px transparent;
+  border-radius: 0.25rem;
+  margin: 0.25rem auto;
+  padding: 0.25rem;
+}
+.section.has-border {
+  border: solid 1px #b3b3b3;
 }
 .layer-folder {
   display: flex;
