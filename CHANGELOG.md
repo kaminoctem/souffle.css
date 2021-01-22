@@ -6,7 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.7] - 2021-1-23
+### Added
+- implement `.notification`
+- implement `.link`
+- implement `.image`
+- implement `.icon`
+- implement `.list`
+- implement `.message`
+
 ## [0.0.6] - 2020-12-6
+### Added
 - implement `.file`
 - implement `.badge`
 

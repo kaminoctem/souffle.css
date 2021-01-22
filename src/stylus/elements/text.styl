@@ -13,3 +13,26 @@
   margin: 0.25em 0
   padding: 0.25em
   width: 100%
+
+  &.is-number
+    text-align: right
+
+  &[disabled],
+  fieldset[disabled],
+  &.is-disabled
+    background-color: $text-disabled-backcolor
+    border-color: $text-disabled-bordercolor
+    box-shadow: $text-disabled-box-shadow
+    opacity: $text-disabled-opacity
+
+  if (!$is-skeleton)
+    for colorKey, colorValue in $colors
+      &.is-{colorKey}
+        border-color: colorValue.base
+
+        &[disabled],
+        fieldset[disabled],
+        &.is-disabled
+          background-color: colorValue.translucent
+          border-color: transparent
+          box-shadow: none

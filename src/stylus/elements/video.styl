@@ -1,0 +1,30 @@
+/**
+ * elements/video.styl
+ * @author kaminoctem
+ */
+
+.video
+  display: block
+  height: auto
+  max-width: 100%
+  min-width: 320px
+  width: 100%
+  position: relative
+  &.is-ratio-square,
+  &.is-ratio-1by1,
+    padding-top: 100%
+  &.is-2by1
+    padding-top: percentage(1 /2)
+  &.is-ratio-3by2
+    padding-top: percentage(2 / 3)
+  &.is-ratio-4by3
+    padding-top: percentage(3 / 4)
+  &.is-ratio-16by9
+    padding-top: percentage(9 / 16)
+  &.is-ratio-9by16
+    padding-top: percentage(16 / 9)
+
+  &>.has-ratio
+    overlay()
+    height: 100%
+    width: 100%

@@ -3,7 +3,7 @@
  * @author kaminoctem
  */
 
-// control
+/** #region control */
 $control-border-radius ?= 0.25em
 $control-border-width ?= 1px
 $control-height ?= 2.25em
@@ -12,81 +12,116 @@ $control-padding-vertical ?= (0.375em - $control-border-width)
 $control-padding-horizontal ?= (0.625em - $control-border-width)
 $control-margin-vertical ?= 0.05em
 $control-margin-horizontal ?= 0.05em
-// label
+/** #endregion control */
+
+/** #region label */
 $label-forecolor ?= $color-grey-darker
 $label-font-weight ?= $font-weight-bold
+/** #endregion label */
 
-// button
+/** #region button */
 $button-forecolor ?= $color-grey-darker
 $button-backcolor ?= $color-white
 $button-bordercolor ?= $color-grey-lighter
+
 $button-hover-forecolor ?= $color-grey-darker
 $button-hover-backcolor ?= $color-grey-darker
 $button-hover-bordercolor ?= $color-grey-light
+
 $button-focus-forecolor ?= $color-grey-darker
 $button-focus-backcolor ?= $color-grey-darker
 $button-focus-bordercolor ?= $color-link
 $button-focus-box-shadow-size ?= 0 0 0 0.125em
 $button-focus-box-shadow-color ?= alpha($color-link, 0.25)
+
 $button-active-forecolor ?= $color-grey-darker
 $button-active-backcolor ?= $color-grey-darker
 $button-active-bordercolor ?= $color-grey-dark
+
 $button-disabled-forecolor ?= $color-grey-darker
 $button-disabled-backcolor ?= $color-white
 $button-disabled-bordercolor ?= $color-grey-lighter
 $button-disabled-box-shadow ?= none
 $button-disabled-opacity ?= 0.5
+/** #endregion button */
 
-// radio
-$radio-text-font-weight ?= $font-weight-normal
-$radio-button-size ?= 1em
-$radio-button-border-width ?= 0.2em
-$radio-button-border-color ?= $color-grey-lighter
-$radio-button-backcolor ?= $color-white
-$radio-button-checked-border-color ?= $color-grey-lighter
-$radio-button-checked-backcolor ?= $color-grey-darker
-$radio-disabled-button-checked-border-color ?= $color-grey-lighter
-$radio-disabled-button-checked-backcolor ?= $color-grey-light
-$radio-disabled-text-forecolor ?= $color-grey
-$radio-text-padding-vertical ?= 0
-$radio-text-padding-horizontal ?= 0.25em
-
-// checkbox
-$checkbox-text-font-weight ?= $font-weight-normal
+/** #region checkbox */
 $checkbox-box-size ?= 1em
 $checkbox-box-border-width ?= 0.2em
 $checkbox-box-border-color ?= $color-grey-lighter
 $checkbox-box-backcolor ?= $color-white
 $checkbox-box-checked-border-color ?= $color-grey-lighter
 $checkbox-box-checked-backcolor ?= $color-grey-darker
+$checkbox-text-font-weight ?= $font-weight-normal
+$checkbox-text-padding-vertical ?= 0
+$checkbox-text-padding-horizontal ?= 0.25em
+
 $checkbox-disabled-box-checked-border-color ?= $color-grey-lighter
 $checkbox-disabled-box-checked-backcolor ?= $color-grey-light
 $checkbox-disabled-text-checked-forecolor ?= $color-grey
 $checkbox-disabled-text-forecolor ?= $color-grey
-$checkbox-text-padding-vertical ?= 0
-$checkbox-text-padding-horizontal ?= 0.25em
+/** #endregion checkbox */
 
-// select
+/** #region icon */
+$icon-size ?= 1.5em
+$icon-size-small ?= 1em
+$icon-size-medium ?= 2em
+$icon-size-large ?= 3em
+/** #endregion icon */
+
+/** #region radio */
+$radio-button-size ?= 1em
+$radio-button-border-width ?= 0.2em
+$radio-button-border-color ?= $color-grey-lighter
+$radio-button-backcolor ?= $color-white
+$radio-button-checked-border-color ?= $color-grey-lighter
+$radio-button-checked-backcolor ?= $color-grey-darker
+$radio-text-font-weight ?= $font-weight-normal
+$radio-text-padding-vertical ?= 0
+$radio-text-padding-horizontal ?= 0.25em
+
+$radio-disabled-button-checked-border-color ?= $color-grey-lighter
+$radio-disabled-button-checked-backcolor ?= $color-grey-light
+$radio-disabled-button-backcolor ?= $color-white
+$radio-disabled-text-forecolor ?= $color-grey
+/** #endregion radio */
+
+/** #region select */
 $select-disabled-forecolor ?= $color-grey-darker
 $select-disabled-backcolor ?= $color-white
 $select-disabled-bordercolor ?= $color-grey-darker
 $select-disabled-opacity ?= 0.5
+/** #endregion select
 
-// text
+/** #region text */
 $text-forecolor ?= $color-black
 $text-backcolor ?= $color-white
 $text-border-color ?= $color-grey-light
 $text-border-radius ?= 0.25rem
 $text-border-width ?= 0.05rem
 
-// textarea
+$text-disabled-forecolor ?= $color-grey-darker
+$text-disabled-backcolor ?= $color-white
+$text-disabled-bordercolor ?= $color-grey-lighter
+$text-disabled-box-shadow ?= none
+$text-disabled-opacity ?= 0.5
+/** #endregion text
+
+/** #region textarea */
 $textarea-forecolor ?= $color-black
 $textarea-backcolor ?= $color-white
 $textarea-border-color ?= $color-grey-light
 $textarea-border-radius ?= 0.25rem
 $textarea-border-width ?= 0.05rem
 
-// file
+$textarea-disabled-forecolor ?= $color-grey-darker
+$textarea-disabled-backcolor ?= $color-white
+$textarea-disabled-bordercolor ?= $color-grey-lighter
+$textarea-disabled-box-shadow ?= none
+$textarea-disabled-opacity ?= 0.5
+/** #endregion textarea */
+
+/** #region file */
 $file-bordercolor ?= $color-grey-lighter
 $file-border-radius ?= 4px
 $file-text-padding-vertical ?= 0
@@ -95,28 +130,29 @@ $file-filename-font-weight ?= $font-weight-normal
 $file-forecolor ?= $color-grey-darker
 $file-backcolor ?= $color-white
 $file-bordercolor ?= $color-grey-lighter
+
 $file-action-padding-vertical ?= 0
 $file-action-padding-horizontal ?= 0.25em
 $file-action-margin-vertical ?= ($control-border-width * -1)
 $file-action-margin-horizontal ?= ($control-border-width * -1)
+
 $file-action-hover-forecolor ?= $color-grey-darker
 $file-action-hover-backcolor ?= $color-grey-darker
 $file-action-hover-bordercolor ?= $color-grey-light
+
 $file-action-focus-forecolor ?= $color-grey-darker
 $file-action-focus-backcolor ?= $color-grey-darker
 $file-action-focus-bordercolor ?= $color-link
 $file-action-focus-box-shadow-size ?= 0 0 0 0.125em
 $file-action-focus-box-shadow-color ?= alpha($color-link, 0.25)
+
 $file-action-active-forecolor ?= $color-grey-darker
 $file-action-active-backcolor ?= $color-grey-darker
 $file-action-active-bordercolor ?= $color-grey-dark
+
 $file-action-disabled-forecolor ?= $color-grey-darker
 $file-action-disabled-backcolor ?= $color-white
 $file-action-disabled-bordercolor ?= $color-grey-lighter
 $file-action-disabled-box-shadow ?= none
 $file-action-disabled-opacity ?= 0.5
-
-$badge-forecolor ?= $color-mainfore
-$badge-backcolor ?= $color-mainback
-$badge-bordercolor ?= $color-grey-lighter
-$badge-border-width ?= 1px
+/** ##endregion file */

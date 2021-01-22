@@ -36,7 +36,7 @@
               <span class="right">
                 <div
                   role="button"
-                  class="hamburger"
+                  class="hamburger is-visited"
                   aria-label="menu"
                   aria-expanded="false"
                   data-target="navbar-menu"
@@ -103,13 +103,13 @@
       </header>
       <main class="main" role="main">
         <div class="container">
-          <section>
+          <section class="section">
             <article>
               <p><ruby>soufflé.css<rp>(</rp><rt>すふれしーえすえす</rt><rp>)</rp></ruby>は、<ruby>縦書き<rp>(</rp><rt>たてがき</rt><rp>)</rp></ruby>と<ruby>ルビ<rp>(</rp><rt>るび</rt><rp>)</rp></ruby>にフレンドリーなCSSフレームワークです。</p>
               <p>ソースコードは<ruby>stylus<rp>(</rp><rt>すたいらす</rt><rp>)</rp></ruby>で書かれているので、カスタマイズしやすいです。</p>
             </article>
           </section>
-          <section>
+          <section class="section">
             <div class="grid">
               <div class="row is-direction-row-reverse is-mobile-direction-row">
                 <div class="column is-mobile-12">
@@ -189,7 +189,7 @@
               </div>
             </div>
           </section>
-          <section>
+          <section class="section">
             <div class="grid">
               <div class="row">
                 <div class="column">
@@ -223,7 +223,7 @@
               </div>
             </div>
           </section>
-          <section>
+          <section class="section">
             <div class="grid">
               <div class="row">
                 <div class="column">
@@ -232,7 +232,7 @@
               </div>
             </div>
           </section>
-          <section>
+          <section class="section">
             <div class="grid">
               <div class="row">
                 <div class="column is-mobile-4">
@@ -367,7 +367,7 @@
               </div>
             </div>
           </section>
-          <section>
+          <section class="section">
             <div class="row">
               <div class="column">
                 <div class="field">
@@ -383,7 +383,7 @@
               </div>
             </div>
           </section>
-          <section>
+          <section class="section">
             <div class="row">
               <div class="column">
                 <div class="field">
@@ -506,7 +506,7 @@
             </div>
           </section>
 
-          <section>
+          <section class="section">
             <div class="row">
               <div class="column">
                 <div class="field">
@@ -628,7 +628,7 @@
               </div>
             </div>
           </section>
-          <section>
+          <section class="section">
             <div class="row">
               <div class="column">
                 <span class="badge">badge</span>
@@ -675,7 +675,7 @@
               </div>
             </div>
           </section>
-          <section>
+          <section class="section">
             <div class="row">
               <div class="column">
                 <div class="field">
@@ -825,7 +825,54 @@
               </div>
             </div>
           </section>
-          <section>
+          <section class="section">
+            <div class="message">
+              <div class="message-body">
+                message
+              </div>
+            </div>
+            <div class="message is-primary">
+              <div class="message-body">
+                message is-primary
+              </div>
+            </div>
+            <div class="message is-info">
+              <div class="message-body">
+                message is-info
+              </div>
+            </div>
+            <div class="message is-success">
+              <div class="message-body">
+                message is-success
+              </div>
+            </div>
+            <div class="message is-warning">
+              <div class="message-body">
+                message is-warning
+              </div>
+            </div>
+            <div class="message is-danger">
+              <div class="message-body">
+                message is-danger
+              </div>
+            </div>
+            <div class="message is-link">
+              <div class="message-body">
+                message is-link
+              </div>
+            </div>
+            <div class="message is-visited">
+              <div class="message-body">
+                message is-visited
+              </div>
+            </div>
+            <div class="message is-disabled">
+              <div class="message-body">
+                message is-disabled
+              </div>
+            </div>
+          </section>
+          <section class="section">
             <div class="grid">
               <div class="row">
                 <div class="column">
@@ -835,26 +882,35 @@
             </div>
             <div class="modal">
               <div class="modal-content">
-              <div class="card">
-                <div class="card-header">
-                  <div class="card-title">
-                    My Movie
+                <div class="grid">
+                  <div class="row">
+                    <div class="column">
+                      <div class="card">
+                        <div class="card-header">
+                          <div class="card-title">
+                            My Movie
+                          </div>
+                        </div>
+                        <div class="card-body">
+                          <div class="centering">
+                            <div class="video is-ratio-16by9">
+                              <iframe
+                                class="has-ratio"
+                                width="560"
+                                height="315"
+                                src="https://www.youtube.com/embed/vU_N2NZ5vkQ"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                              </iframe>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-footer">
+                          Check it out!
+                        </div>
+                    </div>
                   </div>
-                </div>
-                <div class="card-body">
-                  <div class="centering">
-                    <iframe
-                      width="560"
-                      height="315"
-                      src="https://www.youtube.com/embed/vU_N2NZ5vkQ"
-                      frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen>
-                    </iframe>
-                  </div>
-                </div>
-                <div class="card-footer">
-                  Check it out!
                 </div>
               </div>
             </div>

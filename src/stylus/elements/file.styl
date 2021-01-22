@@ -37,7 +37,8 @@
       color: $file-action-active-forecolor
 
     &[disabled],
-    fieldset[disabled]
+    fieldset[disabled],
+    &.is-disabled
       background-color: $file-action-disabled-backcolor
       border-color: $file-action-disabled-bordercolor
       box-shadow: $file-action-disabled-box-shadow
@@ -71,7 +72,7 @@
             border-color: transparent
             color: colorValue.inverted
             &:not(:active)
-              box-shadow: $file-focus-box-shadow-size colorValue.translucent
+              box-shadow: $file-action-focus-box-shadow-size colorValue.translucent
 
           &:active,
           &.is-active

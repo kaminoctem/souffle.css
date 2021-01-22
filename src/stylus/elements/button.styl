@@ -8,8 +8,17 @@
   @extend.control
   background-color: $button-backcolor
   border-color: $button-bordercolor
+  box-sizing: border-box
   color: $button-forecolor
   cursor: pointer
+  display: inline-block
+  height: auto
+  min-height: 2.5em
+  min-width: 7.5em
+  text-align: center
+  text-transform: none
+  vertical-align: top
+  word-spacing: 0px
 
   &:hover,
   &.is-hovered
@@ -29,7 +38,8 @@
     color: $button-active-forecolor
 
   &[disabled],
-  fieldset[disabled]
+  fieldset[disabled],
+  &.is-disabled
     background-color: $button-disabled-backcolor
     border-color: $button-disabled-bordercolor
     box-shadow: $button-disabled-box-shadow

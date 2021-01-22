@@ -1,0 +1,40 @@
+/**
+ * petits/notification.styl
+ * @author kaminoctem
+ */
+
+notification()
+  &[data-notification-count=""]:before
+    display: none
+  &:before
+    align-items: center
+    background-color: $color-mainback
+    border: 1px solid $color-grey
+    box-sizing: border-box
+    color: $color-mainfore
+    content: attr(data-notification-count);
+    display: flex
+    font-size: $font-size-small
+    font-weight: $font-weight-semibold
+    height: 1.5em
+    justify-content: center
+    min-width: 1.5em
+    padding: 0.25em
+    position: absolute
+    border-radius: 0.75em
+    top: 0
+    right: 0
+    transform: translate(45%, -45%);
+    z-index: 1
+
+*
+  &.has-notification
+    notification()
+  if (!$is-skeleton)
+    for colorKey, colorValue in $colors
+      &.has-notification-{colorKey}
+        notification()
+        &:before
+            background-color: colorValue.base
+            border-color: colorValue.base
+            color: colorValue.inverted

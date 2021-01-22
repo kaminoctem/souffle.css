@@ -49,8 +49,5 @@
     "stylint": "^2.0.0",
     "stylus": "^0.54.5",
     "stylus-supremacy": "^2.12.7"
-  },
-  "publishConfig": {
-    "registry":"https://npm.pkg.github.com/@kaminoctem"
   }
 }

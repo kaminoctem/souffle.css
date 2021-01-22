@@ -5,6 +5,7 @@
 
 .hamburger
   background-color: $hamburger-backcolor
+  border: $hamburger-border-width solid $hamburger-bordercolor
   border-radius: 4px
   color: $hamburger-forecolor
   cursor: pointer
@@ -16,6 +17,25 @@
   &.is-hovered
     background-color: $hamburger-hover-backcolor
     color: $hamburger-hover-forecolor
+
+  if (!$is-skeleton)
+    for colorKey, colorValue in $colors
+      &.is-{colorKey}
+        background-color: colorValue.light
+        border-color: colorValue.dark
+        color: colorValue.dark
+        &:hover,
+        &.is-hovered
+          background-color: colorValue.pale
+        &>span
+          &:nth-child(2)
+            background-color: colorValue.dark
+          &:nth-child(3)
+            background-color: colorValue.dark
+          &:nth-child(4)
+            background-color: colorValue.dark
+
+
   &>span
     display: inline-block
     opacity: 1

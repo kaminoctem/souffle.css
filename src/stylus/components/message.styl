@@ -1,0 +1,19 @@
+/**
+ * components/message.styl
+ * @author kaminoctem
+ */
+
+.message
+  background-color: $message-backcolor
+  border-radius: 0.5em
+  padding: 0.5em
+  margin: 0.5em
+  border: $message-border-width solid $message-bordercolor
+  &>.message-body
+    padding: 1.25em 1.5em
+  if (!$is-skeleton)
+    for colorKey, colorValue in $colors
+      &.is-{colorKey}
+        background-color: colorValue.translucent
+        border-color: colorValue.translucent
+        color: colorValue.dark

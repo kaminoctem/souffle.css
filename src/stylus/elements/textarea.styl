@@ -17,3 +17,22 @@
   padding: 0.25rem
   resize: vertical
   width: 100%
+
+  &[disabled],
+  fieldset[disabled],
+  &.is-disabled
+    background-color: $textarea-disabled-backcolor
+    border-color: $textarea-disabled-bordercolor
+    box-shadow: $textarea-disabled-box-shadow
+    opacity: $textarea-disabled-opacity
+
+  if (!$is-skeleton)
+    for colorKey, colorValue in $colors
+      &.is-{colorKey}
+        border-color: colorValue.base
+        &[disabled],
+        fieldset[disabled],
+        &.is-disabled
+          background-color: colorValue.translucent
+          border-color: transparent
+          box-shadow: none

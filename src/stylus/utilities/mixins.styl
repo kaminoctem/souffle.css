@@ -1,0 +1,101 @@
+/**
+ * utils/mixins.styl
+ * @author kaminoctem
+ */
+
+clearfix()
+  &::after
+    clear: both
+    content: " "
+    display: block
+
+mobile()
+  @media screen and (max-width: $breakpoint-tablet - 1px)
+    {block}
+
+tablet()
+  @media screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop - 1px)
+    {block}
+
+desktop()
+  @media screen and (min-width: $breakpoint-desktop) and (max-width: $breakpoint-widescreen - 1px)
+    {block}
+
+widescreen()
+  @media screen and (min-width: $breakpoint-widescreen) and (max-width: $breakpoint-fullhd - 1px)
+    {block}
+
+fullhd()
+  @media screen and (min-width: $breakpoint-fullhd)
+    {block}
+
+reducemotion()
+  @media (print), (prefers-reduced-motion: reduce)
+    {block}
+
+unselectable()
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+column()
+  display: block
+  flex-basis: 0
+  flex-grow: 1
+  flex-shrink: 1
+  max-width: 100%
+  position: relative
+
+is_responsive(suffix = "")
+  +mobile()
+    &.is-mobile{suffix},
+    &.is-mobile-or-more{suffix},
+    &.is-tablet-or-less{suffix},
+    &.is-desktop-or-less{suffix},
+    &.is-widescreen-or-less{suffix}
+    &.is-fullhd-or-less{suffix}
+      {block}
+  +tablet()
+    &.is-mobile-or-more{suffix},
+    &.is-tablet-or-less{suffix},
+    &.is-tablet{suffix},
+    &.is-tablet-or-more{suffix},
+    &.is-desktop-or-less{suffix},
+    &.is-widescreen-or-less{suffix}
+    &.is-fullhd-or-less{suffix}
+      {block}
+  +desktop()
+    &.is-mobile-or-more{suffix},
+    &.is-tablet-or-more{suffix},
+    &.is-desktop-or-less{suffix},
+    &.is-desktop,
+    &.is-desktop-or-more{suffix},
+    &.is-widescreen-or-less{suffix}
+    &.is-fullhd-or-less{suffix}
+      {block}
+  +widescreen()
+    &.is-mobile-or-more{suffix},
+    &.is-tablet-or-more{suffix},
+    &.is-desktop-or-more{suffix},
+    &.is-widescreen-or-less{suffix},
+    &.is-widescreen{suffix},
+    &.is-widescreen-or-more{suffix},
+    &.is-fullhd-or-less{suffix}
+      {block}
+  +fullhd()
+    &.is-mobile-or-more{suffix},
+    &.is-tablet-or-more{suffix},
+    &.is-desktop-or-more{suffix},
+    &.is-widescreen-or-more{suffix},
+    &.is-fullhd-or-less{suffix},
+    &.is-fullhd{suffix}
+      {block}
+
+overlay(offset = 0)
+  bottom: offset
+  left: offset
+  position: absolute
+  right: offset
+  top: offset
